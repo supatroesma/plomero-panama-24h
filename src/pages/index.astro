@@ -1,15 +1,123 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTABanner from '../components/CTABanner.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
 import { siteConfig } from '../data/site';
+import { services } from '../data/services';
+import { zones } from '../data/zones';
+import { generalFAQs } from '../data/faqs';
+import { testimonials } from '../data/testimonials';
+
+const homeFAQs = generalFAQs.slice(0, 6);
+const featuredTestimonials = testimonials.slice(0, 6);
 ---
 
 <BaseLayout
   title="Plomero Panamá 24h | Servicio de Plomería Profesional"
   description={siteConfig.description}
-  schema={{ type: 'home' }}
+  schema={{
+    type: 'home',
+    pageTitle: 'Plomero en Panamá 24 Horas',
+    pageDescription: siteConfig.description,
+    faqs: homeFAQs,
+  }}
 >
-  <section class="container-site py-12">
-    <h1>Plomero en Panamá 24 Horas</h1>
-    <p>Sitio en construcción.</p>
+  <HeroSection
+    title="Plomero en Panamá 24 Horas | Servicio Profesional"
+    subtitle="Destape de cañerías, fugas de agua, instalación de calentadores y emergencias. Cotización gratis vía WhatsApp. Llegamos en 30-60 minutos a toda Ciudad de Panamá."
+  />
+
+  <section class="container-site py-12 md:py-16">
+    <header class="mb-8 max-w-3xl">
+      <h2 class="mb-3">Servicios de Plomería en Ciudad de Panamá</h2>
+      <p class="text-[color:var(--color-text-muted)] text-base md:text-lg leading-relaxed">
+        Atendemos toda Ciudad de Panamá: Costa del Este, San Francisco, Punta Pacífica, Obarrio, Bella Vista y zonas cercanas. Servicio residencial y comercial, disponible las 24 horas.
+      </p>
+    </header>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {services.map((s) => (
+        <ServiceCard slug={s.slug} name={s.name} description={s.description} />
+      ))}
+    </div>
+    <div class="mt-6 text-center">
+      <a href="/servicios" class="inline-block text-[color:var(--color-primary)] font-semibold no-underline hover:underline">
+        Ver todos los servicios →
+      </a>
+    </div>
   </section>
+
+  <section class="container-site py-12 md:py-16 bg-[color:var(--color-bg-alt)]">
+    <header class="mb-8 max-w-3xl">
+      <h2 class="mb-3">¿Por qué elegirnos como tu plomero en Panamá?</h2>
+      <p class="text-[color:var(--color-text-muted)] text-base md:text-lg leading-relaxed">
+        Más de 70% de las búsquedas de plomero en Panamá se hacen desde el celular en momentos de urgencia. Nosotros respondemos rápido y damos certeza desde el primer mensaje.
+      </p>
+    </header>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white border border-[color:var(--color-border-base)] rounded-xl p-5">
+        <div class="text-3xl mb-2" aria-hidden="true">⏱</div>
+        <h3 class="text-lg mb-1">Llegamos en 30-60 min</h3>
+        <p class="text-sm text-[color:var(--color-text-muted)]">Tiempo de respuesta real según la zona. Costa del Este, San Francisco y Punta Pacífica: 30 min.</p>
+      </div>
+      <div class="bg-white border border-[color:var(--color-border-base)] rounded-xl p-5">
+        <div class="text-3xl mb-2" aria-hidden="true">💰</div>
+        <h3 class="text-lg mb-1">Cotización gratis</h3>
+        <p class="text-sm text-[color:var(--color-text-muted)]">Sin compromiso. Te decimos el precio antes de empezar el trabajo, por WhatsApp.</p>
+      </div>
+      <div class="bg-white border border-[color:var(--color-border-base)] rounded-xl p-5">
+        <div class="text-3xl mb-2" aria-hidden="true">🛡️</div>
+        <h3 class="text-lg mb-1">Garantía sobre el trabajo</h3>
+        <p class="text-sm text-[color:var(--color-text-muted)]">Reparaciones con garantía por escrito. Si vuelve a fallar en el plazo, regresamos sin costo.</p>
+      </div>
+      <div class="bg-white border border-[color:var(--color-border-base)] rounded-xl p-5">
+        <div class="text-3xl mb-2" aria-hidden="true">🕐</div>
+        <h3 class="text-lg mb-1">Disponibles 24/7</h3>
+        <p class="text-sm text-[color:var(--color-text-muted)]">Madrugadas, fines de semana y feriados. WhatsApp y teléfono activos siempre.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Emergencia de plomería ahora mismo?"
+    subtitle="WhatsApp directo y llegamos en 30 minutos. No esperes a que el daño crezca."
+    variant="urgent"
+  />
+
+  <section class="container-site py-12 md:py-16">
+    <header class="mb-8 max-w-3xl">
+      <h2 class="mb-3">Zonas de Cobertura en Ciudad de Panamá</h2>
+      <p class="text-[color:var(--color-text-muted)] text-base md:text-lg leading-relaxed">
+        Atendemos toda la ciudad. Estas son las zonas con páginas dedicadas con tiempos de llegada y notas locales.
+      </p>
+    </header>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      {zones.map((z) => (
+        <a href={`/zonas/${z.slug}`} class="block bg-white border border-[color:var(--color-border-base)] rounded-lg p-4 text-center hover:border-[color:var(--color-primary)] hover:shadow no-underline">
+          <span class="text-2xl block mb-1" aria-hidden="true">📍</span>
+          <span class="text-sm font-semibold text-[color:var(--color-text-base)]">{z.name}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[color:var(--color-bg-alt)] py-12 md:py-16">
+    <div class="container-site">
+      <header class="mb-8 max-w-3xl">
+        <h2 class="mb-3">Lo que dicen nuestros clientes</h2>
+        <p class="text-[color:var(--color-text-muted)]">Reseñas reales de clientes en Ciudad de Panamá.</p>
+      </header>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {featuredTestimonials.map((t) => (
+          <TestimonialCard testimonial={t} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={homeFAQs} title="Preguntas frecuentes sobre plomeros en Panamá" />
+
+  <CTABanner />
 </BaseLayout>

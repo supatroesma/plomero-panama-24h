@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQSection from '../components/FAQSection.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import { siteConfig, editorialTeam } from '../data/site';
+import { aboutFAQs } from '../data/faqs';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Sobre Nosotros', url: '/sobre-nosotros' },
+];
+---
+
+<BaseLayout
+  title="Sobre Nosotros | Plomero Panamá 24h"
+  description="Conoce al equipo de Plomero Panamá 24h. Plomeros profesionales en Ciudad de Panamá desde 2024. Servicio residencial y comercial con cotización gratis."
+  schema={{
+    type: 'page',
+    pageTitle: 'Sobre Nosotros',
+    pageDescription: 'Equipo de plomeros profesionales en Ciudad de Panamá.',
+    breadcrumbs,
+    faqs: aboutFAQs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-3xl">
+    <header class="mb-8">
+      <h1 class="mb-4">Sobre Plomero Panamá 24h</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        Equipo de plomeros profesionales operando en toda Ciudad de Panamá desde {siteConfig.yearEstablished}. Atendemos casas, apartamentos, edificios residenciales y oficinas las 24 horas, los 7 días de la semana.
+      </p>
+    </header>
+
+    <div class="prose-content">
+      <h2>¿Quiénes somos?</h2>
+      <p>
+        {siteConfig.name} es un equipo de plomeros con experiencia en servicios residenciales y comerciales en Ciudad de Panamá. Operamos desde {siteConfig.yearEstablished} con un modelo simple: respuesta rápida, cotización transparente y trabajo con garantía.
+      </p>
+      <p>
+        No somos la plomería más grande de Panamá. Somos la que responde rápido al WhatsApp, llega cuando dice que va a llegar y cobra exactamente lo que cotizó. Para emergencias de plomería, eso es lo que importa.
+      </p>
+
+      <h2>Nuestra misión</h2>
+      <p>
+        Resolver problemas de plomería en Ciudad de Panamá con rapidez, transparencia y profesionalismo. Que el cliente sepa qué va a pagar antes de que empecemos a trabajar, y que el trabajo dure.
+      </p>
+
+      <h2>Nuestros valores</h2>
+      <ul>
+        <li><strong>Puntualidad:</strong> Si dijimos que llegamos en 30 minutos, llegamos en 30 minutos.</li>
+        <li><strong>Transparencia:</strong> Cotización por escrito antes de empezar. Cero sorpresas al final.</li>
+        <li><strong>Profesionalismo:</strong> Herramientas profesionales, técnicas correctas, normas locales.</li>
+        <li><strong>Disponibilidad real:</strong> 24/7 significa 24/7. Madrugada, fin de semana, feriado.</li>
+        <li><strong>Compromiso con la garantía:</strong> Si vuelve a fallar dentro del plazo, regresamos sin costo.</li>
+      </ul>
+
+      <h2>¿Por qué elegir un plomero local en Panamá?</h2>
+      <p>
+        Un plomero local conoce los detalles que un servicio externo no maneja: los sistemas hidráulicos típicos de Panamá, las regulaciones de IDAAN (Instituto de Acueductos y Alcantarillados Nacionales), los materiales que se consiguen aquí, y los problemas más comunes del clima panameño (humedad, corrosión, sedimentos en el agua).
+      </p>
+      <p>
+        Llegamos más rápido porque ya estamos en Ciudad de Panamá. Hablamos el mismo español de Panamá. Entendemos que en Costa del Este la gente busca algo distinto que en Vía España, y atendemos según el contexto.
+      </p>
+
+      <h2>¿Qué tipos de clientes atendemos?</h2>
+      <p>Trabajamos con tres perfiles principales:</p>
+      <ul>
+        <li><strong>Residencial:</strong> Casas, apartamentos, PHs. Reparaciones, instalaciones nuevas, mantenimiento preventivo.</li>
+        <li><strong>Edificios y administraciones:</strong> Coordinamos con administradores de PH, residentes o juntas. Respetamos las normas internas de cada edificio.</li>
+        <li><strong>Comercial pequeño:</strong> Oficinas, locales pequeños, negocios. Atendemos en horario de oficina o cerrado, según prefiera el cliente.</li>
+      </ul>
+
+      <h2>Áreas de cobertura</h2>
+      <p>
+        Tenemos cobertura completa en: Ciudad de Panamá, Costa del Este, San Francisco, Punta Pacífica, Obarrio, Bella Vista, El Cangrejo, Vía España, Calle 50 y Panamá Pacífico. Para áreas más alejadas, evaluamos el caso (sumamos un cargo por traslado y seguimos atendiendo).
+      </p>
+
+      <h2>Compromiso de servicio</h2>
+      <p>
+        Nuestro compromiso es simple y verificable:
+      </p>
+      <ul>
+        <li>Respondemos cualquier WhatsApp en menos de 30 minutos.</li>
+        <li>Damos cotización antes de empezar cualquier trabajo.</li>
+        <li>El precio cotizado es el precio final (salvo problemas no detectables al inicio, en cuyo caso te informamos antes de continuar).</li>
+        <li>Trabajos realizados con garantía por escrito.</li>
+        <li>Si no te resolvemos el problema, no cobramos la mano de obra.</li>
+      </ul>
+    </div>
+  </article>
+
+  <TrustSignals />
+
+  <FAQSection faqs={aboutFAQs} title="Preguntas frecuentes sobre nosotros" />
+
+  <CTABanner />
+</BaseLayout>

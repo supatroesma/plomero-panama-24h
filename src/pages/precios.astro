@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQSection from '../components/FAQSection.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import { pricingFAQs } from '../data/faqs';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Precios', url: '/precios' },
+];
+
+const priceTable = {
+  caption: 'Rangos de precios de plomería en Panamá (2026)',
+  headers: ['Servicio', 'Rango aproximado', 'Tiempo estimado'],
+  rows: [
+    ['Destape de lavamanos / fregadero', '$30 – $80', '30-60 min'],
+    ['Destape de inodoro', '$40 – $90', '30-60 min'],
+    ['Destape con hidrojet (drenaje principal)', '$80 – $200', '1-2 horas'],
+    ['Reparación de fuga visible', '$50 – $120', '1-2 horas'],
+    ['Detección y reparación de fuga oculta', '$150 – $400', '2-4 horas'],
+    ['Instalación de calentador eléctrico', '$80 – $180 + equipo', '2-3 horas'],
+    ['Instalación de calentador a gas / tankless', '$150 – $350 + equipo', '3-4 horas'],
+    ['Cambio parcial de tuberías (un baño)', '$200 – $600', '4-8 horas'],
+    ['Cambio total de tuberías (casa pequeña)', '$800 – $2,500', '2-3 días'],
+    ['Servicio de emergencia 24h', 'Recargo +20-50%', 'Llegada 30-60 min'],
+  ],
+};
+
+const factorTable = {
+  caption: 'Qué factores hacen que el precio cambie',
+  headers: ['Factor', 'Impacto típico', 'Por qué'],
+  rows: [
+    ['Severidad del problema', '+0% a +200%', 'Una fuga visible no es lo mismo que una oculta detrás de muros'],
+    ['Materiales necesarios', '+$10 a +$300', 'PVC vs CPVC vs cobre, calidad y cantidad'],
+    ['Ubicación', '+$0 a +$30', 'Áreas alejadas suman traslado'],
+    ['Horario', '+20% a +50%', 'Nocturno, fin de semana y feriados'],
+    ['Tipo de inmueble', '+0% a +30%', 'Edificios altos requieren coordinación adicional'],
+    ['Acceso al problema', '+0% a +100%', 'Cortar pared, levantar piso, etc.'],
+  ],
+};
+---
+
+<BaseLayout
+  title="Precios de Plomero en Panamá 2026 | Tarifas y Cotización"
+  description="Precios actualizados de plomero en Panamá: destape, fugas, calentadores, cambio de tuberías. Tabla de rangos transparentes. Cotización gratis vía WhatsApp."
+  schema={{
+    type: 'page',
+    pageTitle: '¿Cuánto cobra un plomero en Panamá? Guía de Precios 2026',
+    pageDescription: 'Tarifas y rangos de precios de servicios de plomería en Ciudad de Panamá.',
+    breadcrumbs,
+    faqs: pricingFAQs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-4xl">
+    <header class="mb-8">
+      <h1 class="mb-4">¿Cuánto cobra un plomero en Panamá? Guía de Precios 2026</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        Un plomero en Panamá cobra entre $30 y $250 según el tipo de servicio. Un destape simple cuesta $30-80, una reparación de fuga $50-150 y la instalación de un calentador $100-250 más el equipo. Esta guía te da la tabla completa con factores que hacen variar el precio.
+      </p>
+    </header>
+
+    <div class="prose-content">
+      <h2>¿Cuánto cuesta un plomero en Panamá según el servicio?</h2>
+      <p>
+        El precio de un plomero en Panamá varía según el servicio, los materiales y la urgencia. Esta es la tabla de rangos reales que se manejan en Ciudad de Panamá en 2026. Los precios son aproximados; la cotización exacta depende del caso específico y se entrega antes de empezar el trabajo.
+      </p>
+
+      <ComparisonTable {...priceTable} />
+
+      <h2>¿Por qué los precios de plomería varían tanto?</h2>
+      <p>
+        Si llamas a tres plomeros distintos en Panamá por el mismo problema, es probable que recibas tres precios distintos. La razón no siempre es que uno cobre de más: el precio depende de variables reales que cambian el costo del trabajo.
+      </p>
+
+      <ComparisonTable {...factorTable} />
+
+      <h3>Severidad del problema</h3>
+      <p>
+        Una fuga visible en una llave puede repararse en 30 minutos. Una fuga oculta detrás de un muro puede requerir detección con cámara, romper losa, reparar y volver a sellar. El precio refleja el tiempo real y el riesgo del trabajo.
+      </p>
+
+      <h3>Materiales necesarios</h3>
+      <p>
+        Tuberías de PVC son más económicas que CPVC; CPVC es más económico que cobre. La grifería de marcas como Grohe o Moen cuesta más que la genérica. La cotización siempre debe especificar materiales.
+      </p>
+
+      <h3>Horario y urgencia</h3>
+      <p>
+        Un plomero de emergencia 24 horas en Panamá tiene un recargo del 20-50% sobre la tarifa normal por madrugada, fin de semana o feriado. Es razonable: el técnico está fuera de su horario, dejando otra cosa, llegando rápido.
+      </p>
+
+      <h2>¿Cuánto cuesta el destape de cañerías en Panamá?</h2>
+      <p>
+        El destape de una cañería en Panamá cuesta entre $30 y $200 según el método y la severidad. Un destape simple con cable mecánico en lavamanos: $30-60. Destape de inodoro: $40-90. Drenaje principal con hidrojet: $80-200.
+      </p>
+      <p>
+        Más detalles en nuestra <a href="/servicios/destape-canerias">página de destape de cañerías</a>.
+      </p>
+
+      <h2>¿Cuánto cuesta reparar una fuga de agua en Panamá?</h2>
+      <p>
+        Reparar una fuga de agua visible cuesta entre $50 y $120. Si la fuga es oculta y requiere detección con cámara o geófono, el costo total (detección + reparación) sube a $150-400. La detección sin destrucción ahorra dinero a la larga.
+      </p>
+      <p>
+        Detalles en <a href="/servicios/fugas-de-agua">reparación de fugas de agua</a>.
+      </p>
+
+      <h2>¿Cuánto cuesta instalar un calentador en Panamá?</h2>
+      <p>
+        La mano de obra de instalación de un calentador eléctrico en Panamá cuesta $80-180. Para tankless o calentadores a gas, sube a $150-350 por la complejidad de la conexión. El equipo se cotiza aparte: un calentador eléctrico de 30 galones cuesta $250-450 según marca.
+      </p>
+      <p>
+        Más en <a href="/servicios/instalacion-calentadores">instalación de calentadores</a>.
+      </p>
+
+      <h2>¿Cómo evitar que un plomero te cobre de más?</h2>
+      <ol>
+        <li><strong>Pide cotización por escrito</strong> antes de que empiece. Por WhatsApp es suficiente.</li>
+        <li><strong>Compara con 2-3 plomeros</strong> si el problema no es urgente. Si es emergencia, prioriza tiempo de llegada.</li>
+        <li><strong>Pregunta qué incluye</strong>: ¿mano de obra, materiales, IVA, garantía?</li>
+        <li><strong>Desconfía de quien quiera empezar sin darte un estimado</strong>. "Te digo al final" es señal de alerta.</li>
+        <li><strong>Pide referencias</strong> o lee reseñas si tienes tiempo.</li>
+        <li><strong>Verifica que la cotización mencione la garantía</strong> (días o meses).</li>
+      </ol>
+
+      <h2>¿Cómo pedir una cotización transparente?</h2>
+      <p>
+        Manda un WhatsApp con: descripción del problema, foto si es posible, dirección de la zona (Costa del Este, San Francisco, etc.), si es urgente o puede esperar. Con eso podemos darte un rango realista en menos de 30 minutos. La cotización exacta se da después de la evaluación inicial en sitio.
+      </p>
+
+      <h3>Datos útiles que aceleran la cotización</h3>
+      <ol>
+        <li>Descripción del problema en 1-2 líneas.</li>
+        <li>Foto o video corto si se puede.</li>
+        <li>Antigüedad aproximada de la instalación.</li>
+        <li>Si ya intentaste algo (importante para no repetir).</li>
+        <li>Disponibilidad horaria.</li>
+      </ol>
+
+      <h2>¿Qué métodos de pago aceptamos?</h2>
+      <p>
+        Aceptamos efectivo, tarjeta de crédito, transferencia bancaria y Yappy. El pago se coordina al finalizar el trabajo, una vez verifiques que todo quedó funcionando correctamente. No pedimos pago por adelantado para servicios estándar; para trabajos grandes se puede acordar 50% al inicio y 50% al final.
+      </p>
+    </div>
+  </article>
+
+  <TrustSignals />
+
+  <CTABanner
+    title="Pide tu cotización gratis ahora"
+    subtitle="WhatsApp directo. Te respondemos en menos de 30 minutos con un rango claro."
+  />
+
+  <FAQSection faqs={pricingFAQs} title="Preguntas frecuentes sobre precios" />
+</BaseLayout>

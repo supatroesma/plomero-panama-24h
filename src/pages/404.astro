@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildWhatsAppLink } from '../data/site';
+
+const waHref = buildWhatsAppLink();
+---
+
+<BaseLayout
+  title="Página no encontrada | Plomero Panamá 24h"
+  description="La página que buscas no existe. Vuelve al inicio o contáctanos por WhatsApp."
+  noindex={true}
+>
+  <section class="container-site py-20 md:py-28 text-center">
+    <p class="text-6xl md:text-8xl font-extrabold text-[color:var(--color-primary)] mb-4">404</p>
+    <h1 class="mb-4">Página no encontrada</h1>
+    <p class="text-lg text-[color:var(--color-text-muted)] mb-8 max-w-xl mx-auto">
+      La página que buscas no existe o fue movida. Si llegaste aquí buscando un plomero en Panamá, podemos ayudarte directamente.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="/" class="inline-block bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-dark)] text-white font-bold px-6 py-3 rounded-lg no-underline transition-colors">
+        Volver al inicio
+      </a>
+      <a href={waHref} target="_blank" rel="noopener" class="inline-block bg-[color:var(--color-whatsapp)] hover:bg-[color:var(--color-whatsapp-dark)] text-white font-bold px-6 py-3 rounded-lg no-underline transition-colors">
+        WhatsApp directo
+      </a>
+    </div>
+  </section>
+</BaseLayout>

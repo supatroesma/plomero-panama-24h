@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { zones } from '../../data/zones';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Zonas', url: '/zonas' },
+];
+---
+
+<BaseLayout
+  title="Zonas de Cobertura | Plomero Panamá 24h"
+  description="Cobertura completa de plomería en Ciudad de Panamá: Costa del Este, San Francisco, Punta Pacífica, Obarrio, Panamá Pacífico. Llegamos en 30-60 minutos."
+  schema={{
+    type: 'page',
+    pageTitle: 'Zonas de Cobertura',
+    pageDescription: 'Zonas atendidas en Ciudad de Panamá.',
+    breadcrumbs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10">
+    <header class="max-w-3xl mb-8">
+      <h1 class="mb-4">Zonas de Cobertura en Ciudad de Panamá</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        Atendemos toda Ciudad de Panamá. Estas son las zonas con páginas dedicadas con tiempos de llegada y notas locales. Para cualquier zona no listada, podemos atender con cargo de traslado.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {zones.map((z) => (
+        <a href={`/zonas/${z.slug}`} class="block bg-white border border-[color:var(--color-border-base)] rounded-xl p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all no-underline">
+          <div class="text-3xl mb-2" aria-hidden="true">📍</div>
+          <h2 class="text-lg mb-2 text-[color:var(--color-text-base)]">{z.name}</h2>
+          <p class="text-sm text-[color:var(--color-text-muted)]">{z.description}</p>
+          <span class="inline-block mt-3 text-sm font-semibold text-[color:var(--color-primary)]">Ver zona →</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="prose-content max-w-3xl mt-12">
+      <h2>¿Cubren mi zona si no aparece en la lista?</h2>
+      <p>
+        Cubrimos toda Ciudad de Panamá: Bella Vista, El Cangrejo, Vía España, Calle 50 y otras. Las zonas listadas son las que tienen página dedicada con notas locales, pero atendemos todo. Para áreas más alejadas (Panamá Oeste, Chorrera, Arraiján), evaluamos el caso y aplicamos cargo de traslado adicional.
+      </p>
+
+      <h2>¿Cuál es el tiempo de llegada típico?</h2>
+      <ul>
+        <li><strong>Costa del Este, San Francisco, Punta Pacífica, Obarrio:</strong> 30 minutos.</li>
+        <li><strong>Bella Vista, El Cangrejo, Vía España, Calle 50:</strong> 30-45 minutos.</li>
+        <li><strong>Panamá Pacífico:</strong> 45-60 minutos.</li>
+        <li><strong>Áreas más alejadas:</strong> 60-90 minutos con cargo adicional.</li>
+      </ul>
+    </div>
+  </article>
+
+  <CTABanner />
+</BaseLayout>

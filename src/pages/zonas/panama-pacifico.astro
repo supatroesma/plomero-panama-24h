@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import { getZone } from '../../data/zones';
+import { services } from '../../data/services';
+
+const zone = getZone('panama-pacifico')!;
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Zonas', url: '/zonas' },
+  { name: zone.name, url: `/zonas/${zone.slug}` },
+];
+
+const zoneFAQs = [
+  {
+    question: `¿Cuánto tarda un plomero en llegar a ${zone.name}?`,
+    answer: `Un plomero llega a ${zone.name} en 45-60 minutos. La zona requiere cruce de puente, por lo que el tiempo es mayor que en zonas centrales. Para emergencias confirmamos el tiempo exacto al recibir tu WhatsApp.`,
+  },
+  {
+    question: `¿Atienden las casas y condominios de ${zone.name}?`,
+    answer: `Sí, atendemos casas, condominios y oficinas en ${zone.name}. La zona tiene predominancia de casas familiares y condominios cerrados con sistemas modernos.`,
+  },
+  {
+    question: `¿Cuánto cobran un servicio en ${zone.name}?`,
+    answer: `Las tarifas en ${zone.name} son las mismas que en el resto de Ciudad de Panamá; puede haber un cargo de traslado adicional menor por el tiempo de viaje. Cotización gratis con todo desglosado antes de empezar.`,
+  },
+  {
+    question: `¿Atienden 24 horas en ${zone.name}?`,
+    answer: `Sí, atendemos emergencias 24 horas en ${zone.name} todos los días. El tiempo de llegada nocturno puede variar entre 45-90 minutos según condiciones.`,
+  },
+  {
+    question: `¿Qué problemas son comunes en ${zone.name}?`,
+    answer: `En ${zone.name} los problemas comunes son: instalaciones modernas con ajustes en los primeros años, fugas en jardines y áreas externas (clima costero), calentadores y sistemas residenciales tipo casa, y problemas asociados a humedad por proximidad al mar.`,
+  },
+];
+---
+
+<BaseLayout
+  title={zone.metaTitle}
+  description={zone.metaDescription}
+  schema={{
+    type: 'page',
+    pageTitle: zone.h1,
+    pageDescription: zone.metaDescription,
+    breadcrumbs,
+    faqs: zoneFAQs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-3xl">
+    <header class="mb-8">
+      <h1 class="mb-4">{zone.h1}</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        {zone.description}
+      </p>
+    </header>
+
+    <div class="prose-content">
+      <h2>¿Por qué llamarnos para plomería en {zone.name}?</h2>
+      <ul>
+        {zone.highlights.map((h) => <li>{h}</li>)}
+      </ul>
+
+      <h2>¿Qué particularidades tiene {zone.name}?</h2>
+      <p>
+        {zone.name} es una zona en desarrollo con predominancia de casas familiares, condominios cerrados y algunas oficinas. La proximidad al mar y el clima costero traen particularidades:
+      </p>
+      <ul>
+        <li><strong>Humedad ambiental alta:</strong> acelera corrosión externa de tuberías y sistemas.</li>
+        <li><strong>Sedimentos en agua según zona:</strong> afecta calentadores y filtros.</li>
+        <li><strong>Casas con jardín:</strong> problemas frecuentes en sistemas externos (riego, conexiones de jardín).</li>
+        <li><strong>Construcción reciente:</strong> instalaciones modernas pero con ajustes esperables en los primeros años.</li>
+      </ul>
+
+      <h2>¿Qué servicios atendemos en {zone.name}?</h2>
+      <p>
+        Servicios completos: destape, fugas, cambio de tuberías, instalación de calentadores, plomería residencial y emergencias 24 horas. Conocemos las particularidades de las construcciones modernas de la zona.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+      {services.slice(0, 4).map((s) => (
+        <ServiceCard slug={s.slug} name={s.name} description={s.description} />
+      ))}
+    </div>
+
+    <div class="prose-content">
+      <h2>¿Cómo agendar servicio en {zone.name}?</h2>
+      <p>
+        WhatsApp con dirección dentro de {zone.name} (condominio o sector), descripción del problema y urgencia. El tiempo de llegada es 45-60 minutos en horario regular. Para emergencias atendemos sin importar la hora.
+      </p>
+
+      <p class="italic text-[color:var(--color-text-muted)]">
+        Más información:
+        <a href="/guia-completa-plomeria-panama">guía completa de plomería</a> y
+        <a href="/precios">precios detallados</a>.
+      </p>
+    </div>
+  </article>
+
+  <TrustSignals />
+  <CTABanner whatsappMessage={`Hola, necesito un plomero en ${zone.name}, Panamá.`} />
+  <FAQSection faqs={zoneFAQs} title={`Preguntas frecuentes sobre plomería en ${zone.name}`} />
+</BaseLayout>

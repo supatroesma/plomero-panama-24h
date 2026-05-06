@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import { getZone } from '../../data/zones';
+import { services } from '../../data/services';
+
+const zone = getZone('punta-pacifica')!;
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Zonas', url: '/zonas' },
+  { name: zone.name, url: `/zonas/${zone.slug}` },
+];
+
+const zoneFAQs = [
+  {
+    question: `¿Cuánto tarda un plomero en llegar a ${zone.name}?`,
+    answer: `Un plomero llega a ${zone.name} en 30 minutos en promedio. Es zona prioritaria por concentración de torres residenciales premium. Confirmamos el tiempo exacto al recibir tu WhatsApp.`,
+  },
+  {
+    question: `¿Atienden las torres de Punta Pacífica?`,
+    answer: `Sí, atendemos todas las torres residenciales de Punta Pacífica. Las torres altas tienen sistemas de alta presión zonificada que requieren conocimiento específico; lo manejamos sin problema.`,
+  },
+  {
+    question: `¿Cuánto cobran en Punta Pacífica?`,
+    answer: `Las tarifas en Punta Pacífica son las mismas que en el resto de Ciudad de Panamá. Destape simple: $30-80. Reparación de fuga: $50-150. Cotización gratis antes de empezar.`,
+  },
+  {
+    question: `¿Coordinan con la administración del PH?`,
+    answer: `Sí, coordinamos con la administración cuando es necesario (corte de agua general, acceso a áreas comunes). En la mayoría de casos el residente coordina la entrada y nosotros llegamos directo al apartamento.`,
+  },
+  {
+    question: `¿Qué problemas son comunes en torres de Punta Pacífica?`,
+    answer: `En las torres de ${zone.name} los problemas comunes son: presión irregular en pisos altos, fugas en uniones por presión sostenida, calentadores tankless con sedimentos, y drenajes principales con uso intensivo. Tenemos experiencia específica.`,
+  },
+];
+---
+
+<BaseLayout
+  title={zone.metaTitle}
+  description={zone.metaDescription}
+  schema={{
+    type: 'page',
+    pageTitle: zone.h1,
+    pageDescription: zone.metaDescription,
+    breadcrumbs,
+    faqs: zoneFAQs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-3xl">
+    <header class="mb-8">
+      <h1 class="mb-4">{zone.h1}</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        {zone.description}
+      </p>
+    </header>
+
+    <div class="prose-content">
+      <h2>¿Por qué llamarnos para plomería en {zone.name}?</h2>
+      <ul>
+        {zone.highlights.map((h) => <li>{h}</li>)}
+      </ul>
+
+      <h2>¿Qué particularidades tienen las torres de {zone.name}?</h2>
+      <p>
+        {zone.name} es zona de torres premium de 30+ pisos. Esto trae particularidades de plomería:
+      </p>
+      <ul>
+        <li><strong>Presión zonificada:</strong> los pisos altos tienen presión menor sin bombeo de refuerzo, los pisos intermedios tienen sistema balanceado.</li>
+        <li><strong>Calentadores generalmente tankless:</strong> requieren mantenimiento por sedimentos especialmente en zona costera.</li>
+        <li><strong>Sistemas de bombeo centralizados:</strong> fallas afectan múltiples apartamentos.</li>
+        <li><strong>Coordinación estricta con administración:</strong> normativa interna fuerte.</li>
+        <li><strong>Tuberías de cobre o CPVC modernas:</strong> reparaciones técnicas más sencillas pero requieren plomero entrenado.</li>
+      </ul>
+
+      <h2>¿Qué servicios cubrimos en {zone.name}?</h2>
+      <p>
+        Servicios completos: destape de cañerías (incluyendo drenajes principales con hidrojet), reparación de fugas, instalación y reparación de calentadores tankless, plomería residencial y emergencias 24 horas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+      {services.slice(0, 4).map((s) => (
+        <ServiceCard slug={s.slug} name={s.name} description={s.description} />
+      ))}
+    </div>
+
+    <div class="prose-content">
+      <h2>¿Cómo agendar servicio en {zone.name}?</h2>
+      <p>
+        WhatsApp con dirección de torre y apartamento, descripción del problema y urgencia. Coordinamos acceso con tu administración si es necesario. Para emergencias confirmamos llegada en 30 minutos.
+      </p>
+
+      <p class="italic text-[color:var(--color-text-muted)]">
+        ¿Más información?
+        <a href="/guia-completa-plomeria-panama">Guía completa de plomería</a> y
+        <a href="/precios">precios detallados</a>.
+      </p>
+    </div>
+  </article>
+
+  <TrustSignals />
+  <CTABanner whatsappMessage={`Hola, necesito un plomero en ${zone.name}, Panamá.`} />
+  <FAQSection faqs={zoneFAQs} title={`Preguntas frecuentes sobre plomería en ${zone.name}`} />
+</BaseLayout>

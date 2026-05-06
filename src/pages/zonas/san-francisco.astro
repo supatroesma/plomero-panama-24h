@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import { getZone } from '../../data/zones';
+import { services } from '../../data/services';
+
+const zone = getZone('san-francisco')!;
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Zonas', url: '/zonas' },
+  { name: zone.name, url: `/zonas/${zone.slug}` },
+];
+
+const zoneFAQs = [
+  {
+    question: `¿Cuánto tarda un plomero en llegar a ${zone.name}, Panamá?`,
+    answer: `Un plomero llega a ${zone.name} en 30-45 minutos. Es zona prioritaria por la cantidad de edificios residenciales. Para emergencias confirmamos el tiempo exacto al recibir tu WhatsApp.`,
+  },
+  {
+    question: `¿Atienden edificios antiguos en ${zone.name}?`,
+    answer: `Sí, atendemos edificios antiguos y modernos en ${zone.name}. Los edificios antiguos pueden tener tuberías galvanizadas que requieren atención especial; conocemos las particularidades técnicas y los protocolos del sector.`,
+  },
+  {
+    question: `¿Cuánto cobran un servicio en ${zone.name}?`,
+    answer: `Las tarifas en ${zone.name} son las mismas que en el resto de Ciudad de Panamá. Destape simple: $30-80. Reparación de fuga: $50-150. Cotización gratis antes de empezar el trabajo.`,
+  },
+  {
+    question: `¿Atienden 24 horas en ${zone.name}?`,
+    answer: `Sí, servicio de emergencia 24 horas en ${zone.name} todos los días. WhatsApp y teléfono activos siempre. Llegada típica: 30-45 minutos para emergencias.`,
+  },
+  {
+    question: `¿Qué problemas son comunes en edificios de ${zone.name}?`,
+    answer: `En ${zone.name} los problemas comunes incluyen: tuberías galvanizadas oxidadas en edificios viejos, presión irregular, drenajes principales tapados por uso comercial mixto y fugas en juntas por antigüedad de la construcción.`,
+  },
+];
+---
+
+<BaseLayout
+  title={zone.metaTitle}
+  description={zone.metaDescription}
+  schema={{
+    type: 'page',
+    pageTitle: zone.h1,
+    pageDescription: zone.metaDescription,
+    breadcrumbs,
+    faqs: zoneFAQs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-3xl">
+    <header class="mb-8">
+      <h1 class="mb-4">{zone.h1}</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        {zone.description}
+      </p>
+    </header>
+
+    <div class="prose-content">
+      <h2>¿Por qué llamarnos para plomería en {zone.name}?</h2>
+      <ul>
+        {zone.highlights.map((h) => <li>{h}</li>)}
+      </ul>
+
+      <h2>¿Qué hace particular a {zone.name} en términos de plomería?</h2>
+      <p>
+        {zone.name} es una de las zonas con mayor mezcla de edificios antiguos y construcción moderna. Esto significa que el tipo de problemas varía mucho según el edificio. Los edificios de los 70-90 pueden tener tuberías galvanizadas que dan problemas de presión y agua marrón. Los edificios nuevos tienen sistemas modernos pero a veces con instalaciones rápidas que requieren ajustes en los primeros años.
+      </p>
+
+      <h2>¿Qué servicios atendemos en {zone.name}?</h2>
+      <p>
+        Cubrimos todos los servicios: destape, fugas, cambio de tuberías, instalación de calentadores, plomería residencial y emergencias 24 horas. Conocemos las particularidades de los edificios antiguos del sector y trabajamos con respeto a las normas de cada PH.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+      {services.slice(0, 4).map((s) => (
+        <ServiceCard slug={s.slug} name={s.name} description={s.description} />
+      ))}
+    </div>
+
+    <div class="prose-content">
+      <h2>¿Cómo coordinar servicio en {zone.name}?</h2>
+      <p>
+        Manda un WhatsApp con la dirección dentro de {zone.name}, descripción del problema y nivel de urgencia. Si es un edificio con administración, podemos coordinar el acceso o tú le avisas previamente. Para emergencias en madrugada, llamamos directo al teléfono.
+      </p>
+
+      <p class="italic text-[color:var(--color-text-muted)]">
+        Más información en
+        <a href="/guia-completa-plomeria-panama">la guía completa de plomería</a> o
+        <a href="/precios">los precios detallados</a>.
+      </p>
+    </div>
+  </article>
+
+  <TrustSignals />
+  <CTABanner whatsappMessage={`Hola, necesito un plomero en ${zone.name}, Panamá.`} />
+  <FAQSection faqs={zoneFAQs} title={`Preguntas frecuentes sobre plomería en ${zone.name}`} />
+</BaseLayout>

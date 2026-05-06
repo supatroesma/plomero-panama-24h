@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import { getZone } from '../../data/zones';
+import { services } from '../../data/services';
+
+const zone = getZone('costa-del-este')!;
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Zonas', url: '/zonas' },
+  { name: zone.name, url: `/zonas/${zone.slug}` },
+];
+
+const zoneFAQs = [
+  {
+    question: `¿Cuánto tarda un plomero en llegar a ${zone.name}?`,
+    answer: `Un plomero llega a ${zone.name} en promedio 30 minutos. Es una de nuestras zonas prioritarias por la concentración de torres residenciales. Para emergencias confirmamos el tiempo exacto vía WhatsApp.`,
+  },
+  {
+    question: `¿Atienden torres residenciales en ${zone.name}?`,
+    answer: `Sí, atendemos todas las torres residenciales en ${zone.name}. Tenemos experiencia con sistemas de presión típicos de torres altas, conocemos los protocolos comunes con administraciones de PH y coordinamos cortes de agua si son necesarios.`,
+  },
+  {
+    question: `¿Cuánto cobran en ${zone.name}?`,
+    answer: `Las tarifas en ${zone.name} son las mismas que en el resto de Ciudad de Panamá. Destape simple: $30-80. Reparación de fuga: $50-150. Servicio nocturno con recargo del 30-50%. Cotización gratis antes de empezar.`,
+  },
+  {
+    question: `¿Atienden 24 horas en ${zone.name}?`,
+    answer: `Sí, atendemos emergencias 24 horas en ${zone.name} todos los días. WhatsApp y teléfono activos siempre. Llegamos en 30 minutos para emergencias en esta zona.`,
+  },
+  {
+    question: `¿Qué tipos de problemas son más comunes en ${zone.name}?`,
+    answer: `En ${zone.name} los problemas más comunes son: fugas en juntas de torre por la presión alta, drenajes principales tapados, fallas en calentadores tankless y problemas de presión irregular en pisos altos. Tenemos experiencia específica en cada uno.`,
+  },
+];
+---
+
+<BaseLayout
+  title={zone.metaTitle}
+  description={zone.metaDescription}
+  schema={{
+    type: 'page',
+    pageTitle: zone.h1,
+    pageDescription: zone.metaDescription,
+    breadcrumbs,
+    faqs: zoneFAQs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-3xl">
+    <header class="mb-8">
+      <h1 class="mb-4">{zone.h1}</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        {zone.description}
+      </p>
+    </header>
+
+    <div class="prose-content">
+      <h2>¿Por qué llamarnos para plomería en {zone.name}?</h2>
+      <ul>
+        {zone.highlights.map((h) => <li>{h}</li>)}
+      </ul>
+
+      <h2>¿Qué servicios atendemos en {zone.name}?</h2>
+      <p>
+        Cubrimos todos los servicios de plomería en {zone.name}: destape de cañerías, reparación de fugas, cambio de tuberías, instalación de calentadores, plomería residencial y emergencias 24 horas. La mayoría de torres en la zona ya nos conoce.
+      </p>
+
+      <h2>Características de {zone.name} que afectan la plomería</h2>
+      <p>
+        {zone.name} es una de las zonas residenciales más modernas de Ciudad de Panamá, con alta concentración de torres residenciales de 20+ pisos. Esto trae particularidades técnicas:
+      </p>
+      <ul>
+        <li><strong>Sistemas de presión zonificados:</strong> los pisos altos vs bajos tienen sistemas distintos.</li>
+        <li><strong>Sistemas centralizados de agua caliente o calentadores individuales tankless:</strong> ambos requieren mantenimiento específico.</li>
+        <li><strong>Drenajes principales con alta carga:</strong> requieren limpieza periódica con hidrojet.</li>
+        <li><strong>Coordinación con administración del PH:</strong> imprescindible para cortes generales.</li>
+      </ul>
+
+      <h2>Servicios disponibles en {zone.name}</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+      {services.slice(0, 4).map((s) => (
+        <ServiceCard slug={s.slug} name={s.name} description={s.description} />
+      ))}
+    </div>
+
+    <div class="prose-content">
+      <h2>¿Cómo agendo servicio en {zone.name}?</h2>
+      <p>
+        Manda un WhatsApp con descripción del problema, dirección dentro de {zone.name} (torre, número de PH si aplica) y si es urgente. Te respondemos en menos de 30 minutos con cotización inicial y disponibilidad. Para emergencias, llegamos en 30 minutos.
+      </p>
+
+      <p class="italic text-[color:var(--color-text-muted)]">
+        ¿Necesitas más información?
+        <a href="/guia-completa-plomeria-panama">Lee la guía completa de plomería en Panamá</a> o
+        <a href="/precios">consulta los precios detallados</a>.
+      </p>
+    </div>
+  </article>
+
+  <TrustSignals />
+  <CTABanner whatsappMessage={`Hola, necesito un plomero en ${zone.name}, Panamá.`} />
+  <FAQSection faqs={zoneFAQs} title={`Preguntas frecuentes sobre plomería en ${zone.name}`} />
+</BaseLayout>

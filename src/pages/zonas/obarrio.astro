@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import { getZone } from '../../data/zones';
+import { services } from '../../data/services';
+
+const zone = getZone('obarrio')!;
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Zonas', url: '/zonas' },
+  { name: zone.name, url: `/zonas/${zone.slug}` },
+];
+
+const zoneFAQs = [
+  {
+    question: `¿Cuánto tarda un plomero en llegar a ${zone.name}?`,
+    answer: `Un plomero llega a ${zone.name} en 30-45 minutos. La zona tiene buen acceso desde múltiples vías. Para emergencias confirmamos el tiempo exacto al recibir tu WhatsApp.`,
+  },
+  {
+    question: `¿Atienden oficinas y locales comerciales en ${zone.name}?`,
+    answer: `Sí, atendemos oficinas, locales comerciales pequeños y residencial en ${zone.name}. Coordinamos horarios laborales o cerrado según prefiera el cliente. Para grandes edificios comerciales referimos a plomería comercial especializada.`,
+  },
+  {
+    question: `¿Cuánto cobran un servicio en ${zone.name}?`,
+    answer: `Las tarifas en ${zone.name} son las mismas que en el resto de Ciudad de Panamá. Destape: $30-80. Fugas: $50-150. Cotización gratis sin compromiso vía WhatsApp.`,
+  },
+  {
+    question: `¿Atienden en horario de oficina si tengo un negocio en ${zone.name}?`,
+    answer: `Sí, atendemos en horario de oficina (8 AM-5 PM lunes a viernes) o fuera de horario (noches, fines de semana) según prefieras. Trabajos en oficinas activas se coordinan con discreción para no interrumpir operaciones.`,
+  },
+  {
+    question: `¿Qué problemas son comunes en ${zone.name}?`,
+    answer: `En ${zone.name} los problemas comunes incluyen: drenajes en oficinas con uso intensivo, calentadores en residencias, fugas en edificios con instalaciones mixtas (residencial + comercial), y mantenimiento de instalaciones antiguas en algunos casos.`,
+  },
+];
+---
+
+<BaseLayout
+  title={zone.metaTitle}
+  description={zone.metaDescription}
+  schema={{
+    type: 'page',
+    pageTitle: zone.h1,
+    pageDescription: zone.metaDescription,
+    breadcrumbs,
+    faqs: zoneFAQs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-3xl">
+    <header class="mb-8">
+      <h1 class="mb-4">{zone.h1}</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        {zone.description}
+      </p>
+    </header>
+
+    <div class="prose-content">
+      <h2>¿Por qué llamarnos para plomería en {zone.name}?</h2>
+      <ul>
+        {zone.highlights.map((h) => <li>{h}</li>)}
+      </ul>
+
+      <h2>¿Qué hace particular a {zone.name}?</h2>
+      <p>
+        {zone.name} es zona mixta: combina residencial (apartamentos y PHs) con comercial (oficinas y locales). Esto significa que atendemos perfiles distintos según el cliente:
+      </p>
+      <ul>
+        <li><strong>Residencial:</strong> apartamentos en torres y PHs medianos.</li>
+        <li><strong>Comercial pequeño:</strong> oficinas profesionales (despachos, consultorios), locales pequeños, restaurantes.</li>
+        <li><strong>Edificios mixtos:</strong> con plantas comerciales y residenciales.</li>
+      </ul>
+
+      <h2>¿Qué servicios atendemos en {zone.name}?</h2>
+      <p>
+        Servicios completos: destape, fugas, cambio de tuberías, instalación de calentadores, plomería residencial y emergencias 24 horas. Para oficinas y locales comerciales pequeños tenemos atención específica con foco en minimizar impacto a operaciones.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+      {services.slice(0, 4).map((s) => (
+        <ServiceCard slug={s.slug} name={s.name} description={s.description} />
+      ))}
+    </div>
+
+    <div class="prose-content">
+      <h2>¿Cómo agendar servicio en {zone.name}?</h2>
+      <p>
+        WhatsApp con dirección, descripción del problema y si es residencial o comercial. Para oficinas indícanos horario preferido (en operación o cerrado). Para emergencias atendemos inmediatamente sin importar el horario.
+      </p>
+
+      <p class="italic text-[color:var(--color-text-muted)]">
+        Más información:
+        <a href="/guia-completa-plomeria-panama">guía completa</a> y
+        <a href="/precios">precios detallados</a>.
+      </p>
+    </div>
+  </article>
+
+  <TrustSignals />
+  <CTABanner whatsappMessage={`Hola, necesito un plomero en ${zone.name}, Panamá.`} />
+  <FAQSection faqs={zoneFAQs} title={`Preguntas frecuentes sobre plomería en ${zone.name}`} />
+</BaseLayout>

@@ -1,0 +1,159 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import { getService } from '../../data/services';
+import { serviceFAQs } from '../../data/faqs';
+
+const service = getService('instalacion-calentadores')!;
+const faqs = serviceFAQs['instalacion-calentadores'];
+
+const calentadoresTable = {
+  caption: 'Tipos de calentadores de agua para Panamá',
+  headers: ['Tipo', 'Costo equipo', 'Eficiencia', 'Mejor para'],
+  rows: [
+    ['Eléctrico de tanque', '$250-450', 'Media', 'Apartamentos, 1-3 personas'],
+    ['A gas (tanque)', '$400-800', 'Alta', 'Casas con gas, familias 4+'],
+    ['Tankless eléctrico', '$500-1,200', 'Muy alta', 'Familias grandes, ahorro a largo plazo'],
+    ['Tankless a gas', '$600-1,500', 'Muy alta', 'Casas grandes, alto consumo'],
+    ['Solar', '$1,000-2,500', 'Excelente clima Panamá', 'Inversión a largo plazo'],
+  ],
+};
+
+const consumoTable = {
+  caption: 'Consumo anual estimado en Panamá',
+  headers: ['Tipo', 'Consumo eléctrico anual', 'Costo aprox. anual'],
+  rows: [
+    ['Eléctrico tanque (40 gal)', '3,500-4,500 kWh', '$650-840'],
+    ['Tankless eléctrico', '2,000-3,000 kWh', '$370-560'],
+    ['A gas (tanque)', '180-220 m³ gas', '$300-400'],
+    ['Tankless a gas', '120-160 m³ gas', '$200-280'],
+    ['Solar (con respaldo)', '500-1,500 kWh', '$90-280'],
+  ],
+};
+---
+
+<ServiceLayout service={service} faqs={faqs}>
+  <h2>¿Qué calentador de agua conviene en Panamá?</h2>
+  <p>
+    En Panamá conviene un calentador eléctrico de tanque (30-40 galones) para apartamentos y familias de 1-3 personas; un calentador a gas para casas con conexión a gas y familias de 4+; un tankless eléctrico para familias grandes que quieren ahorrar a largo plazo. La elección depende de consumo, conexión disponible y presupuesto inicial vs costo operativo.
+  </p>
+
+  <ComparisonTable {...calentadoresTable} />
+
+  <h3>Calentador eléctrico de tanque</h3>
+  <p>
+    Es el más común en apartamentos en Panamá. Tiene un tanque que mantiene agua caliente lista para usar. Capacidades típicas: 20, 30, 40 y 50 galones. Costo inicial bajo, pero consume electricidad continuamente para mantener el agua caliente, aunque no la uses. Vida útil 8-12 años.
+  </p>
+
+  <h3>Calentador a gas</h3>
+  <p>
+    Calienta agua mucho más rápido que el eléctrico y es más eficiente energéticamente. Requiere conexión a gas (natural si tu zona tiene red, o tanques de propano). En zonas como partes de Costa del Este con red de gas natural, es la opción recomendada para familias medianas a grandes. Vida útil 10-15 años.
+  </p>
+
+  <h3>Tankless (sin tanque)</h3>
+  <p>
+    Calienta el agua solo cuando la usas. Ahorra entre 20% y 30% en consumo anual y nunca se acaba. Costo inicial mayor pero recuperable en 3-5 años. Hay versiones eléctricas y a gas. Para una familia con varios baños usándose en simultáneo, asegurar que el tankless tenga capacidad suficiente (medida en GPM o lpm). Vida útil 15-20 años.
+  </p>
+
+  <h3>Calentador solar</h3>
+  <p>
+    Aprovecha el clima de Panamá (sol intenso casi todo el año) para calentar agua sin electricidad ni gas. Costo inicial alto pero costo operativo casi cero. Generalmente se instala con respaldo eléctrico para días nublados o consumo nocturno. Vida útil 20-25 años. Es la opción más sostenible si tienes techo accesible.
+  </p>
+
+  <h2>¿Cuál calentador consume menos electricidad?</h2>
+  <p>
+    El calentador solar consume menos (casi nada en operación, solo el respaldo). Después, los tankless eléctricos consumen entre 20% y 30% menos que los de tanque eléctrico. Los a gas no consumen electricidad para calentar (solo para la ignición). Esta tabla compara consumo anual estimado para una familia de 4 en Panamá.
+  </p>
+
+  <ComparisonTable {...consumoTable} />
+
+  <h2>¿Cuánto cuesta instalar un calentador en Panamá?</h2>
+  <p>
+    La mano de obra de instalación de un calentador eléctrico cuesta entre $80 y $180 (sin incluir el calentador). Un tankless o a gas sube a $150-350 por la complejidad de la conexión. Un solar cuesta $200-500 en instalación. El equipo se cotiza aparte. Detalles completos en <a href="/precios">guía de precios</a>.
+  </p>
+
+  <h3>¿Qué incluye la instalación?</h3>
+  <ul>
+    <li>Desconexión y retiro del calentador anterior (si aplica).</li>
+    <li>Adecuación del soporte y plomería existente.</li>
+    <li>Conexión a red eléctrica o de gas según el modelo.</li>
+    <li>Conexión de tuberías de entrada (agua fría) y salida (agua caliente).</li>
+    <li>Instalación de válvulas de seguridad y termostato.</li>
+    <li>Llenado del tanque (si aplica) y prueba de presión.</li>
+    <li>Verificación de funcionamiento y temperatura.</li>
+    <li>Capacitación al usuario sobre uso y mantenimiento.</li>
+  </ul>
+
+  <h3>¿Qué NO incluye la instalación?</h3>
+  <ul>
+    <li>El calentador mismo (se cotiza aparte).</li>
+    <li>Cambio de tuberías o cableado eléctrico no relacionado directamente con el calentador.</li>
+    <li>Permisos especiales de instalación de gas (los gestiona el cliente cuando aplica).</li>
+    <li>Acceso especial (poleas, andamios) si la ubicación lo requiere.</li>
+  </ul>
+
+  <h2>¿Cuánto dura un calentador de agua?</h2>
+  <p>
+    Un calentador de tanque eléctrico dura 8-12 años con buen mantenimiento. Uno a gas dura 10-15 años. Un tankless dura 15-20 años. Un solar dura 20-25 años. La calidad del agua de Panamá (sedimentos) afecta la vida útil; el mantenimiento anual la prolonga 20-30%.
+  </p>
+
+  <h2>¿Cómo se hace mantenimiento al calentador?</h2>
+  <p>
+    El mantenimiento anual previene las fallas más comunes y extiende la vida útil. Pasos básicos:
+  </p>
+  <ol>
+    <li><strong>Drenar sedimentos:</strong> abrir la válvula de drenado del tanque y dejar salir 1-2 baldes de agua para sacar sedimentos acumulados.</li>
+    <li><strong>Revisar termostato:</strong> verificar que mantenga la temperatura programada (60°C es lo recomendado).</li>
+    <li><strong>Inspeccionar resistencia (eléctrico):</strong> sacar y limpiar de sarro si lo tiene; reemplazar si tiene corrosión.</li>
+    <li><strong>Verificar válvula de presión y temperatura:</strong> que abra correctamente como prueba de seguridad.</li>
+    <li><strong>Revisar el ánodo de magnesio (si aplica):</strong> reemplazar si está consumido más del 50%.</li>
+    <li><strong>Limpiar quemador y tubo de escape (gas):</strong> ningún residuo o tela de araña.</li>
+    <li><strong>Apretar conexiones eléctricas o de gas</strong> si están flojas.</li>
+  </ol>
+  <p>
+    El mantenimiento profesional cuesta $40-80 al año y ahorra reparaciones de $200-500.
+  </p>
+
+  <h2>¿Reparamos calentadores que dejaron de calentar?</h2>
+  <p>
+    Sí, reparamos calentadores eléctricos, a gas y tankless. Las fallas más comunes son:
+  </p>
+  <ul>
+    <li><strong>Termostato dañado:</strong> el agua no calienta o calienta de más. Cambio de termostato: $30-60 + mano de obra.</li>
+    <li><strong>Resistencia quemada (eléctrico):</strong> no calienta o tarda mucho. Cambio: $25-50 + mano de obra.</li>
+    <li><strong>Válvula de gas defectuosa (gas):</strong> no enciende. Cambio: $50-150 + mano de obra.</li>
+    <li><strong>Sensor de flujo (tankless):</strong> no enciende cuando abres la llave. Cambio: $40-100 + mano de obra.</li>
+    <li><strong>Corrosión del tanque:</strong> fuga interna. No es reparable, requiere reemplazo.</li>
+  </ul>
+  <p>
+    Diagnosticamos el problema antes de cotizar la reparación. Si el calentador tiene más de 10 años y la reparación cuesta más del 50% del valor del equipo nuevo, recomendamos reemplazar.
+  </p>
+
+  <h2>¿Qué calentador conviene para una familia en Panamá?</h2>
+  <p>
+    Para una familia de 4 personas en Panamá, un calentador eléctrico de 30-40 galones o un tankless eléctrico de 12 lpm es lo ideal. Si tienes conexión a gas, un calentador a gas es más eficiente a largo plazo. Para 5+ personas o varios baños usándose simultáneamente, evaluar tankless de mayor capacidad o sistema dual.
+  </p>
+
+  <h2>¿Cómo elegir la capacidad correcta?</h2>
+  <p>
+    Reglas básicas para elegir tamaño:
+  </p>
+  <ul>
+    <li><strong>1-2 personas, 1 baño:</strong> 20-30 galones (tanque) o 8-10 lpm (tankless).</li>
+    <li><strong>3-4 personas, 1-2 baños:</strong> 30-40 galones o 12-14 lpm.</li>
+    <li><strong>5+ personas, 2+ baños:</strong> 50+ galones o 16+ lpm, considerar tankless dual.</li>
+    <li><strong>Apartamento con bañera grande o jacuzzi:</strong> sumar 10-20 galones extra o tankless de mayor caudal.</li>
+  </ul>
+
+  <h2>¿Atendemos instalaciones en torres residenciales?</h2>
+  <p>
+    Sí. Las torres residenciales en Panamá tienen reglas específicas para instalación de calentadores: tipo permitido, ubicación, ventilación si es a gas. Coordinamos con el administrador del edificio para cumplir con las normas internas. La mayoría de torres permite calentadores eléctricos sin problemas; los a gas requieren ventilación específica.
+  </p>
+
+  <p class="mt-8 italic text-[color:var(--color-text-muted)]">
+    Más recursos:
+    <a href="/blog">Blog con guías de calentadores</a>,
+    <a href="/guia-completa-plomeria-panama">guía completa</a>,
+    <a href="/precios">precios detallados</a>.
+  </p>
+</ServiceLayout>

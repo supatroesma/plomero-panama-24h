@@ -1,0 +1,160 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import { getService } from '../../data/services';
+import { serviceFAQs } from '../../data/faqs';
+
+const service = getService('fugas-de-agua')!;
+const faqs = serviceFAQs['fugas-de-agua'];
+
+const tiposFugaTable = {
+  caption: 'Tipos de fugas de agua y cómo identificarlas',
+  headers: ['Tipo de fuga', 'Cómo se detecta', 'Daño potencial'],
+  rows: [
+    ['Visible (llave, codo)', 'A simple vista', 'Bajo si se atiende rápido'],
+    ['En muro', 'Mancha de humedad, pintura abombada', 'Medio - daña pared y pintura'],
+    ['En piso/losa', 'Loseta caliente, manchas, agua acumulada', 'Alto - daña estructura'],
+    ['Subterránea (jardín)', 'Pasto verde anormal, hundimiento', 'Alto - factura de agua'],
+    ['En techo', 'Manchas amarillas, goteo, moho', 'Alto - daña losa y eléctrico'],
+    ['En cisterna/tanque', 'Bomba arranca sin uso, nivel baja', 'Medio - desperdicio constante'],
+  ],
+};
+
+const metodosDeteccionTable = {
+  caption: 'Métodos de detección de fugas ocultas',
+  headers: ['Método', 'Cuándo se usa', 'Ventaja'],
+  rows: [
+    ['Inspección visual', 'Primera línea, fugas visibles', 'Gratis, rápido'],
+    ['Cámara endoscópica', 'Tuberías accesibles internamente', 'Sin destrucción'],
+    ['Geófono acústico', 'Fugas subterráneas o en muros', 'Localización precisa'],
+    ['Cámara termográfica', 'Detecta calor de tubería con fuga', 'Muros, pisos, sin romper'],
+    ['Gas trazador', 'Fugas muy pequeñas o complejas', 'Funciona donde otros no'],
+    ['Prueba de presión', 'Verificar después de reparación', 'Confirma sellado'],
+  ],
+};
+---
+
+<ServiceLayout service={service} faqs={faqs}>
+  <h2>¿Qué tipos de fugas de agua reparamos en Panamá?</h2>
+  <p>
+    Reparamos cualquier fuga de agua en Ciudad de Panamá: visibles, ocultas, en muros, en pisos, subterráneas, en cisternas y en sistemas de calentadores. Cada tipo requiere un enfoque distinto. Esta es la clasificación con la que trabajamos y cómo identificar cada una.
+  </p>
+
+  <ComparisonTable {...tiposFugaTable} />
+
+  <h3>Fugas visibles</h3>
+  <p>
+    Son las más fáciles de identificar y resolver: una llave que gotea, un codo de tubería con humedad visible, una unión que pierde agua. Si actúas rápido, el daño se queda en la fuga misma. Si la dejas semanas, puede dañar muebles, pisos o documentos cercanos.
+  </p>
+
+  <h3>Fugas ocultas (en muros, pisos, subterráneas)</h3>
+  <p>
+    Las fugas ocultas son las más costosas a largo plazo. No las ves, pero el agua sigue saliendo y causando daño. Tu factura de agua sube sin razón aparente. Aparecen manchas de humedad, pintura abombada, olor a moho. Pueden durar meses sin detectarse y costar miles en reparaciones secundarias (estructura, eléctrico, mobiliario).
+  </p>
+
+  <h2>¿Cómo se detecta una fuga oculta?</h2>
+  <p>
+    Una fuga oculta se detecta por cinco señales claras: factura de agua que sube sin razón, manchas de humedad en paredes o pisos, olor a moho, sonido constante de agua corriendo cuando no hay consumo y presión baja generalizada. Si tienes 2 o más de estas señales, llama un plomero con equipo de detección.
+  </p>
+
+  <h3>Señales tempranas que la mayoría ignora</h3>
+  <ul>
+    <li><strong>Factura sube 20% o más</strong> sin cambio en consumo familiar.</li>
+    <li><strong>Pintura empieza a abombarse</strong> o despegarse en una zona específica.</li>
+    <li><strong>Pasto del jardín verde anormalmente</strong> en una franja (fuga subterránea).</li>
+    <li><strong>Mancha amarilla o anillada</strong> en el techo (fuga del piso de arriba o tubería superior).</li>
+    <li><strong>Loseta caliente al pie</strong> sin razón (tubería de agua caliente con fuga).</li>
+    <li><strong>Olor a humedad persistente</strong> en una habitación o closet.</li>
+    <li><strong>Bomba de cisterna arranca sola</strong> sin uso de agua (fuga en sistema).</li>
+  </ul>
+
+  <h2>¿Qué métodos usamos para detectar fugas?</h2>
+  <p>
+    La detección moderna no requiere romper paredes a ciegas. Usamos métodos no invasivos que localizan la fuga con precisión antes de tocar nada. La elección del método depende de dónde se sospeche la fuga y qué acceso haya.
+  </p>
+
+  <ComparisonTable {...metodosDeteccionTable} />
+
+  <h3>Geófono acústico</h3>
+  <p>
+    Es un dispositivo que amplifica el sonido del agua escapándose por presión. Apoyamos sensores en pared o piso y escuchamos. Las fugas, aunque sean diminutas, hacen un sonido característico (silbido o burbujeo). Permite localizar el punto exacto sin romper nada hasta saber dónde reparar.
+  </p>
+
+  <h3>Cámara termográfica</h3>
+  <p>
+    Detecta diferencias de temperatura. El agua que escapa enfría (o calienta, si es agua caliente) los materiales alrededor. La cámara nos muestra esa diferencia en colores y vemos exactamente dónde está la tubería con fuga, incluso debajo de pisos o detrás de muros.
+  </p>
+
+  <h3>Cámara endoscópica (CCTV de tubería)</h3>
+  <p>
+    Cuando la fuga está en una tubería accesible internamente (drenajes, cañerías de mayor diámetro), introducimos una cámara hasta el punto del problema. Vemos en pantalla qué hay (fractura, raíz, separación de unión) y cómo está alrededor.
+  </p>
+
+  <h3>Gas trazador</h3>
+  <p>
+    Para fugas muy pequeñas o donde otros métodos no llegan, usamos gas (mezcla de hidrógeno y nitrógeno, no inflamable) que se introduce a presión en la tubería. El gas escapa por la fuga y un detector de superficie lo capta. Localización extremadamente precisa.
+  </p>
+
+  <h2>¿Qué daños causa una fuga sin reparar?</h2>
+  <p>
+    Una fuga oculta no reparada causa daños progresivos que multiplican el costo final. Estos son los daños típicos en Ciudad de Panamá ordenados por gravedad:
+  </p>
+  <ol>
+    <li><strong>Factura de agua disparada:</strong> una fuga de 1 mm puede desperdiciar 20-30 m³ de agua al mes.</li>
+    <li><strong>Daño a pintura y muros:</strong> humedad permanente arruina pintura y revoque.</li>
+    <li><strong>Crecimiento de moho:</strong> riesgo respiratorio especialmente para niños y ancianos.</li>
+    <li><strong>Deterioro de estructura:</strong> humedad prolongada debilita losas y vigas.</li>
+    <li><strong>Cortocircuitos eléctricos:</strong> agua llegando a tomacorrientes o cableado.</li>
+    <li><strong>Daño a mobiliario y pisos:</strong> madera se hincha, laminados se separan.</li>
+    <li><strong>Hundimientos en jardín o piso:</strong> fugas subterráneas erosionan suelo.</li>
+  </ol>
+
+  <h2>¿Las fugas de agua están cubiertas por el seguro de hogar en Panamá?</h2>
+  <p>
+    La mayoría de los seguros de hogar en Panamá cubren los daños causados por una fuga (paredes, pisos, mobiliario), pero no la reparación de la fuga misma si fue por mantenimiento descuidado. Para reclamar, generalmente necesitas:
+  </p>
+  <ol>
+    <li>Reporte del plomero con causa identificada.</li>
+    <li>Cotización por escrito de la reparación.</li>
+    <li>Fotos del antes y después.</li>
+    <li>Reportar a la aseguradora dentro del plazo (suele ser 24-48 horas).</li>
+  </ol>
+  <p>
+    Te entregamos el reporte y la cotización en formato apto para tu seguro. Revisa siempre tu póliza específica antes de asumir cobertura.
+  </p>
+
+  <h2>¿Cuánto cuesta reparar una fuga de agua en Panamá?</h2>
+  <p>
+    Reparar una fuga visible cuesta entre $50 y $120. Una fuga oculta que requiere detección con cámara o geófono puede costar $150-400 incluyendo la reparación, según ubicación y daño. Detalles en nuestra <a href="/precios">guía de precios</a>.
+  </p>
+
+  <h2>¿Qué hago mientras llega el plomero?</h2>
+  <p>
+    Si la fuga es activa y visible, sigue estos pasos en este orden:
+  </p>
+  <ol>
+    <li><strong>Cierra la llave de paso principal de la casa</strong> (gírala en sentido horario).</li>
+    <li><strong>Si es agua caliente</strong>, desconecta el calentador (apaga breaker o cierra gas).</li>
+    <li><strong>Coloca trapos o baldes</strong> para contener.</li>
+    <li><strong>Retira mobiliario, electrónicos y documentos</strong> de la zona.</li>
+    <li><strong>Documenta con fotos</strong> antes de mover demasiado (para el seguro).</li>
+    <li><strong>No intentes reparar tú mismo</strong> si no estás seguro: empeorar la fuga es peor que esperar.</li>
+  </ol>
+
+  <h2>¿Podemos detectar una fuga sin romper paredes?</h2>
+  <p>
+    Sí, en la mayoría de los casos. Con geófono, cámara termográfica y cámara endoscópica localizamos la fuga con precisión. Solo abrimos el punto exacto donde está la fuga, no toda la pared. Esto reduce el costo de reparación posterior (revoque, pintura) en un 60-80%.
+  </p>
+
+  <h2>¿Cuánto tarda una reparación de fuga?</h2>
+  <p>
+    Una fuga visible se repara en 30 minutos a 2 horas. Una fuga oculta, contando detección y reparación, toma 2-4 horas. Si requiere romper losa o piso, sumar 1-2 horas adicionales. Cambios mayores (sección completa de tubería) toman medio día a un día.
+  </p>
+
+  <p class="mt-8 italic text-[color:var(--color-text-muted)]">
+    Más recursos:
+    <a href="/blog">Blog con tutoriales</a>,
+    <a href="/guia-completa-plomeria-panama">guía completa de plomería</a> o
+    <a href="/emergencias-plomeria-panama">si es emergencia ahora</a>.
+  </p>
+</ServiceLayout>

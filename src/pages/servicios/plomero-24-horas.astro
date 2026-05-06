@@ -1,0 +1,136 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import { getService } from '../../data/services';
+import { serviceFAQs } from '../../data/faqs';
+
+const service = getService('plomero-24-horas')!;
+const faqs = serviceFAQs['plomero-24-horas'];
+
+const tiemposTable = {
+  caption: 'Tiempos de llegada por zona en Ciudad de Panamá',
+  headers: ['Zona', 'Tiempo de llegada', 'Notas'],
+  rows: [
+    ['Costa del Este', '30 min', 'Cobertura prioritaria'],
+    ['San Francisco', '30 min', 'Cobertura prioritaria'],
+    ['Punta Pacífica', '30 min', 'Especialistas en torres'],
+    ['Obarrio', '30-45 min', 'Residencial y comercial'],
+    ['Bella Vista / El Cangrejo', '30-45 min', 'Cobertura completa'],
+    ['Vía España / Calle 50', '30-45 min', 'Comercial y residencial'],
+    ['Panamá Pacífico', '45-60 min', 'Cobertura con tiempo extendido'],
+    ['Panamá Oeste / áreas alejadas', '60-90 min', 'Cargo por traslado adicional'],
+  ],
+};
+
+const tarifasTable = {
+  caption: 'Recargos por horario de servicio',
+  headers: ['Horario', 'Recargo sobre tarifa diurna', 'Aplica desde'],
+  rows: [
+    ['Diurno laboral', '0% (tarifa base)', '7 AM - 6 PM lunes a viernes'],
+    ['Vespertino', '+10-15%', '6 PM - 10 PM'],
+    ['Nocturno', '+30-50%', '10 PM - 6 AM'],
+    ['Fin de semana diurno', '+15-25%', 'Sábados y domingos 7 AM - 6 PM'],
+    ['Fin de semana nocturno', '+40-50%', 'Sábados y domingos 10 PM - 6 AM'],
+    ['Feriados', '+25-40%', 'Feriados nacionales'],
+  ],
+};
+---
+
+<ServiceLayout service={service} faqs={faqs}>
+  <h2>¿Cuándo llamar a un plomero 24 horas en Panamá?</h2>
+  <p>
+    Llama a un plomero 24 horas cuando el problema está causando daño activo y no puede esperar a la mañana. Tubería reventada, fuga incontrolable, inodoro desbordándose, sin agua en toda la casa, fuga de gas en calentador. Si el problema solo es incómodo pero no destructivo, suele ser más económico esperar al horario diurno normal.
+  </p>
+
+  <h3>¿Qué se considera una emergencia de plomería real?</h3>
+  <p>
+    No todo problema de plomería es emergencia. Esta es la línea para distinguir:
+  </p>
+  <ul>
+    <li><strong>SÍ es emergencia:</strong> tubería reventada, fuga grande, agua con riesgo eléctrico, sin agua total, fuga de gas, inodoro desbordándose, drenaje principal de edificio tapado.</li>
+    <li><strong>NO es emergencia (puede esperar):</strong> goteo lento de llave, presión un poco baja, calentador que tarda más de lo normal, inodoro que descarga lento.</li>
+  </ul>
+  <p>
+    Si dudas, manda un WhatsApp con fotos. Te asesoramos sin costo si conviene esperar o atender ya.
+  </p>
+
+  <h2>¿Cuánto tarda en llegar un plomero de emergencia en Panamá?</h2>
+  <p>
+    Un plomero de emergencia llega en 30-60 minutos a la mayoría de Ciudad de Panamá. El tiempo depende de la zona y el tráfico. En zonas prioritarias (Costa del Este, San Francisco, Punta Pacífica) el promedio real es 30 minutos. En zonas más alejadas (Panamá Pacífico) sube a 45-60 minutos. Confirmamos el tiempo exacto al recibir tu WhatsApp.
+  </p>
+
+  <ComparisonTable {...tiemposTable} />
+
+  <h2>¿Qué hacer mientras llega el plomero?</h2>
+  <p>
+    Estos pasos reducen el daño antes de que llegue el técnico. Síguelos en este orden, no improvises.
+  </p>
+  <ol>
+    <li><strong>Cierra la llave de paso principal</strong> (girar en sentido horario hasta detenerse).</li>
+    <li><strong>Si hay riesgo eléctrico</strong> (agua cerca de tomas, electrodomésticos), <strong>baja el breaker general</strong>.</li>
+    <li><strong>Si es fuga de gas</strong>: abre ventanas, no enciendas luces, sal de la casa.</li>
+    <li><strong>Retira muebles, electrónicos y documentos</strong> de la zona afectada.</li>
+    <li><strong>Coloca toallas o baldes</strong> para contener el agua acumulada.</li>
+    <li><strong>Documenta con fotos</strong> antes de mover demasiado (para tu seguro).</li>
+    <li><strong>No intentes reparar tú mismo</strong> si no estás seguro: empeorar la fuga es peor que esperar 30 minutos.</li>
+  </ol>
+  <p>
+    Para una guía completa con más detalle, ve nuestra <a href="/emergencias-plomeria-panama">página de emergencias 24h</a>.
+  </p>
+
+  <h2>¿Cuánto cobran las tarifas nocturnas y de fin de semana?</h2>
+  <p>
+    El servicio de plomero 24 horas en Panamá tiene un recargo del 20-50% sobre la tarifa diurna estándar. El recargo aplica según horario y día. Esto cubre la disponibilidad fuera de horario y el costo de tener técnicos en guardia.
+  </p>
+
+  <ComparisonTable {...tarifasTable} />
+
+  <p>
+    El recargo se calcula sobre el costo del trabajo, no se suma una cuota fija. Te damos cotización completa por WhatsApp antes de que el técnico salga, para que decidas si proceder o esperar al diurno normal.
+  </p>
+
+  <h2>¿Qué tipos de emergencias atendemos más?</h2>
+  <p>
+    Estos son los seis tipos de emergencia que más atendemos en Ciudad de Panamá, en orden de frecuencia:
+  </p>
+  <ol>
+    <li><strong>Tubería reventada en muro o piso:</strong> reparación urgente para detener inundación.</li>
+    <li><strong>Drenaje principal tapado en edificio:</strong> hidrojet profesional.</li>
+    <li><strong>Fuga oculta con techo chorreando:</strong> detección y reparación.</li>
+    <li><strong>Calentador con fuga o sin calentar:</strong> diagnóstico y reparación o reemplazo.</li>
+    <li><strong>Inodoro desbordado o tapado:</strong> destape inmediato.</li>
+    <li><strong>Sin presión de agua súbita:</strong> revisión de llaves y tuberías principales.</li>
+  </ol>
+
+  <h2>¿Atendemos en madrugada y feriados?</h2>
+  <p>
+    Sí, atendemos emergencias 24 horas todos los días, incluyendo madrugadas, fines de semana y feriados nacionales. WhatsApp y teléfono activos siempre. La tarifa nocturna se aplica entre 10 PM y 6 AM con recargo del 30-50%, cotizada antes.
+  </p>
+
+  <h2>¿Por qué elegirnos para una emergencia?</h2>
+  <ul>
+    <li><strong>Disponibilidad real 24/7</strong>, no contestador.</li>
+    <li><strong>Llegada en 30-60 minutos</strong> según la zona, confirmada antes de salir.</li>
+    <li><strong>Cotización transparente</strong> antes de empezar el trabajo, incluyendo el recargo nocturno.</li>
+    <li><strong>Herramientas profesionales</strong> para emergencias (hidrojet, geófono, cámara endoscópica).</li>
+    <li><strong>Pago al finalizar</strong>, una vez verifiques que el problema quedó resuelto.</li>
+    <li><strong>Garantía sobre el trabajo</strong> realizado, por escrito.</li>
+  </ul>
+
+  <h2>¿Qué hago si la emergencia es mientras estoy fuera de la casa?</h2>
+  <p>
+    Si te avisan de una fuga o problema en tu casa mientras estás fuera (vecino, administrador, cámara), pídeles que cierren la llave de paso principal y nos contactas tú o coordinas que te dejen entrar. Podemos coordinar acceso con tu administrador o un familiar autorizado.
+  </p>
+
+  <h2>¿Atendemos torres residenciales y edificios?</h2>
+  <p>
+    Sí. Tenemos experiencia en torres de Costa del Este, Punta Pacífica, Obarrio y otras zonas con edificios altos. Conocemos los sistemas de presión típicos y coordinamos con la administración cuando hay corte general necesario. Los edificios suelen requerir aviso a otros residentes, lo gestionamos con la administración.
+  </p>
+
+  <p class="mt-8 italic text-[color:var(--color-text-muted)]">
+    Más recursos:
+    <a href="/emergencias-plomeria-panama">Página de emergencias completa</a>,
+    <a href="/blog">tutoriales en el blog</a>,
+    <a href="/guia-completa-plomeria-panama">guía completa de plomería</a>.
+  </p>
+</ServiceLayout>

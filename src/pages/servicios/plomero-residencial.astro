@@ -1,0 +1,155 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import { getService } from '../../data/services';
+import { serviceFAQs } from '../../data/faqs';
+
+const service = getService('plomero-residencial')!;
+const faqs = serviceFAQs['plomero-residencial'];
+
+const serviciosTable = {
+  caption: 'Servicios incluidos en plomería residencial',
+  headers: ['Servicio', 'Tiempo típico', 'Costo aprox.'],
+  rows: [
+    ['Cambio de grifería (lavamanos)', '30-60 min', '$30-70 + grifería'],
+    ['Cambio de inodoro completo', '1-2 horas', '$80-150 + inodoro'],
+    ['Reparación de fuga visible', '30-90 min', '$50-120'],
+    ['Instalación de filtro de agua', '1-2 horas', '$80-150 + filtro'],
+    ['Mantenimiento preventivo general', '2-3 horas', '$80-180'],
+    ['Cambio de mezcladora de ducha', '1-2 horas', '$60-120 + mezcladora'],
+    ['Instalación de lavadora', '1-2 horas', '$50-100'],
+    ['Conexión nueva de baño', '4-8 horas', '$200-500'],
+  ],
+};
+---
+
+<ServiceLayout service={service} faqs={faqs}>
+  <h2>¿Qué incluye el servicio de plomero residencial?</h2>
+  <p>
+    El servicio de plomero residencial cubre todo el sistema hidráulico de tu hogar: reparaciones puntuales, instalaciones nuevas, cambios de accesorios, mantenimiento preventivo y atención de emergencias. La diferencia con un servicio comercial es la escala (casa o apartamento, no edificio comercial grande) y el enfoque en confort y durabilidad.
+  </p>
+
+  <ComparisonTable {...serviciosTable} />
+
+  <h3>Reparaciones puntuales</h3>
+  <p>
+    Atendemos los problemas que aparecen con el uso normal de la casa: llaves que gotean, inodoros que descargan mal, fugas pequeñas, calentadores que dejan de funcionar, mezcladoras que ya no controlan temperatura. Llegamos, diagnosticamos y reparamos en la misma visita en el 80% de los casos.
+  </p>
+
+  <h3>Instalaciones nuevas</h3>
+  <p>
+    Cambio de grifería completa, instalación de inodoros, lavamanos nuevos, mezcladoras de ducha, calentadores, filtros de agua. Trabajamos con accesorios que tú compres o asesoramos sobre marcas confiables disponibles en Panamá (Grohe, Moen, American Standard, FV).
+  </p>
+
+  <h3>Mantenimiento preventivo</h3>
+  <p>
+    Visita anual de revisión: revisamos llaves, inodoros, calentador, drenajes, presión general, accesorios. Identificamos problemas antes de que sean emergencias. Cuesta $80-180 según el tamaño de la casa y ahorra reparaciones de cientos en el año.
+  </p>
+
+  <h3>Atención de emergencias</h3>
+  <p>
+    Para emergencias residenciales, ve nuestro <a href="/servicios/plomero-24-horas">servicio de plomero 24 horas</a> o la <a href="/emergencias-plomeria-panama">página de emergencias</a>.
+  </p>
+
+  <h2>¿Cuál es la diferencia entre plomero residencial y comercial?</h2>
+  <p>
+    El plomero residencial atiende casas, apartamentos y edificios pequeños con sistemas estándar. El plomero comercial atiende oficinas, restaurantes, hoteles y edificios grandes con sistemas de mayor capacidad, sistemas de bombeo industrial y exigencias regulatorias específicas. Trabajamos en el ámbito residencial y comercial pequeño (oficinas, locales).
+  </p>
+
+  <h3>Cuando necesitas plomero residencial</h3>
+  <ul>
+    <li>Reparaciones de baño, cocina, lavandería en tu hogar.</li>
+    <li>Instalaciones de accesorios nuevos.</li>
+    <li>Mantenimiento preventivo general.</li>
+    <li>Coordinación con remodelaciones pequeñas.</li>
+  </ul>
+
+  <h3>Cuando necesitas plomero comercial</h3>
+  <ul>
+    <li>Edificios de oficinas grandes con sistemas centralizados.</li>
+    <li>Restaurantes con trampas de grasa, sistemas de drenaje complejos.</li>
+    <li>Hoteles, hospitales, plantas industriales.</li>
+    <li>Cumplimiento de normas técnicas específicas.</li>
+  </ul>
+
+  <h2>¿Atendemos apartamentos y edificios?</h2>
+  <p>
+    Sí, atendemos casas, apartamentos, edificios residenciales y PHs. Tenemos experiencia con torres altas en Costa del Este, Punta Pacífica y otras zonas. Coordinamos con el administrador cuando hay corte general necesario y respetamos las normas internas de cada PH.
+  </p>
+
+  <h3>¿Cómo coordinamos en edificios?</h3>
+  <ol>
+    <li>Avisas al administrador del edificio que vas a tener servicio de plomería.</li>
+    <li>Coordinamos horario que minimice impacto a otros residentes.</li>
+    <li>Si requiere cierre de agua general, el administrador notifica al edificio.</li>
+    <li>Trabajamos con cuidado de áreas comunes (ascensores, pasillos).</li>
+    <li>Limpieza al finalizar el trabajo.</li>
+  </ol>
+
+  <h2>¿Cómo es el mantenimiento preventivo del hogar?</h2>
+  <p>
+    El mantenimiento preventivo es una visita anual donde revisamos todo el sistema de plomería de la casa para detectar problemas antes de que sean emergencias. Lo que cubre:
+  </p>
+  <ol>
+    <li><strong>Llaves y mezcladoras:</strong> revisar fugas, sellos desgastados, presión.</li>
+    <li><strong>Inodoros:</strong> verificar que no goteen entre tanque y taza, descarga correcta, válvulas de llenado.</li>
+    <li><strong>Drenajes:</strong> verificar flujo correcto en lavamanos, fregadero, ducha.</li>
+    <li><strong>Calentador:</strong> drenado preventivo de sedimentos, revisión de termostato.</li>
+    <li><strong>Tuberías visibles:</strong> revisar zonas accesibles (sótano, cuarto de servicio, azotea).</li>
+    <li><strong>Presión general:</strong> verificar que sea correcta y estable.</li>
+    <li><strong>Llaves de paso:</strong> que todas giren correctamente (no se atasquen).</li>
+    <li><strong>Sistema externo:</strong> jardín, mangueras, conexiones de bomba si aplica.</li>
+  </ol>
+  <p>
+    Te dejamos un reporte por escrito con observaciones y recomendaciones priorizadas. Tú decides qué atender ahora y qué dejar para después.
+  </p>
+
+  <h2>¿Hacen visitas a domicilio sin costo?</h2>
+  <p>
+    La cotización inicial vía WhatsApp es gratis (con descripción y fotos). La visita de evaluación al domicilio puede tener un costo de $15-25 que se descuenta del trabajo si decides contratarnos. Esto es estándar en Ciudad de Panamá. Para emergencias, no cobramos visita: cobramos solo el trabajo cotizado.
+  </p>
+
+  <h2>¿Damos garantía sobre el trabajo?</h2>
+  <p>
+    Sí, damos garantía sobre el trabajo realizado, en formato escrito. La duración depende del tipo:
+  </p>
+  <ul>
+    <li><strong>Reparaciones puntuales:</strong> 30-90 días.</li>
+    <li><strong>Instalaciones nuevas:</strong> hasta 6 meses (mano de obra).</li>
+    <li><strong>Cambios mayores (tuberías, calentadores):</strong> 6-12 meses según el caso.</li>
+    <li><strong>Garantía del fabricante:</strong> aplica por separado en accesorios y equipos.</li>
+  </ul>
+  <p>
+    La garantía cubre fallas por defecto del trabajo. No cubre daños por mal uso, golpes posteriores o cambios en el sistema hechos por terceros.
+  </p>
+
+  <h2>¿Cómo agendo una visita?</h2>
+  <p>
+    Tres formas de coordinar una visita residencial:
+  </p>
+  <ol>
+    <li><strong>WhatsApp con descripción + foto:</strong> respondemos en menos de 30 minutos con cotización inicial y disponibilidad.</li>
+    <li><strong>Llamada al teléfono:</strong> disponible 24/7. Para emergencias es la vía más directa.</li>
+    <li><strong>Formulario web:</strong> en la <a href="/contacto">página de contacto</a>. Te llamamos al recibir el formulario.</li>
+  </ol>
+  <p>
+    Para problemas no urgentes, agendamos en horario que te convenga (mañana, tarde, sábados). Para urgencias, llegamos en 30-60 minutos.
+  </p>
+
+  <h2>¿Qué métodos de pago aceptamos?</h2>
+  <p>
+    Aceptamos efectivo, tarjeta de crédito, transferencia bancaria y Yappy. El pago se coordina al finalizar el trabajo, una vez verifiques que todo quedó bien. No pedimos pago por adelantado para servicios estándar; en trabajos grandes (cambio de tuberías) podemos acordar 50% al inicio y 50% al finalizar.
+  </p>
+
+  <h2>¿Cobran extra por accesorios o materiales?</h2>
+  <p>
+    Los materiales y accesorios se cotizan aparte de la mano de obra y se especifican en la cotización inicial. Si tú compras los accesorios (por ejemplo, una grifería específica que ya tienes), solo cobramos mano de obra. Si nos pides que los compremos, sumamos el costo del material a la factura, sin sobreprecios ocultos.
+  </p>
+
+  <p class="mt-8 italic text-[color:var(--color-text-muted)]">
+    Más recursos:
+    <a href="/blog">Blog con tutoriales DIY</a>,
+    <a href="/guia-completa-plomeria-panama">guía completa de plomería</a>,
+    <a href="/precios">precios detallados</a>.
+  </p>
+</ServiceLayout>

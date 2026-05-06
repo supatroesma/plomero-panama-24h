@@ -1,0 +1,131 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import { getService } from '../../data/services';
+import { serviceFAQs } from '../../data/faqs';
+
+const service = getService('reparacion-tuberias')!;
+const faqs = serviceFAQs['reparacion-tuberias'];
+
+const tipoTuberiasTable = {
+  caption: 'Tipos de tuberías y cuándo cambiarlas',
+  headers: ['Material', 'Vida útil', 'Señales de cambio'],
+  rows: [
+    ['PVC', '25-40 años', 'Fragilidad, fugas en uniones, color amarillento'],
+    ['CPVC', '40-50 años', 'Fugas en uniones, soldaduras debilitadas'],
+    ['Cobre', '50-70 años', 'Pinholes (perforaciones pequeñas), corrosión externa'],
+    ['Galvanizada', '20-30 años', 'Agua marrón, baja presión, abolladuras de óxido'],
+    ['PEX', '40-50 años', 'Daño por UV (si quedó expuesta), perforaciones'],
+  ],
+};
+---
+
+<ServiceLayout service={service} faqs={faqs}>
+  <h2>¿Cuándo necesitas reparar o cambiar las tuberías?</h2>
+  <p>
+    Las tuberías se reparan cuando hay fugas puntuales y se cambian cuando el sistema completo está deteriorado. La señal más clara para cambio es agua color marrón en la primera carga del día (oxidación interna), seguida de fugas frecuentes en distintos puntos y baja presión generalizada.
+  </p>
+  <p>
+    Si tu casa tiene más de 25 años y nunca cambió tuberías, considera una inspección preventiva. Una falla de tubería en una zona puede indicar que el sistema completo está al final de su vida útil.
+  </p>
+
+  <h3>Las 7 señales que indican cambio de tuberías</h3>
+  <ol>
+    <li><strong>Agua color marrón o amarillenta</strong> al abrir la llave después de horas sin uso.</li>
+    <li><strong>Presión baja generalizada</strong> en toda la casa (no solo un punto).</li>
+    <li><strong>Fugas frecuentes</strong> en puntos distintos cada pocos meses.</li>
+    <li><strong>Tuberías visibles con corrosión externa</strong>, óxido, abolladuras.</li>
+    <li><strong>Manchas de humedad recurrentes</strong> que reaparecen después de pintar.</li>
+    <li><strong>Olores en el agua</strong> (metálico, a humedad, a químico).</li>
+    <li><strong>Casa con más de 25 años</strong> sin cambio previo de tuberías.</li>
+  </ol>
+
+  <h2>¿Qué tipos de tuberías reparamos?</h2>
+  <p>
+    Trabajamos con todos los materiales comunes en Ciudad de Panamá. Cada uno tiene técnica específica de reparación.
+  </p>
+
+  <ComparisonTable {...tipoTuberiasTable} />
+
+  <h3>PVC (agua fría y drenaje)</h3>
+  <p>
+    El PVC es el material más usado en Panamá para agua fría y drenaje. Es resistente, no se oxida y es fácil de trabajar. Las reparaciones se hacen cortando la sección dañada y soldando con cemento PVC y un acoplamiento. Vida útil 25-40 años.
+  </p>
+
+  <h3>CPVC (agua caliente)</h3>
+  <p>
+    El CPVC resiste hasta 90°C y es lo correcto para líneas de agua caliente. Las reparaciones se hacen igual que PVC pero con cemento específico para CPVC. No mezclar PVC y CPVC: las propiedades térmicas son distintas.
+  </p>
+
+  <h3>Cobre</h3>
+  <p>
+    El cobre se repara con soldadura de plomero (estaño + plata). Requiere quitar humedad, calentar con soplete y aplicar la soldadura con flux. Es trabajo de plomero experimentado, no DIY. Las reparaciones bien hechas son indistinguibles del tubo original.
+  </p>
+
+  <h3>Galvanizada (en desuso)</h3>
+  <p>
+    Las tuberías galvanizadas son las antiguas (20+ años). Se reparan en casos puntuales pero raramente conviene: si una sección está oxidada, es muy probable que el resto del sistema esté igual y que la siguiente fuga aparezca pronto. Lo recomendable es planear un cambio gradual a PVC/CPVC.
+  </p>
+
+  <h2>¿Tubería reventada: causas y reparación?</h2>
+  <p>
+    Una tubería se revienta por presión interna excesiva, deterioro del material, golpe externo o expansión por temperatura extrema. En Panamá las causas más comunes son: deterioro de tubería galvanizada vieja, golpes durante remodelaciones, raíces de árboles en tuberías subterráneas y, más raro, presión excesiva por bomba sin regulador.
+  </p>
+
+  <h3>Cómo se repara una tubería reventada</h3>
+  <ol>
+    <li><strong>Localizar el punto exacto</strong> (visual o con cámara).</li>
+    <li><strong>Cerrar el suministro</strong> en el ramal afectado.</li>
+    <li><strong>Cortar la sección dañada</strong> con margen de 5-10 cm a cada lado.</li>
+    <li><strong>Limpiar bordes</strong> y preparar para la unión.</li>
+    <li><strong>Insertar acoplamiento o reemplazo</strong> con el material original.</li>
+    <li><strong>Sellar con cemento o soldadura</strong> según material.</li>
+    <li><strong>Esperar tiempo de curado</strong> antes de volver a presurizar.</li>
+    <li><strong>Probar presión</strong> y verificar que no haya fuga residual.</li>
+  </ol>
+
+  <h2>¿Cambio parcial vs cambio total: cuál conviene?</h2>
+  <p>
+    El cambio parcial repara una sección específica (un baño, una cocina, un tramo). Cuesta $200-600 y toma medio día a un día. Tiene sentido si el resto del sistema está en buen estado.
+  </p>
+  <p>
+    El cambio total reemplaza todas las tuberías de la casa. Cuesta $800-2,500 para casa pequeña, $2,500-5,000+ para casas medianas a grandes. Toma 2-3 días. Tiene sentido si:
+  </p>
+  <ul>
+    <li>Las tuberías son galvanizadas viejas.</li>
+    <li>Hay fugas frecuentes en puntos distintos.</li>
+    <li>El agua sale color marrón.</li>
+    <li>Estás haciendo remodelación grande (aprovechar paredes abiertas).</li>
+    <li>La casa tiene 30+ años sin cambio previo.</li>
+  </ul>
+
+  <h2>¿Cuánto dura una tubería en Panamá?</h2>
+  <p>
+    En Panamá, el clima cálido y la calidad del agua afectan la vida útil de las tuberías. Una tubería de PVC bien instalada dura 25-40 años; CPVC dura 40-50; cobre dura 50-70 si no hay corrosión externa; galvanizada antigua dura 20-30 antes de oxidarse internamente.
+  </p>
+  <p>
+    Factores que reducen la vida útil: agua con alto sedimento (depende de la zona), instalaciones con tubería expuesta al sol, golpes durante el uso de la casa, productos químicos agresivos en desagües, presión irregular sin regulador.
+  </p>
+
+  <h2>¿Cuánto cuesta cambiar tuberías en Panamá?</h2>
+  <p>
+    El cambio de tuberías en Ciudad de Panamá cuesta entre $200 y $5,000 según el alcance. Cambio parcial (un baño): $200-600. Cambio total casa pequeña: $800-2,500. Casa mediana o grande: $2,500-5,000+. Materiales y mano de obra incluidos. Detalles en <a href="/precios">guía de precios</a>.
+  </p>
+
+  <h2>¿Se puede reparar una tubería sin cortar la pared?</h2>
+  <p>
+    En algunos casos sí, usando técnicas de reparación localizada (relining, encamisado interno) o acceso por puntos pequeños. Sin embargo, si la tubería está muy dañada o oxidada, lo recomendable es cambiarla con corte controlado de pared. Un plomero evalúa el estado real con cámara endoscópica antes de decidir.
+  </p>
+
+  <h2>¿Atendemos cambio de tuberías en edificios y PHs?</h2>
+  <p>
+    Sí. El cambio de tuberías en edificios requiere coordinación con la administración, planificación de cortes de agua, y a veces permisos del PH. Trabajamos con respeto a las normas del edificio y minimizamos molestias a otros residentes.
+  </p>
+
+  <p class="mt-8 italic text-[color:var(--color-text-muted)]">
+    Más recursos:
+    <a href="/blog">Blog</a>,
+    <a href="/guia-completa-plomeria-panama">guía completa</a>,
+    <a href="/precios">precios detallados</a>.
+  </p>
+</ServiceLayout>

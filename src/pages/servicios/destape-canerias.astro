@@ -1,0 +1,141 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import { getService } from '../../data/services';
+import { serviceFAQs } from '../../data/faqs';
+
+const service = getService('destape-canerias')!;
+const faqs = serviceFAQs['destape-canerias'];
+
+const metodosTable = {
+  caption: 'Métodos de destape de cañerías y cuándo usarlos',
+  headers: ['Método', 'Funciona para', 'Costo aprox.', 'Tiempo'],
+  rows: [
+    ['Mecánico (cable)', 'Cabello, residuos sólidos pequeños', '$30-80', '30-60 min'],
+    ['Hidrojet', 'Grasa acumulada, sedimentos, raíces', '$80-200', '1-2 horas'],
+    ['Químico', 'Taponamientos leves orgánicos', '$15-30 producto', '15-30 min'],
+    ['Cámara + diagnóstico', 'Identificar problema profundo', '$80-150', '30-45 min'],
+  ],
+};
+---
+
+<ServiceLayout service={service} faqs={faqs}>
+  <h2>¿Qué causa que se tape una cañería en Panamá?</h2>
+  <p>
+    Una cañería se tapa cuando algo bloquea el flujo del agua: grasa solidificada, cabello, residuos sólidos, sedimentos del agua o raíces de árboles que penetran la tubería. En Ciudad de Panamá, las causas más frecuentes son la acumulación de grasa de cocina (lava platos) y cabello (duchas y lavamanos).
+  </p>
+  <p>
+    El problema raramente aparece de un día para otro. La cañería se va estrechando con el tiempo hasta que un día se tapa por completo. Las primeras señales son: el agua tarda más en bajar, hace ruido al bajar, o sale olor desde el desagüe. Si notas eso, llama antes de que se tape totalmente.
+  </p>
+
+  <h3>Las 6 causas más comunes de taponamiento</h3>
+  <ol>
+    <li><strong>Grasa de cocina:</strong> el aceite y la grasa se solidifican en las tuberías frías. Es la causa #1 en Panamá.</li>
+    <li><strong>Cabello:</strong> en duchas y lavamanos forma masas que retienen jabón y otros residuos.</li>
+    <li><strong>Toallitas húmedas y productos sanitarios:</strong> no se desintegran, aunque digan "biodegradable".</li>
+    <li><strong>Restos de comida:</strong> arroz, pasta, cáscaras pequeñas que pasan por el desagüe.</li>
+    <li><strong>Sedimentos del agua:</strong> calcio, óxido, arena que llega con el suministro.</li>
+    <li><strong>Raíces de árboles:</strong> en tuberías subterráneas viejas, las raíces buscan agua y rompen las uniones.</li>
+  </ol>
+
+  <h2>¿Cómo funciona el destape de cañerías?</h2>
+  <p>
+    El destape de cañerías es el proceso de remover el bloqueo que impide el flujo normal del agua. Existen cuatro métodos principales que usamos según el tipo y profundidad del taponamiento. La elección correcta depende del diagnóstico inicial: a veces basta un cable mecánico, otras veces se necesita hidrojet profesional.
+  </p>
+
+  <ComparisonTable {...metodosTable} />
+
+  <h3>Destape mecánico (cable)</h3>
+  <p>
+    Es el método más común. Usamos un cable rotatorio (sonda) que se introduce por el desagüe y rompe o jala el bloqueo. Funciona en lavamanos, fregaderos, duchas y muchos inodoros. Es rápido, no daña tuberías de PVC y suele resolver el 70% de los taponamientos domésticos.
+  </p>
+
+  <h3>Destape con hidrojet</h3>
+  <p>
+    El hidrojet es un equipo que dispara agua a alta presión (1,500-4,000 PSI) por la tubería. Pulveriza grasa, sedimentos y residuos orgánicos sin necesidad de químicos. Es el método correcto para drenajes principales, taponamientos profundos o cuando el cable mecánico no logra romper el bloqueo. Más limpio que cualquier alternativa.
+  </p>
+
+  <h3>Destape químico</h3>
+  <p>
+    Los productos químicos (a base de hidróxido de sodio o ácido sulfúrico) disuelven materia orgánica. Funcionan en taponamientos leves, pero tienen contras importantes: son corrosivos, dañan tuberías plásticas con uso frecuente, son peligrosos si se mezclan o salpican, y no funcionan en obstrucciones sólidas (cabello, plásticos). Los recomendamos solo en casos puntuales.
+  </p>
+
+  <h3>Cámara endoscópica</h3>
+  <p>
+    Cuando el problema es recurrente o no está claro qué causa el bloqueo, introducimos una cámara endoscópica por la tubería. Esto permite ver exactamente qué hay dentro y dónde, sin romper paredes o pisos. Útil especialmente cuando se sospecha raíces, fractura de tubería o sedimentos profundos.
+  </p>
+
+  <h2>¿Cuánto tiempo toma destapar una cañería?</h2>
+  <p>
+    Destapar una cañería toma entre 30 minutos y 2 horas según el tipo y la profundidad del taponamiento. Un destape simple de lavamanos o ducha toma 30-60 minutos. Un drenaje principal con hidrojet puede tomar 1-2 horas. Si el problema requiere diagnóstico con cámara antes, sumar 30-45 minutos adicionales.
+  </p>
+
+  <h2>¿Cuál es la diferencia entre destape simple y destape profundo?</h2>
+  <p>
+    El destape simple atiende un punto específico (lavamanos, ducha, inodoro de un baño). Se hace con cable mecánico desde el accesorio mismo y resuelve obstrucciones cercanas a la entrada. Cuesta $30-80 y toma 30-60 minutos.
+  </p>
+  <p>
+    El destape profundo atiende drenajes principales o tramos largos de tubería. Generalmente requiere hidrojet, acceso desde un registro y tiempo más largo. Cuesta $80-200 y toma 1-2 horas. Si todos los desagües de la casa están lentos, probablemente necesitas destape profundo, no simple.
+  </p>
+
+  <h2>¿Cómo prevenir taponamientos en cañerías?</h2>
+  <p>
+    La prevención es 10 veces más barata que la reparación. Estos hábitos evitan el 80% de los taponamientos:
+  </p>
+  <ol>
+    <li><strong>Nunca tires grasa o aceite por el desagüe.</strong> Espera a que se solidifique y tíralo a la basura.</li>
+    <li><strong>Usa rejillas en duchas y lavamanos</strong> para atrapar cabello y residuos.</li>
+    <li><strong>No tires al inodoro:</strong> toallitas húmedas, hilo dental, productos sanitarios, arena de gato.</li>
+    <li><strong>Vierte agua caliente con bicarbonato</strong> una vez al mes en cada desagüe.</li>
+    <li><strong>Limpia el sifón del lavamanos</strong> cada 6 meses (es un trabajo de 10 minutos).</li>
+    <li><strong>En cocinas con triturador:</strong> evita cáscaras duras, granos secos y fibrosos.</li>
+    <li><strong>Si la casa tiene árboles cercanos a tuberías subterráneas</strong>, considera una limpieza preventiva anual con hidrojet.</li>
+  </ol>
+
+  <h2>¿Cuándo SÍ y cuándo NO usar productos químicos?</h2>
+  <p>
+    Los productos químicos para destape (Drano, Liquid-Plumr, similares vendidos en Panamá) tienen lugar limitado. Aquí va el criterio claro:
+  </p>
+
+  <h3>Cuándo SÍ usar químicos</h3>
+  <ul>
+    <li>Taponamiento muy leve (el agua aún baja, solo lento).</li>
+    <li>Origen orgánico claro (grasa, cabello).</li>
+    <li>Tuberías nuevas en buen estado (no galvanizadas viejas).</li>
+    <li>Uso muy ocasional (no más de 2-3 veces al año).</li>
+  </ul>
+
+  <h3>Cuándo NO usar químicos</h3>
+  <ul>
+    <li>Taponamiento total (no baja nada): el químico se queda en la tubería y empeora todo.</li>
+    <li>Sospecha de objeto sólido (juguete, plástico): el químico no lo disuelve.</li>
+    <li>Tuberías galvanizadas viejas: el químico acelera la corrosión.</li>
+    <li>Uso frecuente: daña juntas y empaques con el tiempo.</li>
+    <li>Si ya usaste químico y no funcionó: avisa al plomero, porque trabajar con químicos residuales es peligroso.</li>
+  </ul>
+
+  <h2>¿Cuánto cuesta un destape de cañerías en Panamá?</h2>
+  <p>
+    Un destape de cañerías en Ciudad de Panamá cuesta entre $30 y $200 según el método y la complejidad. Destape simple en lavamanos: $30-60. Destape de inodoro: $40-90. Drenaje principal con hidrojet: $80-200. Diagnóstico con cámara: $80-150. Detalles completos en nuestra <a href="/precios">guía de precios</a>.
+  </p>
+
+  <h2>¿Qué hago si la cañería se tapa de nuevo a los pocos días?</h2>
+  <p>
+    Si la cañería se vuelve a tapar en menos de 30 días, el destape no resolvió el problema raíz. Generalmente significa que: hay un bloqueo más profundo que el cable mecánico no alcanzó, hay daño estructural en la tubería (raíz, fractura), o la pendiente de la tubería es incorrecta y siempre se va a tapar. En ese caso, llama a un plomero con cámara endoscópica para diagnóstico real.
+  </p>
+  <p>
+    Nuestra garantía: si el problema vuelve dentro del plazo acordado por el mismo motivo, regresamos sin costo a revisar.
+  </p>
+
+  <h2>¿Atendemos destape de drenaje principal en edificios?</h2>
+  <p>
+    Sí. Destapar drenajes principales en torres residenciales requiere coordinación con la administración del edificio y, generalmente, equipo hidrojet profesional. Conocemos los sistemas típicos de Costa del Este, Punta Pacífica y otras zonas con torres altas. Coordinamos horario para minimizar molestias a otros residentes.
+  </p>
+
+  <p class="mt-8 italic text-[color:var(--color-text-muted)]">
+    Más recursos:
+    <a href="/blog">Lee nuestro blog</a> con tutoriales DIY,
+    <a href="/guia-completa-plomeria-panama">consulta la guía completa de plomería</a> o
+    <a href="/contacto">contáctanos</a> para una cotización.
+  </p>
+</ServiceLayout>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import { services } from '../../data/services';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Servicios', url: '/servicios' },
+];
+---
+
+<BaseLayout
+  title="Servicios de Plomería en Panamá | Lista Completa"
+  description="Lista completa de servicios de plomería en Ciudad de Panamá: destape, fugas, calentadores, tuberías, emergencias 24h y más. Cotización gratis."
+  schema={{
+    type: 'page',
+    pageTitle: 'Servicios de Plomería en Panamá',
+    pageDescription: 'Servicios profesionales de plomería en Ciudad de Panamá.',
+    breadcrumbs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10">
+    <header class="max-w-3xl mb-8">
+      <h1 class="mb-4">Servicios de Plomería en Panamá</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        Cubrimos todas las necesidades de plomería en Ciudad de Panamá: destape, fugas, calentadores, tuberías, emergencias 24h y plomería residencial. Servicio profesional con cotización transparente y garantía sobre el trabajo.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+      {services.map((s) => (
+        <ServiceCard slug={s.slug} name={s.name} description={s.description} />
+      ))}
+    </div>
+
+    <div class="prose-content max-w-3xl">
+      <h2>¿Cuál servicio de plomería necesito?</h2>
+      <p>Si no estás seguro de qué servicio necesitas, esta es la guía rápida:</p>
+      <ul>
+        <li><strong>Cañería tapada (lavamanos, fregadero, ducha):</strong> <a href="/servicios/destape-canerias">Destape de cañerías</a></li>
+        <li><strong>Agua donde no debería estar:</strong> <a href="/servicios/fugas-de-agua">Reparación de fugas</a></li>
+        <li><strong>Tubería rota o vieja:</strong> <a href="/servicios/reparacion-tuberias">Reparación de tuberías</a></li>
+        <li><strong>Problema urgente fuera de horario:</strong> <a href="/servicios/plomero-24-horas">Plomero 24 horas</a> o <a href="/emergencias-plomeria-panama">Emergencias</a></li>
+        <li><strong>Calentador no funciona o instalación nueva:</strong> <a href="/servicios/instalacion-calentadores">Calentadores</a></li>
+        <li><strong>Mantenimiento general del hogar:</strong> <a href="/servicios/plomero-residencial">Plomero residencial</a></li>
+      </ul>
+
+      <h2>¿Cuánto cuestan estos servicios?</h2>
+      <p>
+        Los precios varían según el tipo de servicio y la complejidad. Tenemos una <a href="/precios">guía completa de precios</a> con rangos transparentes para cada categoría.
+      </p>
+
+      <h2>¿Para qué tipos de propiedad atienden?</h2>
+      <p>
+        Atendemos casas, apartamentos, edificios residenciales (PHs), oficinas y locales comerciales pequeños. Para edificios coordinamos con la administración cuando es necesario.
+      </p>
+
+      <h2>¿Tienen cobertura en mi zona?</h2>
+      <p>
+        Cubrimos toda Ciudad de Panamá. Tenemos páginas dedicadas con información local en <a href="/zonas">cada zona principal</a>. Para áreas más alejadas, podemos atender con un cargo adicional por traslado.
+      </p>
+    </div>
+  </article>
+
+  <TrustSignals />
+  <CTABanner />
+</BaseLayout>

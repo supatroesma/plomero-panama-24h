@@ -1,0 +1,65 @@
+---
+import { siteConfig, buildPhoneLink } from '../data/site';
+import { services } from '../data/services';
+
+const phoneHref = buildPhoneLink();
+---
+
+<header class="sticky top-0 z-40 bg-white border-b border-[color:var(--color-border-base)] shadow-sm">
+  <div class="container-site flex items-center justify-between py-3 md:py-4">
+    <a href="/" class="flex items-center gap-2 text-[color:var(--color-primary)] font-extrabold text-lg md:text-xl no-underline">
+      <span aria-hidden="true" class="text-2xl">💧</span>
+      <span class="leading-tight">{siteConfig.shortName}</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium" aria-label="Navegación principal">
+      <a href="/" class="text-[color:var(--color-text-base)] hover:text-[color:var(--color-primary)] no-underline">Inicio</a>
+      <div class="relative group">
+        <button type="button" class="flex items-center gap-1 text-[color:var(--color-text-base)] hover:text-[color:var(--color-primary)]">
+          Servicios
+          <span aria-hidden="true">▾</span>
+        </button>
+        <div class="absolute top-full left-0 hidden group-hover:block group-focus-within:block bg-white border border-[color:var(--color-border-base)] rounded-lg shadow-lg min-w-[260px] py-2">
+          <a href="/servicios" class="block px-4 py-2 text-sm font-semibold hover:bg-[color:var(--color-bg-alt)] no-underline">Todos los servicios</a>
+          <hr class="my-1 border-[color:var(--color-border-base)]" />
+          {services.map((s) => (
+            <a href={`/servicios/${s.slug}`} class="block px-4 py-2 text-sm hover:bg-[color:var(--color-bg-alt)] no-underline text-[color:var(--color-text-base)]">{s.shortName}</a>
+          ))}
+        </div>
+      </div>
+      <a href="/zonas" class="text-[color:var(--color-text-base)] hover:text-[color:var(--color-primary)] no-underline">Zonas</a>
+      <a href="/precios" class="text-[color:var(--color-text-base)] hover:text-[color:var(--color-primary)] no-underline">Precios</a>
+      <a href="/blog" class="text-[color:var(--color-text-base)] hover:text-[color:var(--color-primary)] no-underline">Blog</a>
+      <a href="/contacto" class="text-[color:var(--color-text-base)] hover:text-[color:var(--color-primary)] no-underline">Contacto</a>
+    </nav>
+
+    <a
+      href={phoneHref}
+      class="inline-flex items-center gap-1.5 bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-dark)] text-white font-semibold rounded-lg px-3 py-2 text-sm md:px-4 md:py-2.5 md:text-base no-underline transition-colors"
+      aria-label={`Llamar al ${siteConfig.phone}`}
+    >
+      <span aria-hidden="true">📞</span>
+      <span class="hidden sm:inline">Llamar</span>
+      <span class="hidden md:inline">{siteConfig.phone}</span>
+    </a>
+  </div>
+
+  <details class="md:hidden border-t border-[color:var(--color-border-base)]">
+    <summary class="container-site py-3 text-sm font-semibold cursor-pointer list-none flex items-center justify-between">
+      <span>Menú</span>
+      <span aria-hidden="true">☰</span>
+    </summary>
+    <nav class="container-site pb-4 flex flex-col gap-2 text-sm" aria-label="Navegación móvil">
+      <a href="/" class="py-1.5 no-underline text-[color:var(--color-text-base)]">Inicio</a>
+      <a href="/servicios" class="py-1.5 no-underline text-[color:var(--color-text-base)] font-semibold">Servicios</a>
+      {services.map((s) => (
+        <a href={`/servicios/${s.slug}`} class="py-1 pl-3 no-underline text-[color:var(--color-text-muted)] text-sm">→ {s.shortName}</a>
+      ))}
+      <a href="/zonas" class="py-1.5 no-underline text-[color:var(--color-text-base)]">Zonas</a>
+      <a href="/precios" class="py-1.5 no-underline text-[color:var(--color-text-base)]">Precios</a>
+      <a href="/emergencias-plomeria-panama" class="py-1.5 no-underline text-[color:var(--color-cta)] font-semibold">Emergencias 24h</a>
+      <a href="/blog" class="py-1.5 no-underline text-[color:var(--color-text-base)]">Blog</a>
+      <a href="/contacto" class="py-1.5 no-underline text-[color:var(--color-text-base)]">Contacto</a>
+    </nav>
+  </details>
+</header>

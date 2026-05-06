@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import { siteConfig } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import SchemaMarkup, { type SchemaProps } from '../components/SchemaMarkup.astro';
+
+export type Props = {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  schema?: Omit<SchemaProps, 'pageUrl'>;
+};
+
+const { title, description, image, noindex = false, schema } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).toString();
+const ogImage = image
+  ? new URL(image, siteConfig.url).toString()
+  : new URL(siteConfig.defaultOgImage, siteConfig.url).toString();
+
+const schemaProps: SchemaProps = schema
+  ? { ...schema, pageUrl: Astro.url.pathname }
+  : { type: 'page', pageUrl: Astro.url.pathname };
+---
+
+<!doctype html>
+<html lang="es-PA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_PA" />
+    <meta property="og:site_name" content={siteConfig.name} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <SchemaMarkup {...schemaProps} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-white text-[color:var(--color-text-base)]">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppFloat />
+  </body>
+</html>

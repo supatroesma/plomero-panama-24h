@@ -1,0 +1,89 @@
+---
+import { siteConfig, buildPhoneLink, buildWhatsAppLink } from '../data/site';
+import { services } from '../data/services';
+import { zones } from '../data/zones';
+
+const year = new Date().getFullYear();
+const phoneHref = buildPhoneLink();
+const waHref = buildWhatsAppLink();
+
+const hasSocial = Object.values(siteConfig.social).some((v) => v && v.length > 0);
+---
+
+<footer class="bg-[color:var(--color-bg-alt)] border-t border-[color:var(--color-border-base)] mt-16">
+  <div class="container-site py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-2 text-[color:var(--color-primary)] font-extrabold text-lg mb-3">
+          <span aria-hidden="true" class="text-2xl">💧</span>
+          {siteConfig.shortName}
+        </div>
+        <p class="text-sm text-[color:var(--color-text-muted)] leading-relaxed">
+          Plomero profesional en Ciudad de Panamá. Servicio 24 horas, 7 días a la semana. Cotización gratis vía WhatsApp.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-base font-bold mb-3">Servicios</h3>
+        <ul class="space-y-1.5 text-sm">
+          {services.map((s) => (
+            <li><a href={`/servicios/${s.slug}`} class="text-[color:var(--color-text-muted)] hover:text-[color:var(--color-primary)] no-underline">{s.shortName}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-base font-bold mb-3">Zonas</h3>
+        <ul class="space-y-1.5 text-sm">
+          {zones.map((z) => (
+            <li><a href={`/zonas/${z.slug}`} class="text-[color:var(--color-text-muted)] hover:text-[color:var(--color-primary)] no-underline">{z.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-base font-bold mb-3">Contacto</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href={phoneHref} class="text-[color:var(--color-text-base)] font-semibold hover:text-[color:var(--color-primary)] no-underline">
+              📞 {siteConfig.phone}
+            </a>
+          </li>
+          <li>
+            <a href={waHref} target="_blank" rel="noopener" class="text-[color:var(--color-whatsapp-dark)] font-semibold no-underline hover:underline">
+              💬 WhatsApp
+            </a>
+          </li>
+          <li class="text-[color:var(--color-text-muted)]">
+            🕐 {siteConfig.hoursText}
+          </li>
+          <li class="text-[color:var(--color-text-muted)]">
+            📍 {siteConfig.serviceArea}
+          </li>
+        </ul>
+
+        <h3 class="text-base font-bold mt-6 mb-3">Información</h3>
+        <ul class="space-y-1.5 text-sm">
+          <li><a href="/sobre-nosotros" class="text-[color:var(--color-text-muted)] hover:text-[color:var(--color-primary)] no-underline">Sobre Nosotros</a></li>
+          <li><a href="/precios" class="text-[color:var(--color-text-muted)] hover:text-[color:var(--color-primary)] no-underline">Precios</a></li>
+          <li><a href="/blog" class="text-[color:var(--color-text-muted)] hover:text-[color:var(--color-primary)] no-underline">Blog</a></li>
+          <li><a href="/contacto" class="text-[color:var(--color-text-muted)] hover:text-[color:var(--color-primary)] no-underline">Contacto</a></li>
+          <li><a href="/emergencias-plomeria-panama" class="text-[color:var(--color-cta)] font-semibold no-underline hover:underline">Emergencias 24h</a></li>
+        </ul>
+      </div>
+    </div>
+
+    {hasSocial && (
+      <div class="mt-8 pt-6 border-t border-[color:var(--color-border-base)] flex gap-4 text-sm">
+        {siteConfig.social.facebook && <a href={siteConfig.social.facebook} target="_blank" rel="noopener" class="no-underline">Facebook</a>}
+        {siteConfig.social.instagram && <a href={siteConfig.social.instagram} target="_blank" rel="noopener" class="no-underline">Instagram</a>}
+        {siteConfig.social.youtube && <a href={siteConfig.social.youtube} target="_blank" rel="noopener" class="no-underline">YouTube</a>}
+      </div>
+    )}
+
+    <div class="mt-8 pt-6 border-t border-[color:var(--color-border-base)] text-xs text-[color:var(--color-text-muted)] flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <span>© {year} {siteConfig.name}. Todos los derechos reservados.</span>
+      <span>Servicio en {siteConfig.serviceArea}</span>
+    </div>
+  </div>
+</footer>

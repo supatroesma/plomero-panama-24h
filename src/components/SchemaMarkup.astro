@@ -1,0 +1,247 @@
+---
+import { siteConfig, editorialTeam } from '../data/site';
+
+type FAQItem = { question: string; answer: string };
+type BreadcrumbItem = { name: string; url: string };
+type HowToStep = { name: string; text: string };
+type ServiceItem = { name: string; description?: string; url?: string };
+
+export type SchemaProps = {
+  type: 'home' | 'service' | 'blog' | 'page' | 'pillar' | 'localbusiness';
+  pageUrl: string;
+  pageTitle?: string;
+  pageDescription?: string;
+  pageImage?: string;
+
+  service?: { name: string; description: string };
+  faqs?: FAQItem[];
+  breadcrumbs?: BreadcrumbItem[];
+
+  blog?: {
+    title: string;
+    description: string;
+    image?: string;
+    pubDate: Date;
+    updatedDate?: Date;
+    keywords?: string[];
+  };
+  howToSteps?: HowToStep[];
+  howToName?: string;
+  howToDescription?: string;
+};
+
+const {
+  type,
+  pageUrl,
+  pageTitle,
+  pageDescription,
+  pageImage,
+  service,
+  faqs,
+  breadcrumbs,
+  blog,
+  howToSteps,
+  howToName,
+  howToDescription,
+} = Astro.props as SchemaProps;
+
+const fullUrl = pageUrl.startsWith('http')
+  ? pageUrl
+  : `${siteConfig.url}${pageUrl}`;
+
+const ogImage = pageImage || `${siteConfig.url}${siteConfig.defaultOgImage}`;
+
+const phoneSchema = `+${siteConfig.phoneClean}`;
+
+const plumberSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Plumber',
+  '@id': `${siteConfig.url}/#business`,
+  name: siteConfig.name,
+  alternateName: siteConfig.shortName,
+  image: `${siteConfig.url}${siteConfig.defaultOgImage}`,
+  url: siteConfig.url,
+  telephone: phoneSchema,
+  priceRange: '$$',
+  description: siteConfig.description,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Ciudad de Panamá',
+    addressRegion: 'Panamá',
+    addressCountry: 'PA',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: parseFloat(siteConfig.geo.latitude),
+    longitude: parseFloat(siteConfig.geo.longitude),
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  areaServed: siteConfig.areasServed.map((zone) => ({
+    '@type': 'Place',
+    name: zone,
+  })),
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicios de Plomería',
+    itemListElement: siteConfig.servicesList.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: s.name,
+        description: s.description,
+      },
+    })),
+  },
+  knowsLanguage: 'es-PA',
+  paymentAccepted: [...siteConfig.paymentAccepted],
+  currenciesAccepted: siteConfig.currenciesAccepted,
+};
+
+const breadcrumbSchema = breadcrumbs
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((b, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: b.name,
+        item: b.url.startsWith('http') ? b.url : `${siteConfig.url}${b.url}`,
+      })),
+    }
+  : null;
+
+const faqSchema =
+  faqs && faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.answer,
+          },
+        })),
+      }
+    : null;
+
+const serviceSchema = service
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: service.name,
+      name: service.name,
+      description: service.description,
+      provider: { '@id': `${siteConfig.url}/#business` },
+      areaServed: siteConfig.areasServed.map((zone) => ({
+        '@type': 'Place',
+        name: zone,
+      })),
+      url: fullUrl,
+    }
+  : null;
+
+const blogSchema = blog
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: blog.title,
+      description: blog.description,
+      image: blog.image
+        ? blog.image.startsWith('http')
+          ? blog.image
+          : `${siteConfig.url}${blog.image}`
+        : ogImage,
+      author: {
+        '@type': 'Organization',
+        name: editorialTeam.name,
+        url: editorialTeam.url,
+        description: editorialTeam.description,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: siteConfig.name,
+        url: siteConfig.url,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${siteConfig.url}${siteConfig.defaultOgImage}`,
+        },
+      },
+      datePublished: blog.pubDate.toISOString(),
+      dateModified: (blog.updatedDate || blog.pubDate).toISOString(),
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': fullUrl,
+      },
+      keywords: blog.keywords?.join(', '),
+      inLanguage: 'es-PA',
+    }
+  : null;
+
+const howToSchema =
+  howToSteps && howToSteps.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: howToName || pageTitle,
+        description: howToDescription || pageDescription,
+        step: howToSteps.map((s, idx) => ({
+          '@type': 'HowToStep',
+          position: idx + 1,
+          name: s.name,
+          text: s.text,
+        })),
+      }
+    : null;
+
+const articleSchema =
+  type === 'pillar'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: pageTitle,
+        description: pageDescription,
+        image: ogImage,
+        author: {
+          '@type': 'Organization',
+          name: editorialTeam.name,
+          url: editorialTeam.url,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': fullUrl },
+        inLanguage: 'es-PA',
+      }
+    : null;
+
+const allSchemas = [
+  plumberSchema,
+  breadcrumbSchema,
+  faqSchema,
+  serviceSchema,
+  blogSchema,
+  howToSchema,
+  articleSchema,
+].filter(Boolean);
+---
+
+{allSchemas.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

@@ -1,0 +1,74 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQSection from '../components/FAQSection.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { getRelatedServices, type Service } from '../data/services';
+import type { FAQ } from '../data/faqs';
+
+export type Props = {
+  service: Service;
+  faqs: FAQ[];
+};
+
+const { service, faqs } = Astro.props;
+const related = getRelatedServices(service.slug, 3);
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Servicios', url: '/servicios' },
+  { name: service.name, url: `/servicios/${service.slug}` },
+];
+---
+
+<BaseLayout
+  title={service.metaTitle}
+  description={service.metaDescription}
+  schema={{
+    type: 'service',
+    pageTitle: service.h1,
+    pageDescription: service.metaDescription,
+    service: { name: service.name, description: service.description },
+    faqs,
+    breadcrumbs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10">
+    <header class="max-w-3xl mb-8">
+      <h1 class="mb-4">{service.h1}</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">{service.description}</p>
+    </header>
+
+    <div class="prose-content max-w-3xl">
+      <slot />
+    </div>
+  </article>
+
+  <TrustSignals />
+
+  <CTABanner
+    title={`¿Necesitas ${service.shortName.toLowerCase()} ahora?`}
+    subtitle="Cotización gratis vía WhatsApp. Llegamos en 30-60 minutos."
+    whatsappMessage={`Hola, necesito ${service.name.toLowerCase()} en Panamá. ¿Pueden ayudarme?`}
+  />
+
+  <FAQSection faqs={faqs} title={`Preguntas frecuentes sobre ${service.shortName.toLowerCase()}`} />
+
+  <section class="container-site py-12 md:py-16 bg-[color:var(--color-bg-alt)]">
+    <h2 class="mb-6">Servicios relacionados</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {related.map((s) => (
+        <ServiceCard slug={s.slug} name={s.name} description={s.description} />
+      ))}
+    </div>
+    <div class="mt-6">
+      <a href="/guia-completa-plomeria-panama" class="text-[color:var(--color-primary)] font-semibold no-underline hover:underline">
+        → Lee la guía completa de plomería en Panamá
+      </a>
+    </div>
+  </section>
+</BaseLayout>

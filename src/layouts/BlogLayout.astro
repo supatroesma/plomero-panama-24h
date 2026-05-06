@@ -1,0 +1,76 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { editorialTeam } from '../data/site';
+import type { CollectionEntry } from 'astro:content';
+
+export type Props = {
+  post: CollectionEntry<'blog'>;
+};
+
+const { post } = Astro.props;
+const { data } = post;
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: data.title, url: `/blog/${post.id}` },
+];
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('es-PA', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title={`${data.title} | ${editorialTeam.name}`}
+  description={data.description}
+  image={data.image}
+  schema={{
+    type: 'blog',
+    pageTitle: data.title,
+    pageDescription: data.description,
+    pageImage: data.image,
+    blog: {
+      title: data.title,
+      description: data.description,
+      image: data.image,
+      pubDate: data.pubDate,
+      updatedDate: data.updatedDate,
+      keywords: [data.targetKeyword, ...data.tags],
+    },
+    breadcrumbs,
+    howToSteps: data.howTo ? data.howToSteps : undefined,
+    howToName: data.howTo ? data.title : undefined,
+    howToDescription: data.howTo ? data.description : undefined,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-3xl">
+    <header class="mb-8">
+      <div class="text-sm text-[color:var(--color-text-muted)] mb-2 flex items-center gap-2 flex-wrap">
+        <span class="bg-[color:var(--color-primary-light)] text-[color:var(--color-primary)] px-2 py-0.5 rounded text-xs font-semibold uppercase">{data.category}</span>
+        <time datetime={data.pubDate.toISOString()}>{formatDate(data.pubDate)}</time>
+        {data.readingTime && <span>· {data.readingTime} min lectura</span>}
+      </div>
+      <h1 class="mb-3">{data.title}</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">{data.description}</p>
+      <div class="mt-4 pt-4 border-t border-[color:var(--color-border-base)] text-sm text-[color:var(--color-text-muted)]">
+        Por <a href="/sobre-nosotros" class="font-semibold text-[color:var(--color-text-base)] no-underline hover:underline">{data.author}</a>
+      </div>
+    </header>
+
+    <div class="prose-content">
+      <slot />
+    </div>
+
+    {data.updatedDate && (
+      <p class="mt-8 pt-4 border-t border-[color:var(--color-border-base)] text-sm text-[color:var(--color-text-muted)]">
+        Última actualización: <time datetime={data.updatedDate.toISOString()}>{formatDate(data.updatedDate)}</time>
+      </p>
+    )}
+  </article>
+
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+import type { Testimonial } from '../data/testimonials';
+
+export type Props = {
+  testimonial: Testimonial;
+};
+
+const { testimonial } = Astro.props;
+const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
+---
+
+<article class="bg-white border border-[color:var(--color-border-base)] rounded-xl p-5 md:p-6 h-full flex flex-col">
+  <div class="text-[color:var(--color-warning)] text-lg mb-3" aria-label={`${testimonial.rating} de 5 estrellas`}>
+    {stars}
+  </div>
+  <blockquote class="text-sm md:text-base text-[color:var(--color-text-base)] leading-relaxed mb-4 flex-1">
+    “{testimonial.text}”
+  </blockquote>
+  <footer class="text-sm text-[color:var(--color-text-muted)] border-t border-[color:var(--color-border-base)] pt-3">
+    <strong class="text-[color:var(--color-text-base)]">{testimonial.name}</strong>
+    <span class="block text-xs">{testimonial.zone} · {testimonial.service}</span>
+  </footer>
+</article>

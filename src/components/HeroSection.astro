@@ -1,0 +1,58 @@
+---
+import { siteConfig, buildPhoneLink, buildWhatsAppLink } from '../data/site';
+
+export type Props = {
+  title: string;
+  subtitle: string;
+  badges?: string[];
+  whatsappMessage?: string;
+};
+
+const {
+  title,
+  subtitle,
+  badges = ['24 Horas', 'Cotización Gratis', 'Servicio Profesional'],
+  whatsappMessage,
+} = Astro.props;
+
+const phoneHref = buildPhoneLink();
+const waHref = buildWhatsAppLink(whatsappMessage);
+---
+
+<section class="bg-gradient-to-br from-[color:var(--color-primary)] to-[color:var(--color-primary-dark)] text-white">
+  <div class="container-site py-12 md:py-20">
+    <div class="max-w-3xl">
+      <h1 class="text-white mb-4">{title}</h1>
+      <p class="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">{subtitle}</p>
+
+      <div class="flex flex-wrap gap-2 mb-7">
+        {badges.map((b) => (
+          <span class="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur px-3 py-1.5 rounded-full text-sm font-medium">
+            <span aria-hidden="true">✓</span>{b}
+          </span>
+        ))}
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href={waHref}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center gap-2 bg-[color:var(--color-whatsapp)] hover:bg-[color:var(--color-whatsapp-dark)] text-white font-bold px-6 py-3.5 rounded-lg text-base no-underline transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z" />
+          </svg>
+          WhatsApp
+        </a>
+        <a
+          href={phoneHref}
+          class="inline-flex items-center justify-center gap-2 bg-white text-[color:var(--color-primary)] hover:bg-[color:var(--color-bg-alt)] font-bold px-6 py-3.5 rounded-lg text-base no-underline transition-colors"
+        >
+          <span aria-hidden="true">📞</span>
+          Llamar {siteConfig.phone}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

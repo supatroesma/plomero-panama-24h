@@ -1,0 +1,31 @@
+---
+export type Props = {
+  caption?: string;
+  headers: string[];
+  rows: string[][];
+};
+
+const { caption, headers, rows } = Astro.props;
+---
+
+<div class="overflow-x-auto my-6">
+  <table class="w-full border-collapse text-sm md:text-base">
+    {caption && <caption class="text-left font-semibold mb-2 text-[color:var(--color-text-base)]">{caption}</caption>}
+    <thead>
+      <tr>
+        {headers.map((h) => (
+          <th class="bg-[color:var(--color-primary-light)] text-left font-bold border border-[color:var(--color-border-base)] px-3 py-2.5">{h}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          {row.map((cell) => (
+            <td class="border border-[color:var(--color-border-base)] px-3 py-2.5 align-top">{cell}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

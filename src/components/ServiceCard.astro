@@ -1,0 +1,22 @@
+---
+export type Props = {
+  slug: string;
+  name: string;
+  description: string;
+  icon?: string;
+};
+
+const { slug, name, description, icon = '🔧' } = Astro.props;
+---
+
+<a
+  href={`/servicios/${slug}`}
+  class="block bg-white border border-[color:var(--color-border-base)] rounded-xl p-5 md:p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all no-underline group"
+>
+  <div class="text-3xl mb-3" aria-hidden="true">{icon}</div>
+  <h3 class="text-[color:var(--color-text-base)] mb-2 group-hover:text-[color:var(--color-primary)] transition-colors">{name}</h3>
+  <p class="text-sm text-[color:var(--color-text-muted)] mb-4 leading-relaxed">{description}</p>
+  <span class="inline-flex items-center gap-1 text-sm font-semibold text-[color:var(--color-primary)]">
+    Ver servicio <span aria-hidden="true">→</span>
+  </span>
+</a>

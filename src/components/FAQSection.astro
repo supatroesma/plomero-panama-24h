@@ -1,0 +1,27 @@
+---
+import type { FAQ } from '../data/faqs';
+
+export type Props = {
+  title?: string;
+  faqs: FAQ[];
+};
+
+const { title = 'Preguntas Frecuentes', faqs } = Astro.props;
+---
+
+<section class="container-site py-12 md:py-16">
+  <h2 class="mb-8 text-center md:text-left">{title}</h2>
+  <div class="max-w-3xl space-y-3">
+    {faqs.map((faq, idx) => (
+      <details class="group bg-white border border-[color:var(--color-border-base)] rounded-lg" open={idx === 0}>
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 p-4 md:p-5 font-semibold text-base md:text-lg">
+          <span>{faq.question}</span>
+          <span aria-hidden="true" class="text-[color:var(--color-primary)] text-xl group-open:rotate-45 transition-transform shrink-0">+</span>
+        </summary>
+        <div class="px-4 md:px-5 pb-4 md:pb-5 text-[color:var(--color-text-muted)] leading-relaxed">
+          {faq.answer}
+        </div>
+      </details>
+    ))}
+  </div>
+</section>

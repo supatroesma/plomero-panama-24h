@@ -1,0 +1,26 @@
+---
+export type Crumb = { name: string; url: string };
+
+export type Props = {
+  items: Crumb[];
+};
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Migas de pan" class="container-site py-3 text-sm text-[color:var(--color-text-muted)]">
+  <ol class="flex flex-wrap items-center gap-1">
+    {items.map((item, idx) => (
+      <li class="flex items-center gap-1">
+        {idx < items.length - 1 ? (
+          <>
+            <a href={item.url} class="hover:text-[color:var(--color-primary)] no-underline">{item.name}</a>
+            <span aria-hidden="true" class="text-[color:var(--color-border-base)]">/</span>
+          </>
+        ) : (
+          <span class="text-[color:var(--color-text-base)] font-medium" aria-current="page">{item.name}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

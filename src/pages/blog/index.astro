@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Blog', url: '/blog' },
+];
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('es-PA', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog | Plomero Panamá 24h"
+  description="Blog de plomería en Panamá: tutoriales, guías, precios y consejos. Cómo destapar, qué hacer en emergencias, mantenimiento preventivo y más."
+  schema={{
+    type: 'page',
+    pageTitle: 'Blog de Plomería en Panamá',
+    pageDescription: 'Tutoriales, guías y consejos de plomería en Ciudad de Panamá.',
+    breadcrumbs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10">
+    <header class="max-w-3xl mb-8">
+      <h1 class="mb-4">Blog de Plomería en Panamá</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        Tutoriales paso a paso, guías y consejos para problemas comunes de plomería en Ciudad de Panamá. Aprende a resolver lo simple y a identificar cuándo llamar a un profesional.
+      </p>
+    </header>
+
+    {posts.length === 0 ? (
+      <p class="text-[color:var(--color-text-muted)]">No hay posts disponibles aún. Vuelve pronto.</p>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="block bg-white border border-[color:var(--color-border-base)] rounded-xl p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all no-underline h-full flex flex-col">
+            <div class="text-xs text-[color:var(--color-text-muted)] mb-2 flex items-center gap-2">
+              <span class="bg-[color:var(--color-primary-light)] text-[color:var(--color-primary)] px-2 py-0.5 rounded text-xs font-semibold uppercase">{post.data.category}</span>
+              <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+            </div>
+            <h2 class="text-lg mb-2 text-[color:var(--color-text-base)]">{post.data.title}</h2>
+            <p class="text-sm text-[color:var(--color-text-muted)] leading-relaxed flex-1">{post.data.description}</p>
+            <span class="inline-block mt-3 text-sm font-semibold text-[color:var(--color-primary)]">Leer más →</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </article>
+
+  <CTABanner />
+</BaseLayout>

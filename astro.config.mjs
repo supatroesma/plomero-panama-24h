@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://plomeropanama24h.com',
   output: 'static',
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
   compressHTML: true,
   vite: {

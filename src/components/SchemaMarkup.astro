@@ -53,62 +53,76 @@ const ogImage = pageImage || `${siteConfig.url}${siteConfig.defaultOgImage}`;
 
 const phoneSchema = `+${siteConfig.phoneClean}`;
 
-const plumberSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Plumber',
-  '@id': `${siteConfig.url}/#business`,
-  name: siteConfig.name,
-  alternateName: siteConfig.shortName,
-  image: `${siteConfig.url}${siteConfig.defaultOgImage}`,
-  url: siteConfig.url,
-  telephone: phoneSchema,
-  priceRange: '$$',
-  description: siteConfig.description,
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Ciudad de Panamá',
-    addressRegion: 'Panamá',
-    addressCountry: 'PA',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: parseFloat(siteConfig.geo.latitude),
-    longitude: parseFloat(siteConfig.geo.longitude),
-  },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday',
-    ],
-    opens: '00:00',
-    closes: '23:59',
-  },
-  areaServed: siteConfig.areasServed.map((zone) => ({
-    '@type': 'Place',
-    name: zone,
-  })),
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Servicios de Plomería',
-    itemListElement: siteConfig.servicesList.map((s) => ({
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: s.name,
-        description: s.description,
+// Full Plumber schema rendered ONLY on home/localbusiness pages.
+// Inner pages get a lightweight reference: { '@id': '.../#business' }.
+// This saves ~5 KB per inner page in HTML payload.
+const isFullBusinessPage = type === 'home' || type === 'localbusiness';
+
+const plumberSchema = isFullBusinessPage
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Plumber',
+      '@id': `${siteConfig.url}/#business`,
+      name: siteConfig.name,
+      alternateName: siteConfig.shortName,
+      image: `${siteConfig.url}${siteConfig.defaultOgImage}`,
+      url: siteConfig.url,
+      telephone: phoneSchema,
+      priceRange: '$$',
+      description: siteConfig.description,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Ciudad de Panamá',
+        addressRegion: 'Panamá',
+        addressCountry: 'PA',
       },
-    })),
-  },
-  knowsLanguage: 'es-PA',
-  paymentAccepted: [...siteConfig.paymentAccepted],
-  currenciesAccepted: siteConfig.currenciesAccepted,
-};
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: parseFloat(siteConfig.geo.latitude),
+        longitude: parseFloat(siteConfig.geo.longitude),
+      },
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday',
+        ],
+        opens: '00:00',
+        closes: '23:59',
+      },
+      areaServed: siteConfig.areasServed.map((zone) => ({
+        '@type': 'Place',
+        name: zone,
+      })),
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Servicios de Plomería',
+        itemListElement: siteConfig.servicesList.map((s) => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: s.name,
+            description: s.description,
+          },
+        })),
+      },
+      knowsLanguage: 'es-PA',
+      paymentAccepted: [...siteConfig.paymentAccepted],
+      currenciesAccepted: siteConfig.currenciesAccepted,
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'Plumber',
+      '@id': `${siteConfig.url}/#business`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      telephone: phoneSchema,
+    };
 
 const breadcrumbSchema = breadcrumbs
   ? {

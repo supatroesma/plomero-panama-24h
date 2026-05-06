@@ -1,0 +1,370 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import { services } from '../data/services';
+import { zones } from '../data/zones';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Guía Completa', url: '/guia-completa-plomeria-panama' },
+];
+
+const tipoTuberiasTable = {
+  caption: 'Tipos de tuberías más usadas en Panamá',
+  headers: ['Material', 'Uso típico', 'Vida útil', 'Costo relativo'],
+  rows: [
+    ['PVC', 'Agua fría, drenaje', '25-40 años', 'Económico'],
+    ['CPVC', 'Agua caliente y fría', '40-50 años', 'Medio'],
+    ['Cobre', 'Agua caliente, instalaciones premium', '50-70 años', 'Alto'],
+    ['Galvanizada', 'Instalaciones antiguas (en desuso)', '20-30 años', 'Bajo'],
+    ['PEX', 'Modernas, flexibles', '40-50 años', 'Medio-alto'],
+  ],
+};
+
+const calentadoresTable = {
+  caption: 'Tipos de calentadores de agua para Panamá',
+  headers: ['Tipo', 'Costo equipo', 'Eficiencia', 'Mejor para'],
+  rows: [
+    ['Eléctrico de tanque', 'Bajo ($250-450)', 'Media', 'Apartamentos pequeños, 1-3 personas'],
+    ['A gas', 'Medio ($400-800)', 'Alta', 'Casas con conexión a gas, familias grandes'],
+    ['Tankless eléctrico', 'Alto ($500-1,200)', 'Muy alta', 'Familias grandes, ahorro a largo plazo'],
+    ['Tankless a gas', 'Alto ($600-1,500)', 'Muy alta', 'Casas grandes, alto consumo'],
+    ['Solar', 'Muy alto ($1,000-2,500)', 'Excelente (clima Panamá)', 'Inversión a largo plazo, casas con techo'],
+  ],
+};
+
+const problemasTable = {
+  caption: 'Problemas comunes de plomería en Panamá y su origen',
+  headers: ['Problema', 'Causa más común', 'Acción recomendada'],
+  rows: [
+    ['Baja presión de agua', 'Tubería tapada con sedimento o fuga oculta', 'Detección con plomero'],
+    ['Agua color marrón', 'Tuberías oxidadas (galvanizadas viejas)', 'Considerar cambio de tuberías'],
+    ['Ruido en tuberías', 'Aire en sistema o golpe de ariete', 'Revisar sistema de presión'],
+    ['Inodoro que no descarga bien', 'Acumulación de sedimentos en sifón o cisterna', 'Limpieza o destape'],
+    ['Olor en desagües', 'Sifón seco o descomposición de residuos', 'Limpieza con plomero'],
+    ['Factura de agua alta', 'Fuga oculta', 'Detección urgente'],
+  ],
+};
+---
+
+<BaseLayout
+  title="Guía Completa de Plomería en Panamá 2026 | Servicios, Precios y Mantenimiento"
+  description="Guía completa de plomería en Panamá: tipos de servicios, materiales, precios, mantenimiento, emergencias, normas IDAAN. Todo en un solo recurso."
+  schema={{
+    type: 'pillar',
+    pageTitle: 'Guía Completa de Plomería en Panamá',
+    pageDescription: 'Recurso completo de plomería en Ciudad de Panamá: servicios, materiales, precios, mantenimiento y emergencias.',
+    breadcrumbs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-4xl">
+    <header class="mb-8">
+      <h1 class="mb-4">Guía Completa de Plomería en Panamá 2026</h1>
+      <p class="text-lg text-[color:var(--color-text-muted)] leading-relaxed">
+        Todo lo que necesitas saber sobre plomería en Ciudad de Panamá: servicios, tipos de tuberías, calentadores, precios reales, mantenimiento preventivo, emergencias y regulaciones locales. Esta es la guía de referencia que enlaza a cada tema con detalle.
+      </p>
+    </header>
+
+    <nav aria-label="Tabla de contenidos" class="bg-[color:var(--color-bg-alt)] border border-[color:var(--color-border-base)] rounded-xl p-5 md:p-6 mb-10">
+      <h2 class="text-base font-bold mb-3">Tabla de contenidos</h2>
+      <ol class="space-y-1.5 text-sm list-decimal pl-5">
+        <li><a href="#panorama-plomeria">Panorama de la plomería en Panamá</a></li>
+        <li><a href="#servicios">Tipos de servicios de plomería</a></li>
+        <li><a href="#materiales">Materiales y tuberías más usadas</a></li>
+        <li><a href="#calentadores">Calentadores de agua: opciones para Panamá</a></li>
+        <li><a href="#problemas">Problemas comunes y soluciones</a></li>
+        <li><a href="#precios">Precios reales de plomería en Panamá</a></li>
+        <li><a href="#mantenimiento">Mantenimiento preventivo</a></li>
+        <li><a href="#emergencias">Emergencias: cuándo y cómo actuar</a></li>
+        <li><a href="#zonas">Cobertura por zonas en Ciudad de Panamá</a></li>
+        <li><a href="#regulaciones">Regulaciones e IDAAN</a></li>
+        <li><a href="#elegir-plomero">Cómo elegir un plomero confiable</a></li>
+        <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose-content">
+      <h2 id="panorama-plomeria">Panorama de la plomería en Panamá</h2>
+      <p>
+        La plomería en Ciudad de Panamá tiene tres particularidades que la diferencian de otros mercados: el clima cálido y húmedo acelera la corrosión de algunos materiales; la concentración urbana en torres residenciales requiere conocimiento de sistemas de presión específicos; y la red de agua administrada por IDAAN tiene patrones de presión y calidad que afectan instalaciones domésticas.
+      </p>
+      <p>
+        En 2026, la mayoría de las casas y edificios usan tuberías de PVC para agua fría y CPVC o cobre para agua caliente. Las construcciones antiguas pueden tener tuberías galvanizadas que requieren cambio. Los calentadores eléctricos dominan en apartamentos; los tankless ganan terreno por eficiencia.
+      </p>
+      <p>
+        Los problemas más reportados son: taponamientos por grasa y residuos orgánicos, fugas ocultas en muros (clima húmedo), baja presión en torres y deterioro de calentadores por sedimentos en el agua. Esta guía cubre cada caso con detalle.
+      </p>
+
+      <h2 id="servicios">¿Qué tipos de servicios de plomería existen en Panamá?</h2>
+      <p>
+        Los servicios de plomería en Ciudad de Panamá se agrupan en seis categorías principales. Cada una tiene su propia página con detalle técnico, precios y FAQs específicos.
+      </p>
+
+      <ul>
+        {services.map((s) => (
+          <li>
+            <strong><a href={`/servicios/${s.slug}`}>{s.name}</a></strong>: {s.description}
+          </li>
+        ))}
+      </ul>
+
+      <h3>¿Cuál servicio es el más solicitado en Panamá?</h3>
+      <p>
+        El destape de cañerías es el servicio más solicitado: representa cerca del 35-40% de las llamadas de emergencia. Le sigue la reparación de fugas (25%), instalación y reparación de calentadores (15%) y cambio de tuberías (10%). El resto se distribuye entre instalaciones nuevas y mantenimiento preventivo.
+      </p>
+
+      <h3>¿Qué se considera plomería residencial vs comercial?</h3>
+      <p>
+        Plomería residencial cubre casas, apartamentos y edificios de hasta 6 pisos con sistemas estándar. Plomería comercial cubre oficinas, locales, restaurantes y edificios grandes con sistemas de mayor capacidad, sistemas de bombeo y exigencias de cumplimiento normativo. La diferencia principal es la escala y la complejidad regulatoria.
+      </p>
+
+      <h2 id="materiales">¿Qué materiales se usan en la plomería de Panamá?</h2>
+      <p>
+        La elección del material afecta la durabilidad, el costo y la facilidad de reparación. En Panamá, los más usados son:
+      </p>
+
+      <ComparisonTable {...tipoTuberiasTable} />
+
+      <h3>¿PVC o CPVC: cuál usar en Panamá?</h3>
+      <p>
+        El PVC es ideal para agua fría y drenaje porque resiste hasta 60°C. El CPVC resiste hasta 90°C y es la opción correcta para agua caliente. En instalaciones modernas en Panamá, lo común es PVC para fría y CPVC para caliente. Mezclar PVC en líneas calientes acorta su vida útil y genera fugas en pocos años.
+      </p>
+
+      <h3>¿Cuándo conviene cobre?</h3>
+      <p>
+        El cobre se usa en instalaciones premium o cuando se requiere durabilidad excepcional. Cuesta 3-4 veces más que CPVC pero dura 50-70 años. En clima panameño, el cobre puede sufrir corrosión por contacto con suelos ácidos, por lo que su uso subterráneo requiere protección catódica.
+      </p>
+
+      <h3>¿Tuberías galvanizadas: cambiar o no?</h3>
+      <p>
+        Si tu casa tiene más de 25 años y las tuberías son galvanizadas (color metálico, óxido visible), considera cambiarlas. Las galvanizadas se oxidan internamente, reducen el flujo y eventualmente revientan. El agua color marrón es la primera señal. Más detalles en <a href="/servicios/reparacion-tuberias">reparación de tuberías</a>.
+      </p>
+
+      <h2 id="calentadores">¿Qué calentador de agua conviene en Panamá?</h2>
+      <p>
+        En Panamá hay cinco tipos principales de calentadores. La elección depende del consumo, presupuesto, conexión disponible (eléctrica o gas) y prioridad (precio inicial vs ahorro a largo plazo).
+      </p>
+
+      <ComparisonTable {...calentadoresTable} />
+
+      <h3>¿Eléctrico o tankless?</h3>
+      <p>
+        Para una familia de 2-3 personas con consumo moderado, un calentador eléctrico de tanque (30-40 galones) es lo más económico inicialmente. Para familias grandes (5+) o casas con varios baños usándose simultáneamente, un tankless ahorra entre 20% y 30% en consumo eléctrico anual y elimina el problema de "se acabó el agua caliente".
+      </p>
+
+      <h3>¿Calentador a gas tiene sentido en Panamá?</h3>
+      <p>
+        Si tu casa tiene conexión a gas natural (zonas seleccionadas en Costa del Este, Costa Pacifica, etc.), el calentador a gas es la opción más eficiente y rápida en calentamiento. Para casas sin gas, el tankless eléctrico es alternativa moderna.
+      </p>
+      <p>
+        Detalles técnicos y de instalación en <a href="/servicios/instalacion-calentadores">instalación de calentadores</a>.
+      </p>
+
+      <h2 id="problemas">¿Cuáles son los problemas más comunes de plomería en Panamá?</h2>
+      <p>
+        Estos son los seis problemas que más se reportan en Ciudad de Panamá, su origen típico y la acción recomendada.
+      </p>
+
+      <ComparisonTable {...problemasTable} />
+
+      <h3>¿Por qué baja la presión de agua de un momento a otro?</h3>
+      <p>
+        La baja presión repentina suele tener cinco causas: fuga oculta en alguna parte del sistema, tubería principal obstruida con sedimentos, llave de paso parcialmente cerrada, problema en el calentador (afecta presión de agua caliente) o problema con IDAAN en tu zona. La detección requiere un plomero con experiencia.
+      </p>
+
+      <h3>¿Qué hago si veo agua color marrón?</h3>
+      <p>
+        Agua color marrón en la primera carga del día generalmente indica oxidación en tuberías galvanizadas viejas. Si persiste todo el día, puede ser problema con la red IDAAN (revisar avisos de la entidad) o con el calentador (sedimentos acumulados). Llama a un plomero si dura más de 24 horas.
+      </p>
+
+      <h3>¿Cómo identifico una fuga oculta?</h3>
+      <p>
+        Cinco señales claras: factura de agua que sube sin razón, manchas de humedad o moho en paredes/techos, sonido constante de agua corriendo, presión baja general y olor a humedad. Las fugas ocultas se detectan con cámara endoscópica, geófono acústico o cámara termográfica. Más en <a href="/servicios/fugas-de-agua">reparación de fugas</a>.
+      </p>
+
+      <h2 id="precios">¿Cuánto cuestan los servicios de plomería en Panamá?</h2>
+      <p>
+        Los precios varían según servicio, complejidad y horario. Esta es la tabla de rangos reales en Ciudad de Panamá en 2026. Para una guía detallada con factores que afectan el precio, ve nuestra <a href="/precios">página de precios</a>.
+      </p>
+      <ul>
+        <li><strong>Destape simple:</strong> $30-80</li>
+        <li><strong>Destape con hidrojet:</strong> $80-200</li>
+        <li><strong>Reparación de fuga visible:</strong> $50-120</li>
+        <li><strong>Detección + reparación de fuga oculta:</strong> $150-400</li>
+        <li><strong>Instalación calentador eléctrico:</strong> $80-180 (mano de obra)</li>
+        <li><strong>Cambio total de tuberías casa pequeña:</strong> $800-2,500</li>
+        <li><strong>Servicio nocturno o fin de semana:</strong> +20-50% sobre tarifa normal</li>
+      </ul>
+
+      <h2 id="mantenimiento">¿Cómo se hace mantenimiento preventivo de plomería?</h2>
+      <p>
+        El mantenimiento preventivo evita el 70% de las emergencias de plomería. Cuesta una fracción de lo que cuesta una reparación de emergencia. Estas son las acciones que se recomiendan según la frecuencia.
+      </p>
+
+      <h3>Mensual</h3>
+      <ol>
+        <li>Vierte agua caliente con bicarbonato y vinagre por desagües del lavamanos y fregadero (limpia grasa).</li>
+        <li>Revisa visualmente debajo de los lavamanos y el fregadero buscando humedad.</li>
+        <li>Verifica que las llaves de paso de cada habitación giren correctamente (no se atasquen).</li>
+        <li>Revisa la cisterna del inodoro: que no esté constantemente llenándose.</li>
+      </ol>
+
+      <h3>Cada 6 meses</h3>
+      <ol>
+        <li>Revisa el calentador: drena un balde de agua para sacar sedimentos.</li>
+        <li>Revisa la grifería: aireadores tapados, fugas pequeñas en las llaves.</li>
+        <li>Verifica que los desagües externos no estén tapados con hojas o residuos.</li>
+        <li>Revisa la presión general de la casa.</li>
+      </ol>
+
+      <h3>Anual</h3>
+      <ol>
+        <li>Inspección general del sistema con un plomero (especialmente si la casa tiene más de 10 años).</li>
+        <li>Mantenimiento de calentador: limpieza de tanque, revisión de termostato y resistencia.</li>
+        <li>Verificación de tuberías visibles (sótano, azotea, cuartos de servicio).</li>
+        <li>Revisión del medidor: comparar consumo del año anterior.</li>
+      </ol>
+
+      <h2 id="emergencias">¿Qué hacer en una emergencia de plomería?</h2>
+      <p>
+        Una emergencia de plomería requiere acción inmediata para reducir el daño antes de que llegue el plomero. Los pasos básicos son:
+      </p>
+      <ol>
+        <li><strong>Cierra la llave de paso principal de la casa</strong> (gírala en sentido horario).</li>
+        <li><strong>Si hay riesgo eléctrico, baja el breaker general.</strong></li>
+        <li><strong>Retira muebles y electrónicos</strong> de la zona afectada.</li>
+        <li><strong>Coloca toallas o baldes</strong> para contener el agua.</li>
+        <li><strong>Documenta con fotos</strong> para tu seguro.</li>
+        <li><strong>Llama a un plomero 24h</strong>: WhatsApp es el canal más rápido.</li>
+      </ol>
+      <p>
+        Para detalles específicos por tipo de emergencia, ve nuestra <a href="/emergencias-plomeria-panama">página de emergencias 24h</a>.
+      </p>
+
+      <h2 id="zonas">¿En qué zonas de Ciudad de Panamá tenemos cobertura?</h2>
+      <p>
+        Cubrimos toda Ciudad de Panamá con tiempos de llegada que varían según la zona. Estas son las zonas con páginas dedicadas y notas locales:
+      </p>
+      <ul>
+        {zones.map((z) => (
+          <li>
+            <strong><a href={`/zonas/${z.slug}`}>{z.name}</a></strong>: {z.description}
+          </li>
+        ))}
+      </ul>
+      <p>
+        Tiempo promedio de llegada: 30 minutos en Costa del Este, San Francisco, Punta Pacífica y Obarrio; 30-45 minutos en Bella Vista, El Cangrejo, Vía España y Calle 50; 45-90 minutos en Panamá Pacífico y áreas más alejadas.
+      </p>
+
+      <h2 id="regulaciones">¿Qué regulaciones aplican a la plomería en Panamá?</h2>
+      <p>
+        IDAAN (Instituto de Acueductos y Alcantarillados Nacionales) es la entidad que regula el suministro de agua potable y el manejo de aguas residuales en Panamá. Cualquier instalación que se conecte a la red de agua o alcantarillado debe cumplir con sus normas técnicas.
+      </p>
+
+      <h3>Aspectos regulados por IDAAN</h3>
+      <ul>
+        <li>Conexiones nuevas a la red de agua potable.</li>
+        <li>Instalación de medidores.</li>
+        <li>Conexiones a la red de alcantarillado público.</li>
+        <li>Reparaciones que afecten tubería pública.</li>
+        <li>Calidad del agua y reportes de problemas en la red.</li>
+      </ul>
+
+      <h3>¿Necesito permiso para reparaciones internas?</h3>
+      <p>
+        Las reparaciones dentro de tu propiedad (cambio de grifería, reparación de fugas internas, instalación de calentadores) generalmente no requieren permisos. Las modificaciones que afectan la conexión con la red pública sí los requieren. Un plomero profesional sabe diferenciar.
+      </p>
+
+      <h2 id="elegir-plomero">¿Cómo elegir un plomero confiable en Panamá?</h2>
+      <p>
+        En Panamá no existe una licencia obligatoria estándar para plomeros, lo que hace que el rango de calidad sea amplio. Estas son las señales de un plomero confiable y las señales de alerta que debes evitar.
+      </p>
+
+      <h3>Señales de un buen plomero</h3>
+      <ol>
+        <li>Da cotización por escrito antes de empezar.</li>
+        <li>Explica qué va a hacer y por qué.</li>
+        <li>Tiene herramientas profesionales (no improvisa con utensilios caseros).</li>
+        <li>Ofrece garantía sobre el trabajo.</li>
+        <li>Llega en el tiempo prometido o avisa si se atrasa.</li>
+        <li>Cobra exactamente lo cotizado (salvo problemas no detectables al inicio, en cuyo caso te informa antes).</li>
+        <li>Tiene reseñas verificables.</li>
+      </ol>
+
+      <h3>Señales de alerta (red flags)</h3>
+      <ol>
+        <li>Pide pago completo por adelantado.</li>
+        <li>No quiere dar cotización antes de empezar.</li>
+        <li>Cobra mucho más al final sin explicación.</li>
+        <li>No ofrece garantía.</li>
+        <li>Llega sin uniforme, sin identificación, sin herramientas adecuadas.</li>
+        <li>Te presiona a tomar decisiones rápidas ("si no lo hacemos hoy, mañana cuesta el doble").</li>
+        <li>No tiene canal formal de comunicación (solo número personal sin marca).</li>
+      </ol>
+
+      <h3>Preguntas que debes hacer antes de contratar</h3>
+      <ol>
+        <li>¿Cuánto cuesta el servicio? (rango completo)</li>
+        <li>¿Qué incluye y qué no incluye?</li>
+        <li>¿Qué garantía dan y por cuánto tiempo?</li>
+        <li>¿Qué pasa si el problema vuelve a aparecer?</li>
+        <li>¿Cuánto tardan en llegar?</li>
+        <li>¿Qué métodos de pago aceptan?</li>
+        <li>¿Tienen seguro de responsabilidad?</li>
+      </ol>
+
+      <h2 id="preguntas-frecuentes">Preguntas frecuentes generales sobre plomería en Panamá</h2>
+
+      <h3>¿Cuánto dura una instalación de plomería en Panamá?</h3>
+      <p>
+        Una instalación de plomería bien hecha (PVC + CPVC moderno) dura 25-40 años antes de necesitar cambios mayores. Reparaciones puntuales pueden durar 5-15 años según el tipo. Tuberías de cobre duran 50-70 años. Mantenimiento preventivo extiende la vida útil 20-30%.
+      </p>
+
+      <h3>¿Es legal hacer reparaciones de plomería uno mismo?</h3>
+      <p>
+        Sí, las reparaciones internas en tu propiedad son legales. Sin embargo, errores comunes (mal sellado, presiones incorrectas, materiales incompatibles) generan fugas en pocos meses que cuestan más reparar. Para reparaciones simples (grifería, sopapa) hazlo tú; para fugas, tuberías o gas, llama un profesional.
+      </p>
+
+      <h3>¿Qué hago si IDAAN tiene cortes constantes en mi zona?</h3>
+      <p>
+        Reporta a IDAAN directamente. Considera instalar un tanque de reserva (cisterna) con bomba para asegurar suministro durante cortes. Un plomero te asesora sobre la capacidad correcta según tu consumo.
+      </p>
+
+      <h3>¿Cuánto cuesta una visita de evaluación a domicilio?</h3>
+      <p>
+        La cotización inicial vía WhatsApp es gratis. Una visita de evaluación al domicilio puede tener un costo de $15-25 que se descuenta del trabajo si decides contratar. Esto es estándar en Ciudad de Panamá.
+      </p>
+
+      <h3>¿Atienden urgencias en madrugada?</h3>
+      <p>
+        Sí, atendemos emergencias 24 horas todos los días. WhatsApp y teléfono activos siempre. Tarifa nocturna se aplica entre 10 PM y 6 AM con recargo del 30-50%.
+      </p>
+
+      <h3>¿Cuánto tiempo dura una reparación de plomería?</h3>
+      <p>
+        Una reparación simple (fuga visible, destape) toma 30 minutos a 2 horas. Una reparación compleja (fuga oculta, cambio de tubería) toma 2-8 horas. Un cambio total de tuberías toma 2-3 días. La cotización siempre incluye tiempo estimado.
+      </p>
+
+      <h2>Servicios y recursos del sitio</h2>
+      <p>
+        Esta guía es el resumen general. Para detalles, precios y FAQs específicos de cada tema, visita las páginas dedicadas:
+      </p>
+      <ul>
+        {services.map((s) => (
+          <li><a href={`/servicios/${s.slug}`}>{s.name}</a></li>
+        ))}
+        <li><a href="/precios">Precios detallados de plomería en Panamá</a></li>
+        <li><a href="/emergencias-plomeria-panama">Página de emergencias 24h</a></li>
+        <li><a href="/blog">Blog: tutoriales y guías paso a paso</a></li>
+        <li><a href="/zonas">Cobertura por zonas en Ciudad de Panamá</a></li>
+        <li><a href="/sobre-nosotros">Sobre nuestro equipo</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <CTABanner />
+</BaseLayout>

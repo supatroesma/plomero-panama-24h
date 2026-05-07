@@ -2,22 +2,25 @@ export const siteConfig = {
   name: "Plomero Panamá 24h",
   shortName: "Plomero PA 24h",
   description:
-    "Plomero profesional en Panamá. Servicio 24 horas. Destape de cañerías, fugas de agua, instalación de calentadores. Cotización gratis vía WhatsApp.",
+    "Plomero profesional en Panamá. Destape de cañerías, fugas de agua, instalación de calentadores. Servicio de emergencias. Cotización gratis vía WhatsApp.",
   url: "https://plomeropanama24h.com",
 
   phone: "+507 0000-0000",
   phoneClean: "50700000000",
   whatsapp: "+507 0000-0000",
   whatsappClean: "50700000000",
-  whatsappMessage: "Hola, necesito un plomero. Vi su sitio web.",
+  whatsappMessage: "Hola, necesito información sobre servicios de plomería en Panamá. Vi su sitio web.",
   email: "contacto@plomeropanama24h.com",
 
   serviceArea: "Ciudad de Panamá y áreas cercanas",
-  hoursText: "24 horas, 7 días a la semana",
+  hoursText: "Servicio de emergencias disponible — consulta disponibilidad vía WhatsApp",
   yearEstablished: "2024",
 
   defaultOgImage: "/og-image.jpg",
   twitterHandle: "",
+
+  // Analytics
+  ga4MeasurementId: "G-10FK2BQ94H",
 
   geo: {
     latitude: "8.9824",
@@ -55,9 +58,9 @@ export const siteConfig = {
         "Detección y reparación de fugas de agua visibles y ocultas en hogares y edificios.",
     },
     {
-      name: "Plomería de Emergencia 24 Horas",
+      name: "Plomería de Emergencia",
       description:
-        "Servicio urgente de plomería disponible las 24 horas, los 7 días de la semana.",
+        "Servicio de emergencias de plomería. Consulta disponibilidad vía WhatsApp.",
     },
     {
       name: "Reparación de Tuberías",

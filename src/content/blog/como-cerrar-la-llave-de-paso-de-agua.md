@@ -101,7 +101,7 @@ Si la llave de paso no gira a mano, no la fuerces ciegamente. Probabilidades en 
 - La llave gotea cuando intentas cerrarla.
 - Quieres que un profesional te marque y verifique todas las llaves de paso de la casa.
 
-Una visita técnica para revisar y reemplazar llaves de paso cuesta $40-100 según el caso. Es inversión barata comparada con el riesgo de no poder cerrar el agua en una emergencia.
+Una visita técnica para revisar y reemplazar llaves de paso tiene un costo relativamente bajo según el caso. Es inversión razonable comparada con el riesgo de no poder cerrar el agua en una emergencia. Damos cotización gratis vía WhatsApp.
 
 ## Preguntas frecuentes
 
@@ -111,7 +111,7 @@ Una casa típica en Panamá tiene: **1 llave principal** (corta toda la casa), *
 
 ### ¿Por qué mi llave de paso gotea después de cerrarla?
 
-Si gotea desde el eje (parte superior) cuando la mueves, el empaque interno está gastado. Es reparable cambiando el empaque ($10-20 + mano de obra). No requiere cambiar toda la llave.
+Si gotea desde el eje (parte superior) cuando la mueves, el empaque interno está gastado. Es reparable cambiando solo el empaque (no requiere cambiar toda la llave), lo que reduce el costo significativamente.
 
 ### ¿Es seguro dejar el agua cerrada por días?
 

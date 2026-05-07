@@ -18,11 +18,11 @@ export const services: Service[] = [
     name: "Destape de Cañerías",
     shortName: "Destape Cañerías",
     h1: "Destape de Cañerías en Panamá",
-    metaTitle: "Destape de Cañerías en Panamá | Servicio Profesional 24h",
+    metaTitle: "Destape de Cañerías en Panamá | Servicio Profesional",
     metaDescription:
       "Servicio profesional de destape de cañerías en Ciudad de Panamá. Métodos mecánico, químico e hidrojet. Cotización gratis vía WhatsApp.",
     description:
-      "Destapamos cañerías y desagües tapados con métodos profesionales. Servicio rápido en toda Ciudad de Panamá.",
+      "Destapamos cañerías y desagües tapados con métodos profesionales. Servicio en toda Ciudad de Panamá.",
     icon: "Pipette",
     keyword: "destapa cañerias panama",
     intent: "transactional",
@@ -42,7 +42,7 @@ export const services: Service[] = [
     h1: "Reparación de Fugas de Agua en Panamá",
     metaTitle: "Reparación de Fugas de Agua en Panamá | Detección y Reparación",
     metaDescription:
-      "Detección y reparación profesional de fugas de agua visibles y ocultas en Ciudad de Panamá. Servicio 24 horas. Cotización gratis.",
+      "Detección y reparación profesional de fugas de agua visibles y ocultas en Ciudad de Panamá. Servicio de emergencias. Cotización gratis.",
     description:
       "Detectamos y reparamos fugas de agua en muros, pisos y subterráneas. Tecnología profesional, mínimo daño.",
     icon: "Droplets",
@@ -63,7 +63,7 @@ export const services: Service[] = [
     h1: "Reparación de Tuberías en Panamá",
     metaTitle: "Reparación y Cambio de Tuberías en Panamá | Plomero Profesional",
     metaDescription:
-      "Reparación y cambio de tuberías rotas, oxidadas o reventadas en Ciudad de Panamá. Servicio profesional con garantía. WhatsApp 24h.",
+      "Reparación y cambio de tuberías rotas, oxidadas o reventadas en Ciudad de Panamá. Servicio profesional. Cotización gratis vía WhatsApp.",
     description:
       "Cambiamos y reparamos tuberías de PVC, cobre, CPVC y galvanizadas. Servicio completo residencial y comercial.",
     icon: "Wrench",
@@ -84,16 +84,16 @@ export const services: Service[] = [
     h1: "Plomero 24 Horas en Panamá | Emergencias",
     metaTitle: "Plomero 24 Horas en Panamá | Servicio de Emergencia",
     metaDescription:
-      "Plomero de emergencia 24 horas en Ciudad de Panamá. Llegamos en 30-60 minutos. Tuberías reventadas, fugas, destape urgente.",
+      "Servicio de plomería de emergencia en Ciudad de Panamá. Tuberías reventadas, fugas, destape urgente. Cotización gratis vía WhatsApp.",
     description:
-      "Servicio de plomería de emergencia disponible 24 horas, los 7 días. Llegamos rápido a toda Ciudad de Panamá.",
+      "Servicio de plomería de emergencia. Atención de problemas urgentes en toda Ciudad de Panamá. Consulta disponibilidad vía WhatsApp.",
     icon: "Clock",
     keyword: "plomero 24 horas panama",
     intent: "urgent",
     subTopics: [
       "Cuándo es una emergencia de plomería real",
       "Qué hacer mientras llega el plomero",
-      "Tiempos de llegada según zona",
+      "Cobertura por zona en Ciudad de Panamá",
       "Tarifas nocturnas y de fin de semana",
       "Tipos de emergencias más comunes",
     ],
@@ -105,7 +105,7 @@ export const services: Service[] = [
     h1: "Instalación de Calentadores de Agua en Panamá",
     metaTitle: "Instalación de Calentadores de Agua en Panamá | Eléctricos y Gas",
     metaDescription:
-      "Instalación profesional de calentadores de agua en Panamá. Eléctricos, a gas, tankless. Servicio garantizado. Cotización gratis.",
+      "Instalación profesional de calentadores de agua en Panamá. Eléctricos, a gas, tankless. Cotización gratis vía WhatsApp.",
     description:
       "Instalamos calentadores eléctricos, a gas y tankless. Asesoría sobre el modelo ideal para tu casa o apartamento.",
     icon: "Flame",
@@ -126,7 +126,7 @@ export const services: Service[] = [
     h1: "Plomero Residencial a Domicilio en Panamá",
     metaTitle: "Plomero Residencial a Domicilio en Panamá | Servicio Completo",
     metaDescription:
-      "Plomero residencial a domicilio en Ciudad de Panamá. Servicios completos para casas y apartamentos. Profesional, puntual, garantía.",
+      "Plomero residencial a domicilio en Ciudad de Panamá. Servicios completos para casas y apartamentos. Cotización gratis sin compromiso.",
     description:
       "Servicios completos de plomería para hogares: instalaciones, reparaciones y mantenimiento. Visitas a domicilio en toda Ciudad de Panamá.",
     icon: "Home",

@@ -18,13 +18,13 @@ howToSteps:
   - name: "Documenta para el seguro"
     text: "Toma fotos y videos de los daños antes de mover demasiado las cosas. Tu seguro de hogar puede requerir esta evidencia si vas a reclamar."
   - name: "Llama a un plomero profesional"
-    text: "Contacta un plomero 24 horas en Panamá vía WhatsApp con descripción del problema y fotos. El plomero llega en 30-60 minutos según la zona."
+    text: "Contacta a un plomero de emergencia en Panamá vía WhatsApp con descripción del problema y fotos. Te confirma disponibilidad inmediata según la zona."
 readingTime: 7
 ---
 
 ## Resumen rápido
 
-Si se revienta una tubería en tu casa en Panamá, los pasos críticos son: **cierra la llave de paso principal**, **baja el breaker general si hay riesgo eléctrico**, **identifica la fuga**, **retira muebles y electrónicos**, **documenta con fotos** y **llama a un plomero 24 horas**. Esta guía cubre cada paso con detalle.
+Si se revienta una tubería en tu casa en Panamá, los pasos críticos son: **cierra la llave de paso principal**, **baja el breaker general si hay riesgo eléctrico**, **identifica la fuga**, **retira muebles y electrónicos**, **documenta con fotos** y **llama a un plomero de emergencia**. Esta guía cubre cada paso con detalle.
 
 Una tubería reventada puede causar miles de dólares en daños en pocas horas si no actúas rápido. El daño no es solo el agua: es la humedad permanente que arruina pintura, pisos, mobiliario y, en casos graves, debilita estructuras.
 
@@ -103,7 +103,7 @@ Una vez controlada la situación, contacta a un plomero. Recomendamos WhatsApp p
 - Si hay riesgo eléctrico aún.
 - Tu disponibilidad para que te visiten.
 
-Para emergencias en Ciudad de Panamá, llegamos en 30-60 minutos. Si es madrugada o feriado, hay un recargo del 30-50% sobre la tarifa diurna, que cotizamos antes.
+Para emergencias en Ciudad de Panamá, confirmamos disponibilidad inmediata vía WhatsApp. Si es fuera de horario regular, puede aplicar un recargo sobre la tarifa diurna, que cotizamos antes.
 
 ## Cómo prevenir tuberías reventadas en el futuro
 
@@ -120,11 +120,11 @@ La prevención es 100 veces más económica que la reparación. Estos hábitos r
 
 ### ¿Cuánto cuesta reparar una tubería reventada en Panamá?
 
-Una reparación de tubería reventada en Ciudad de Panamá cuesta entre $100 y $400 según ubicación, accesibilidad y daño. Si requiere romper pared o piso, sumar $50-150. Para servicio nocturno hay recargo del 30-50%. Más detalles en nuestra [guía de precios](/precios).
+El costo de reparar una tubería reventada en Ciudad de Panamá depende de la ubicación, accesibilidad y daño. Si requiere romper pared o piso, suma al costo. Para servicio fuera de horario regular puede aplicar recargo. Damos cotización gratis vía WhatsApp; más detalles en nuestra [guía de precios](/precios).
 
 ### ¿Cuánto tarda en llegar un plomero de emergencia?
 
-Un plomero de emergencia llega en 30-60 minutos en Ciudad de Panamá. En zonas prioritarias (Costa del Este, San Francisco, Punta Pacífica, Obarrio): 30 minutos. Zonas más alejadas: 45-90 minutos.
+El tiempo de llegada de un plomero de emergencia en Ciudad de Panamá depende de la zona, el tráfico y la disponibilidad del momento. Zonas centrales suelen tener mejor tiempo de respuesta que áreas más alejadas. Confirmamos disponibilidad inmediata cuando recibimos tu WhatsApp con la dirección.
 
 ### ¿Mi seguro cubre los daños de una tubería reventada?
 

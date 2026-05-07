@@ -5,24 +5,24 @@ export type FAQ = {
 
 export const generalFAQs: FAQ[] = [
   {
-    question: "¿Atienden emergencias de plomería las 24 horas en Panamá?",
+    question: "¿Atienden emergencias de plomería en Panamá?",
     answer:
-      "Sí, atendemos emergencias de plomería 24 horas, 7 días a la semana en toda Ciudad de Panamá. Nuestro equipo llega en 30-60 minutos según la zona.",
+      "Sí, ofrecemos servicio de emergencias de plomería en Ciudad de Panamá. Para consultar disponibilidad inmediata escríbenos por WhatsApp con la descripción del problema y tu ubicación.",
   },
   {
-    question: "¿Cuánto tarda en llegar un plomero en Panamá?",
+    question: "¿Cuánto tarda un plomero en llegar?",
     answer:
-      "Un plomero llega entre 30 y 60 minutos según la zona. Costa del Este, San Francisco, Punta Pacífica y Obarrio: 30 minutos. Panamá Oeste y áreas alejadas: 60-90 minutos.",
+      "El tiempo de llegada depende de la zona, el horario y la disponibilidad del momento. Para una estimación específica, escríbenos por WhatsApp con tu dirección y describimos disponibilidad inmediata.",
   },
   {
-    question: "¿Cuánto cuesta un plomero en Panamá?",
+    question: "¿Cuánto cobra un plomero en Panamá?",
     answer:
-      "El costo de un plomero en Panamá varía entre $30 y $200 según el tipo de servicio. Un destape simple cuesta $30-80, una reparación de fuga $50-150 y la instalación de un calentador $100-250 más materiales.",
+      "El costo depende del tipo de servicio, la complejidad y los materiales. Damos cotización gratis sin compromiso vía WhatsApp; envíanos una descripción del problema con foto si es posible.",
   },
   {
     question: "¿Dan cotización antes de empezar el trabajo?",
     answer:
-      "Sí, damos cotización gratis sin compromiso antes de empezar cualquier trabajo. La evaluación inicial es transparente y por escrito vía WhatsApp.",
+      "Sí, damos cotización gratis sin compromiso antes de empezar cualquier trabajo. La evaluación inicial es transparente y se entrega vía WhatsApp.",
   },
   {
     question: "¿En qué zonas de Panamá atienden?",
@@ -41,8 +41,8 @@ export const serviceFAQs: Record<string, FAQ[]> = {
     {
       question: "¿Cuánto tarda destapar una cañería?",
       answer:
-        "Destapar una cañería toma entre 30 minutos y 2 horas según la severidad y profundidad del taponamiento. Un destape simple de lavamanos toma 30 minutos; un drenaje principal con hidrojet puede tomar hasta 2 horas.",
-      },
+        "El tiempo varía según la severidad y profundidad del taponamiento. Un destape simple suele resolverse rápido, mientras que un drenaje principal con hidrojet puede tomar más tiempo. Te confirmamos un estimado al evaluar el caso.",
+    },
     {
       question: "¿Qué método de destape es mejor?",
       answer:
@@ -54,9 +54,9 @@ export const serviceFAQs: Record<string, FAQ[]> = {
         "Los productos químicos pueden funcionar en taponamientos leves, pero no se recomiendan para uso frecuente. Dañan tuberías de PVC, son corrosivos y peligrosos. Si el taponamiento persiste, llama a un plomero profesional.",
     },
     {
-      question: "¿Cuánto cuesta destapar una cañería en Panamá?",
+      question: "¿Cuánto cuesta destapar una cañería?",
       answer:
-        "Un destape simple en Panamá cuesta entre $30 y $80. Un destape con hidrojet o drenaje principal puede costar $80-200 según la complejidad y el tiempo requerido.",
+        "El costo depende del método requerido (mecánico, hidrojet) y la complejidad del taponamiento. Te damos cotización gratis sin compromiso después de revisar la descripción del problema vía WhatsApp.",
     },
     {
       question: "¿Cómo evito que se vuelva a tapar?",
@@ -71,9 +71,9 @@ export const serviceFAQs: Record<string, FAQ[]> = {
         "Una fuga oculta se detecta por: factura de agua que sube sin razón, manchas de humedad en paredes o pisos, olor a moho, sonido constante de agua corriendo, presión baja en las llaves. Llama un plomero con equipo de detección.",
     },
     {
-      question: "¿Cuánto cuesta reparar una fuga de agua en Panamá?",
+      question: "¿Cuánto cuesta reparar una fuga de agua?",
       answer:
-        "La reparación de una fuga visible cuesta entre $50 y $120. Una fuga oculta que requiere detección con cámara o geófono puede costar $150-400 incluyendo la reparación, según la ubicación y el daño.",
+        "El costo depende del tipo de fuga (visible u oculta), la ubicación y los materiales necesarios. Las fugas ocultas que requieren detección con cámara o geófono cuestan más. Damos cotización gratis sin compromiso vía WhatsApp.",
     },
     {
       question: "¿Las fugas de agua están cubiertas por el seguro en Panamá?",
@@ -103,9 +103,9 @@ export const serviceFAQs: Record<string, FAQ[]> = {
         "El CPVC es mejor para agua caliente porque resiste hasta 90°C. El PVC se recomienda solo para agua fría. En instalaciones modernas en Panamá, lo común es PVC para agua fría y CPVC o cobre para agua caliente.",
     },
     {
-      question: "¿Cuánto cuesta cambiar tuberías en una casa en Panamá?",
+      question: "¿Cuánto cuesta cambiar tuberías en una casa?",
       answer:
-        "El cambio total de tuberías de una casa pequeña en Panamá cuesta entre $800 y $2,500 según el tamaño, materiales y dificultad. Un cambio parcial (un baño o cocina) cuesta $200-600.",
+        "El costo varía según el tamaño de la casa, los materiales seleccionados y la dificultad del trabajo. Un cambio parcial es más económico que uno total. Damos cotización gratis sin compromiso después de evaluar el caso.",
     },
     {
       question: "¿Puedo reparar una tubería sin cortar la pared?",
@@ -127,17 +127,17 @@ export const serviceFAQs: Record<string, FAQ[]> = {
     {
       question: "¿Cobran extra por servicio nocturno o de fin de semana?",
       answer:
-        "El servicio nocturno y de fin de semana puede tener un recargo del 20-50% sobre la tarifa normal. Te damos la cotización antes de empezar para que decidas si proceder.",
+        "El servicio fuera de horario regular puede tener un recargo sobre la tarifa normal. Te damos la cotización antes de empezar para que decidas si proceder.",
     },
     {
       question: "¿Cuánto tarda un plomero de emergencia en llegar?",
       answer:
-        "Un plomero de emergencia en Ciudad de Panamá llega en 30-60 minutos. Costa del Este, San Francisco, Punta Pacífica: 30 minutos. Áreas más alejadas: 60-90 minutos.",
+        "El tiempo de llegada depende de la zona, el tráfico y la disponibilidad del momento. Confirmamos disponibilidad inmediata cuando recibimos tu WhatsApp con la dirección.",
     },
     {
-      question: "¿Atienden emergencias en madrugada?",
+      question: "¿Atienden emergencias fuera de horario?",
       answer:
-        "Sí, atendemos emergencias de plomería las 24 horas, incluyendo madrugada, fines de semana y feriados. El número de WhatsApp y teléfono está activo siempre.",
+        "Ofrecemos servicio de emergencias fuera de horario regular. Para consultar disponibilidad inmediata, escríbenos por WhatsApp con descripción del problema y tu ubicación.",
     },
     {
       question: "¿Qué hago mientras esperan al plomero?",
@@ -149,17 +149,17 @@ export const serviceFAQs: Record<string, FAQ[]> = {
     {
       question: "¿Qué calentador conviene para una familia en Panamá?",
       answer:
-        "Para una familia de 4 personas en Panamá, un calentador eléctrico de 30-40 galones o un tankless de 12 lpm es lo ideal. Si tienes conexión a gas, un calentador a gas es más eficiente a largo plazo.",
+        "Para una familia de 4 personas en Panamá, un calentador eléctrico de 30-40 galones o un tankless de capacidad media es lo común. Si tienes conexión a gas, un calentador a gas es más eficiente a largo plazo. Asesoramos sobre la mejor opción según tu caso.",
     },
     {
-      question: "¿Cuánto cuesta instalar un calentador en Panamá?",
+      question: "¿Cuánto cuesta instalar un calentador?",
       answer:
-        "La instalación de un calentador eléctrico en Panamá cuesta entre $80 y $180 (mano de obra, sin incluir el calentador). Un tankless o a gas puede costar $150-350 por la instalación específica.",
+        "El costo de instalación depende del tipo de calentador (eléctrico, a gas, tankless) y la complejidad de la conexión. El equipo se cotiza aparte. Damos cotización gratis sin compromiso vía WhatsApp.",
     },
     {
       question: "¿Cuál calentador consume menos electricidad?",
       answer:
-        "Los calentadores tankless consumen menos a largo plazo porque solo calientan el agua que usas. Los de tanque mantienen agua caliente constantemente. Si usas mucha agua caliente, el tankless ahorra entre 20% y 30% al año.",
+        "Los calentadores tankless consumen menos a largo plazo porque solo calientan el agua que usas. Los de tanque mantienen agua caliente constantemente. Si usas mucha agua caliente, el tankless puede ahorrar significativamente al año.",
     },
     {
       question: "¿Cuánto dura un calentador de agua?",
@@ -181,7 +181,7 @@ export const serviceFAQs: Record<string, FAQ[]> = {
     {
       question: "¿Hacen visitas a domicilio sin costo?",
       answer:
-        "La cotización inicial vía WhatsApp es gratis. La visita de evaluación al domicilio puede tener un costo de $15-25 que se descuenta del trabajo si decides contratarnos.",
+        "La cotización inicial vía WhatsApp es gratis. La visita de evaluación al domicilio puede tener un costo que se descuenta del trabajo si decides contratarnos. Lo confirmamos al coordinar la visita.",
     },
     {
       question: "¿Atienden apartamentos y edificios?",
@@ -191,12 +191,12 @@ export const serviceFAQs: Record<string, FAQ[]> = {
     {
       question: "¿Dan garantía sobre el trabajo?",
       answer:
-        "Sí, damos garantía sobre el trabajo realizado. La duración de la garantía depende del tipo de servicio: reparaciones tienen 30-90 días; instalaciones nuevas hasta 6 meses. Te lo confirmamos por escrito.",
+        "Sí, damos garantía sobre el trabajo realizado. La duración depende del tipo de servicio y se confirma por escrito en la cotización. La garantía cubre el trabajo realizado y no daños por mal uso posterior.",
     },
     {
       question: "¿Cómo agendo una visita?",
       answer:
-        "Escríbenos por WhatsApp con la dirección y descripción del problema. Coordinamos hora el mismo día o al día siguiente según urgencia. Para emergencias, llamamos en lugar de agendar.",
+        "Escríbenos por WhatsApp con la dirección y descripción del problema. Coordinamos hora según urgencia y disponibilidad. Para emergencias, llamamos en lugar de agendar.",
     },
   ],
 };
@@ -205,7 +205,7 @@ export const aboutFAQs: FAQ[] = [
   {
     question: "¿Desde cuándo opera Plomero Panamá 24h?",
     answer:
-      "Plomero Panamá 24h opera desde 2024 brindando servicios profesionales de plomería en toda Ciudad de Panamá. Nuestro equipo combina experiencia técnica con disponibilidad 24 horas.",
+      "Plomero Panamá 24h opera desde 2024 brindando servicios profesionales de plomería en Ciudad de Panamá. Nuestro equipo combina experiencia técnica con cotización transparente.",
   },
   {
     question: "¿Son una empresa registrada en Panamá?",
@@ -215,7 +215,7 @@ export const aboutFAQs: FAQ[] = [
   {
     question: "¿Por qué elegir un plomero local en Panamá?",
     answer:
-      "Un plomero local conoce los sistemas hidráulicos típicos de Panamá, las normas de IDAAN, los materiales disponibles localmente y los problemas más comunes del clima panameño. Llega más rápido y entiende el contexto.",
+      "Un plomero local conoce los sistemas hidráulicos típicos de Panamá, las normas de IDAAN, los materiales disponibles localmente y los problemas más comunes del clima panameño. Entiende mejor el contexto de cada caso.",
   },
   {
     question: "¿Atienden tanto residencial como comercial?",
@@ -225,7 +225,7 @@ export const aboutFAQs: FAQ[] = [
   {
     question: "¿Qué los diferencia de otros plomeros en Panamá?",
     answer:
-      "Tres factores: disponibilidad real 24/7, cotización transparente sin sorpresas, y compromiso de llegar en 30-60 minutos según la zona. No cobramos por evaluación inicial vía WhatsApp.",
+      "Cotización transparente sin sorpresas, comunicación clara vía WhatsApp y compromiso con el trabajo de calidad. No cobramos por evaluación inicial vía WhatsApp.",
   },
 ];
 
@@ -233,22 +233,22 @@ export const pricingFAQs: FAQ[] = [
   {
     question: "¿Cuánto cobra un plomero en Panamá?",
     answer:
-      "Un plomero en Panamá cobra entre $30 y $250 según el tipo de servicio. Destape simple: $30-80. Reparación de fuga: $50-150. Instalación de calentador: $100-250 más el equipo. Servicio nocturno tiene recargo.",
+      "El costo depende del tipo de servicio, la complejidad, los materiales y el horario. Damos cotización gratis sin compromiso vía WhatsApp; envíanos una descripción del problema con foto si es posible.",
   },
   {
     question: "¿Por qué los precios de plomería varían tanto?",
     answer:
-      "Los precios varían por: complejidad del problema, materiales necesarios, ubicación (Costa del Este es distinto a Panamá Oeste), horario (nocturno cuesta más) y tiempo de trabajo. Pide siempre cotización antes.",
+      "Los precios varían por: complejidad del problema, materiales necesarios, ubicación, horario (nocturno cuesta más) y tiempo de trabajo. Pide siempre cotización antes de empezar cualquier trabajo.",
   },
   {
     question: "¿Cobran por la cotización?",
     answer:
-      "La cotización inicial vía WhatsApp es gratis. Una visita de evaluación al domicilio puede tener un costo simbólico ($15-25) que se descuenta del trabajo si decides contratarnos.",
+      "La cotización inicial vía WhatsApp es gratis. Una visita de evaluación al domicilio puede tener un costo simbólico que se descuenta del trabajo si decides contratarnos.",
   },
   {
     question: "¿Cómo evito que un plomero me cobre de más?",
     answer:
-      "Pide cotización por escrito antes de empezar, compara con 2-3 plomeros, pregunta qué incluye (mano de obra, materiales, garantía), y desconfía de quien quiera empezar sin darte un estimado claro.",
+      "Pide cotización por escrito antes de empezar, compara con varios plomeros, pregunta qué incluye (mano de obra, materiales, garantía), y desconfía de quien quiera empezar sin darte un estimado claro.",
   },
   {
     question: "¿Qué métodos de pago aceptan?",
@@ -259,19 +259,19 @@ export const pricingFAQs: FAQ[] = [
 
 export const emergencyFAQs: FAQ[] = [
   {
-    question: "¿Atienden emergencias de plomería en madrugada en Panamá?",
+    question: "¿Atienden emergencias de plomería fuera de horario en Panamá?",
     answer:
-      "Sí, atendemos emergencias 24 horas todos los días, incluyendo madrugadas, fines de semana y feriados. WhatsApp y teléfono activos siempre. Llegamos en 30-60 minutos según la zona.",
+      "Sí, ofrecemos servicio de emergencias fuera de horario regular. Para consultar disponibilidad inmediata, escríbenos por WhatsApp con la descripción del problema y tu ubicación.",
   },
   {
-    question: "¿Cuánto cuesta un plomero de emergencia en Panamá?",
+    question: "¿Cuánto cuesta un plomero de emergencia?",
     answer:
-      "Un plomero de emergencia en Panamá cuesta entre $50 y $200 según el problema. Hay un recargo del 20-50% para servicios nocturnos y de fin de semana. La cotización se da antes de empezar.",
+      "El costo depende del problema, la zona y el horario. Hay un recargo posible para servicios nocturnos y de fin de semana. La cotización se da antes de empezar el trabajo.",
   },
   {
     question: "¿Qué hago si revienta una tubería de noche?",
     answer:
-      "Cierra la llave de paso principal de tu casa, retira muebles y aparatos eléctricos del agua, llama a un plomero 24h. Si hay riesgo eléctrico, baja el breaker general antes de intentar nada.",
+      "Cierra la llave de paso principal de tu casa, retira muebles y aparatos eléctricos del agua, llama a un plomero. Si hay riesgo eléctrico, baja el breaker general antes de intentar nada.",
   },
   {
     question: "¿Qué emergencias atienden con prioridad?",

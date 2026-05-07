@@ -9,25 +9,25 @@ const faqs = serviceFAQs['instalacion-calentadores'];
 
 const calentadoresTable = {
   caption: 'Tipos de calentadores de agua para Panamá',
-  headers: ['Tipo', 'Costo equipo', 'Eficiencia', 'Mejor para'],
+  headers: ['Tipo', 'Costo relativo', 'Eficiencia', 'Mejor para'],
   rows: [
-    ['Eléctrico de tanque', '$250-450', 'Media', 'Apartamentos, 1-3 personas'],
-    ['A gas (tanque)', '$400-800', 'Alta', 'Casas con gas, familias 4+'],
-    ['Tankless eléctrico', '$500-1,200', 'Muy alta', 'Familias grandes, ahorro a largo plazo'],
-    ['Tankless a gas', '$600-1,500', 'Muy alta', 'Casas grandes, alto consumo'],
-    ['Solar', '$1,000-2,500', 'Excelente clima Panamá', 'Inversión a largo plazo'],
+    ['Eléctrico de tanque', 'Bajo', 'Media', 'Apartamentos, 1-3 personas'],
+    ['A gas (tanque)', 'Medio', 'Alta', 'Casas con gas, familias 4+'],
+    ['Tankless eléctrico', 'Alto', 'Muy alta', 'Familias grandes, ahorro a largo plazo'],
+    ['Tankless a gas', 'Alto', 'Muy alta', 'Casas grandes, alto consumo'],
+    ['Solar', 'Muy alto', 'Excelente clima Panamá', 'Inversión a largo plazo'],
   ],
 };
 
 const consumoTable = {
-  caption: 'Consumo anual estimado en Panamá',
-  headers: ['Tipo', 'Consumo eléctrico anual', 'Costo aprox. anual'],
+  caption: 'Consumo anual estimado en Panamá (referencial)',
+  headers: ['Tipo', 'Consumo anual aproximado', 'Costo operativo relativo'],
   rows: [
-    ['Eléctrico tanque (40 gal)', '3,500-4,500 kWh', '$650-840'],
-    ['Tankless eléctrico', '2,000-3,000 kWh', '$370-560'],
-    ['A gas (tanque)', '180-220 m³ gas', '$300-400'],
-    ['Tankless a gas', '120-160 m³ gas', '$200-280'],
-    ['Solar (con respaldo)', '500-1,500 kWh', '$90-280'],
+    ['Eléctrico tanque (40 gal)', 'Alto en electricidad', 'Alto'],
+    ['Tankless eléctrico', 'Medio en electricidad', 'Medio'],
+    ['A gas (tanque)', 'Medio en gas', 'Medio'],
+    ['Tankless a gas', 'Bajo en gas', 'Bajo'],
+    ['Solar (con respaldo)', 'Muy bajo en electricidad', 'Muy bajo'],
   ],
 };
 ---
@@ -69,7 +69,7 @@ const consumoTable = {
 
   <h2>¿Cuánto cuesta instalar un calentador en Panamá?</h2>
   <p>
-    La mano de obra de instalación de un calentador eléctrico cuesta entre $80 y $180 (sin incluir el calentador). Un tankless o a gas sube a $150-350 por la complejidad de la conexión. Un solar cuesta $200-500 en instalación. El equipo se cotiza aparte. Detalles completos en <a href="/precios">guía de precios</a>.
+    El costo de instalación depende del tipo de calentador y la complejidad de la conexión. Las instalaciones a gas, tankless o solar tienen un costo mayor que las eléctricas básicas por la complejidad de conexión. El equipo se cotiza aparte. Damos cotización gratis vía WhatsApp; consulta factores de precio en nuestra <a href="/precios">página de precios</a>.
   </p>
 
   <h3>¿Qué incluye la instalación?</h3>
@@ -111,7 +111,7 @@ const consumoTable = {
     <li><strong>Apretar conexiones eléctricas o de gas</strong> si están flojas.</li>
   </ol>
   <p>
-    El mantenimiento profesional cuesta $40-80 al año y ahorra reparaciones de $200-500.
+    El mantenimiento profesional anual tiene un costo relativamente bajo y ahorra reparaciones más costosas a futuro.
   </p>
 
   <h2>¿Reparamos calentadores que dejaron de calentar?</h2>
@@ -119,10 +119,10 @@ const consumoTable = {
     Sí, reparamos calentadores eléctricos, a gas y tankless. Las fallas más comunes son:
   </p>
   <ul>
-    <li><strong>Termostato dañado:</strong> el agua no calienta o calienta de más. Cambio de termostato: $30-60 + mano de obra.</li>
-    <li><strong>Resistencia quemada (eléctrico):</strong> no calienta o tarda mucho. Cambio: $25-50 + mano de obra.</li>
-    <li><strong>Válvula de gas defectuosa (gas):</strong> no enciende. Cambio: $50-150 + mano de obra.</li>
-    <li><strong>Sensor de flujo (tankless):</strong> no enciende cuando abres la llave. Cambio: $40-100 + mano de obra.</li>
+    <li><strong>Termostato dañado:</strong> el agua no calienta o calienta de más. Reparación con cambio de pieza.</li>
+    <li><strong>Resistencia quemada (eléctrico):</strong> no calienta o tarda mucho. Reparación con cambio de pieza.</li>
+    <li><strong>Válvula de gas defectuosa (gas):</strong> no enciende. Reparación con cambio de pieza.</li>
+    <li><strong>Sensor de flujo (tankless):</strong> no enciende cuando abres la llave. Reparación con cambio de pieza.</li>
     <li><strong>Corrosión del tanque:</strong> fuga interna. No es reparable, requiere reemplazo.</li>
   </ul>
   <p>

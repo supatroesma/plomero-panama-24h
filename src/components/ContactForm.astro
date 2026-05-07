@@ -61,7 +61,15 @@ const { formName = 'contacto' } = Astro.props;
     Enviar solicitud
   </button>
 
-  <p class="text-xs text-[color:var(--color-text-muted)] mt-3 text-center">
-    Te respondemos en menos de 30 minutos vía WhatsApp.
+  <p class="text-xs text-[color:var(--color-text-muted)] mt-3 text-center leading-relaxed">
+    Respuesta vía WhatsApp. Al enviar este formulario aceptas nuestra
+    <a href="/politica-de-privacidad" class="text-[color:var(--color-primary)] underline">Política de Privacidad</a>.
+    Tus datos se usan únicamente para coordinar el servicio solicitado.
   </p>
 </form>
+
+{/*
+  TODO LEGAL: Si se activa grabación de llamadas en el futuro,
+  agregar aviso de consentimiento explícito según Constitución de
+  Panamá Art. 29 y consultar con abogado local antes de activar.
+*/}

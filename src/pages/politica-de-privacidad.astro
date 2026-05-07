@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadCrumbs from '../components/BreadCrumbs.astro';
+import { siteConfig } from '../data/site';
+
+const breadcrumbs = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Política de Privacidad', url: '/politica-de-privacidad' },
+];
+
+const lastUpdated = '6 de mayo de 2026';
+---
+
+<BaseLayout
+  title="Política de Privacidad | Plomero Panamá 24h"
+  description="Política de privacidad de Plomero Panamá 24h. Tratamiento de datos personales según la Ley 81 de 2019 de Panamá. Tus datos se usan únicamente para coordinar el servicio."
+  schema={{
+    type: 'page',
+    pageTitle: 'Política de Privacidad',
+    pageDescription: 'Política de tratamiento de datos personales de Plomero Panamá 24h.',
+    breadcrumbs,
+  }}
+>
+  <BreadCrumbs items={breadcrumbs} />
+
+  <article class="container-site py-6 md:py-10 max-w-3xl">
+    <header class="mb-8">
+      <h1 class="mb-4">Política de Privacidad</h1>
+      <p class="text-sm text-[color:var(--color-text-muted)]">
+        Última actualización: {lastUpdated}
+      </p>
+    </header>
+
+    <div class="prose-content">
+      <p>
+        En {siteConfig.name} respetamos tu privacidad y tratamos tus datos personales conforme a la <strong>Ley 81 de 2019 sobre Protección de Datos Personales de la República de Panamá</strong>. Esta política explica qué datos recopilamos, para qué los usamos, con quién los compartimos y qué derechos tienes sobre ellos.
+      </p>
+
+      <h2>1. Quién recopila los datos</h2>
+      <p>
+        El responsable del tratamiento de tus datos es <strong>{siteConfig.name}</strong>, operando en Ciudad de Panamá, República de Panamá. Para cualquier consulta sobre tus datos puedes contactarnos vía:
+      </p>
+      <ul>
+        <li>Correo electrónico: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+        <li>Sitio web: <a href={siteConfig.url}>{siteConfig.url}</a></li>
+      </ul>
+
+      <h2>2. Qué datos recopilamos</h2>
+      <p>
+        Recopilamos únicamente los datos necesarios para coordinar y prestar el servicio de plomería que solicitas. Específicamente:
+      </p>
+      <ul>
+        <li><strong>Nombre completo</strong> (a través del formulario de contacto o WhatsApp).</li>
+        <li><strong>Número de teléfono o WhatsApp</strong>.</li>
+        <li><strong>Mensaje o descripción del problema</strong> que envías a través del formulario o WhatsApp.</li>
+        <li><strong>Dirección o zona</strong> que tú nos compartes para coordinar el servicio.</li>
+        <li><strong>Datos de navegación anónimos</strong> recopilados por Google Analytics (páginas visitadas, tiempo en el sitio, dispositivo). Estos datos no permiten identificarte personalmente.</li>
+      </ul>
+      <p>
+        <strong>No recopilamos</strong>: datos bancarios, número de identificación personal (cédula, pasaporte) salvo que tú los compartas voluntariamente, datos de salud, ni datos sensibles.
+      </p>
+
+      <h2>3. Para qué usamos tus datos</h2>
+      <p>
+        Tus datos se usan exclusivamente para:
+      </p>
+      <ul>
+        <li>Coordinar y prestar el servicio de plomería que solicitas.</li>
+        <li>Comunicarnos contigo para confirmar disponibilidad, horario y cotización.</li>
+        <li>Atender consultas o seguimiento posventa.</li>
+        <li>Mejorar nuestro servicio mediante análisis agregado de uso del sitio (sin identificarte personalmente).</li>
+      </ul>
+      <p>
+        <strong>No usamos tus datos para</strong>: marketing no solicitado, venta a terceros, ni fines distintos a los descritos en esta política.
+      </p>
+
+      <h2>4. Con quién compartimos tus datos</h2>
+      <p>
+        Tus datos pueden ser compartidos únicamente con:
+      </p>
+      <ul>
+        <li><strong>El técnico o plomero asignado</strong> a tu servicio, para que pueda contactarte y llegar a la dirección. El técnico recibe solo la información necesaria para realizar el servicio.</li>
+        <li><strong>Proveedores tecnológicos</strong> que nos ayudan a operar el sitio (por ejemplo, Netlify para hosting, Google Analytics para métricas anónimas). Estos proveedores tienen sus propias políticas de privacidad y procesan los datos bajo nuestras instrucciones.</li>
+      </ul>
+      <p>
+        <strong>No compartimos tus datos con terceros</strong> con fines comerciales, publicitarios ni de ningún otro tipo no autorizado por ti.
+      </p>
+
+      <h2>5. Cómo protegemos tus datos</h2>
+      <p>
+        Aplicamos medidas razonables para proteger tus datos:
+      </p>
+      <ul>
+        <li><strong>Acceso restringido:</strong> solo personal autorizado tiene acceso a los datos del formulario de contacto y conversaciones de WhatsApp.</li>
+        <li><strong>Uso exclusivo operativo:</strong> los datos se usan únicamente para coordinar y prestar el servicio solicitado.</li>
+        <li><strong>Conexión segura:</strong> el sitio web usa HTTPS para cifrar la comunicación entre tu navegador y nuestros servidores.</li>
+        <li><strong>Retención limitada:</strong> conservamos tus datos solo por el tiempo necesario para prestar el servicio y cumplir obligaciones legales aplicables. Puedes solicitar la eliminación cuando quieras.</li>
+      </ul>
+
+      <h2>6. Tus derechos como titular de los datos</h2>
+      <p>
+        Conforme a la Ley 81 de 2019 de Panamá, tienes los siguientes derechos sobre tus datos personales:
+      </p>
+      <ul>
+        <li><strong>Derecho de acceso:</strong> solicitar información sobre los datos que tenemos de ti.</li>
+        <li><strong>Derecho de rectificación:</strong> corregir datos inexactos o desactualizados.</li>
+        <li><strong>Derecho de cancelación:</strong> solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
+        <li><strong>Derecho de oposición:</strong> oponerte al tratamiento de tus datos en determinadas circunstancias.</li>
+      </ul>
+      <p>
+        Para ejercer cualquiera de estos derechos, escríbenos a <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> con tu nombre, teléfono y la solicitud específica. Responderemos en un plazo razonable.
+      </p>
+
+      <h2>7. Cookies y tecnologías de medición</h2>
+      <p>
+        Este sitio utiliza Google Analytics 4 para medir el uso de la página de forma anónima. Esta herramienta puede instalar cookies en tu navegador para identificar visitas únicas y entender qué páginas son más visitadas. La información recopilada es agregada y no permite identificarte personalmente.
+      </p>
+      <p>
+        Si prefieres no ser rastreado, puedes:
+      </p>
+      <ul>
+        <li>Configurar tu navegador para bloquear cookies de terceros.</li>
+        <li>Instalar la extensión <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out</a>.</li>
+      </ul>
+
+      <h2>8. Menores de edad</h2>
+      <p>
+        Nuestro servicio está dirigido a personas mayores de edad. No recopilamos intencionalmente datos de menores de edad. Si descubres que un menor ha enviado datos a través de nuestro formulario, contáctanos y los eliminaremos.
+      </p>
+
+      <h2>9. Cambios a esta política</h2>
+      <p>
+        Podemos actualizar esta política de privacidad cuando sea necesario. Cuando hagamos cambios sustanciales, los publicaremos en esta misma página con un aviso previo y actualizaremos la fecha de "Última actualización" al inicio del documento. Te recomendamos revisar esta página periódicamente.
+      </p>
+
+      <h2>10. Marco legal aplicable</h2>
+      <p>
+        Esta política se rige por la <strong>Ley 81 de 2019 sobre Protección de Datos Personales de la República de Panamá</strong> y demás normativa aplicable. Cualquier disputa relacionada con el tratamiento de tus datos personales será resuelta conforme a las leyes de Panamá.
+      </p>
+
+      <h2>11. Contacto</h2>
+      <p>
+        Si tienes preguntas, dudas o solicitudes sobre esta política de privacidad o sobre el tratamiento de tus datos, escríbenos a:
+      </p>
+      <ul>
+        <li>Correo: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+        <li>Sitio web: <a href={siteConfig.url}>{siteConfig.url}</a></li>
+        <li>Página de contacto: <a href="/contacto">/contacto</a></li>
+      </ul>
+
+      <p class="mt-8 text-sm text-[color:var(--color-text-muted)] italic">
+        Esta política fue redactada para cumplir con la legislación panameña vigente sobre protección de datos personales. Si necesitas más información sobre tus derechos, puedes consultar la Autoridad Nacional de Transparencia y Acceso a la Información (ANTAI) de Panamá.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

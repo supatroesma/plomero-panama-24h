@@ -75,7 +75,7 @@ Este método es seguro para todas las tuberías y no genera vapores tóxicos. Es
 5. Retira de golpe en la última subida.
 6. Si el agua empieza a bajar, sigue bombeando hasta que baje toda.
 
-**Tip:** una sopapa con falda (la moderna en forma de campana) funciona mejor que la clásica plana. Cuesta $5-10 en cualquier ferretería de Panamá.
+**Tip:** una sopapa con falda (la moderna en forma de campana) funciona mejor que la clásica plana. Disponible a precio bajo en cualquier ferretería de Panamá.
 
 ## Método 4: Cable destapador manual (sonda)
 
@@ -84,7 +84,7 @@ Este método es seguro para todas las tuberías y no genera vapores tóxicos. Es
 
 ### Pasos
 
-1. Compra una sonda manual ($8-15 en ferretería).
+1. Compra una sonda manual (disponible a precio bajo en cualquier ferretería).
 2. Retira el tapón del desagüe del lavamanos.
 3. Introduce el cable empujando suavemente.
 4. Cuando sientas resistencia, gira el cable mientras empujas.
@@ -126,7 +126,7 @@ Si después de probar los 5 métodos el lavamanos sigue tapado, o si **todos los
 
 En estos casos llama un plomero con cable mecánico profesional o hidrojet. Más detalles en nuestro [servicio de destape de cañerías](/servicios/destape-canerias).
 
-**Costo aproximado:** un destape profesional de lavamanos en Panamá cuesta $30-80, drenaje principal $80-200. Detalles en [precios](/precios).
+**Costo:** el destape profesional de lavamanos tiene costo relativamente bajo; el destape de un drenaje principal con hidrojet cuesta más por el equipo y tiempo requerido. Damos cotización gratis vía WhatsApp; más en [precios](/precios).
 
 ## Cómo evitar que se vuelva a tapar
 
@@ -150,7 +150,7 @@ Si destapar el lavamanos hace que el agua aparezca en la ducha o el inodoro, el 
 
 ### ¿Cuánto tarda destapar con métodos caseros?
 
-Cada método toma 15-30 minutos. Si pruebas los 5, planea 2 horas en total. Un plomero profesional resuelve el 90% de casos en menos de 1 hora.
+Cada método toma de pocos minutos a media hora. Si pruebas los 5, planea un par de horas en total. Un plomero profesional suele resolver casos típicos en una visita corta.
 
 ### ¿Funciona vinagre solo, sin bicarbonato?
 

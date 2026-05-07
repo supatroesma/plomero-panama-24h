@@ -7,31 +7,29 @@ import { serviceFAQs } from '../../data/faqs';
 const service = getService('plomero-24-horas')!;
 const faqs = serviceFAQs['plomero-24-horas'];
 
-const tiemposTable = {
-  caption: 'Tiempos de llegada por zona en Ciudad de Panamá',
-  headers: ['Zona', 'Tiempo de llegada', 'Notas'],
+const coberturaTable = {
+  caption: 'Cobertura por zona en Ciudad de Panamá',
+  headers: ['Zona', 'Tipo de cobertura', 'Notas'],
   rows: [
-    ['Costa del Este', '30 min', 'Cobertura prioritaria'],
-    ['San Francisco', '30 min', 'Cobertura prioritaria'],
-    ['Punta Pacífica', '30 min', 'Especialistas en torres'],
-    ['Obarrio', '30-45 min', 'Residencial y comercial'],
-    ['Bella Vista / El Cangrejo', '30-45 min', 'Cobertura completa'],
-    ['Vía España / Calle 50', '30-45 min', 'Comercial y residencial'],
-    ['Panamá Pacífico', '45-60 min', 'Cobertura con tiempo extendido'],
-    ['Panamá Oeste / áreas alejadas', '60-90 min', 'Cargo por traslado adicional'],
+    ['Costa del Este', 'Cobertura prioritaria', 'Torres residenciales'],
+    ['San Francisco', 'Cobertura prioritaria', 'Edificios y casas'],
+    ['Punta Pacífica', 'Cobertura prioritaria', 'Especialistas en torres'],
+    ['Obarrio', 'Cobertura completa', 'Residencial y comercial'],
+    ['Bella Vista / El Cangrejo', 'Cobertura completa', 'Edificios y casas'],
+    ['Vía España / Calle 50', 'Cobertura completa', 'Comercial y residencial'],
+    ['Panamá Pacífico', 'Cobertura disponible', 'Casas y condominios'],
+    ['Áreas alejadas', 'Consultar disponibilidad', 'Cargo por traslado adicional'],
   ],
 };
 
 const tarifasTable = {
-  caption: 'Recargos por horario de servicio',
-  headers: ['Horario', 'Recargo sobre tarifa diurna', 'Aplica desde'],
+  caption: 'Horarios de servicio y posibles recargos',
+  headers: ['Horario', 'Tipo de tarifa', 'Aplica'],
   rows: [
-    ['Diurno laboral', '0% (tarifa base)', '7 AM - 6 PM lunes a viernes'],
-    ['Vespertino', '+10-15%', '6 PM - 10 PM'],
-    ['Nocturno', '+30-50%', '10 PM - 6 AM'],
-    ['Fin de semana diurno', '+15-25%', 'Sábados y domingos 7 AM - 6 PM'],
-    ['Fin de semana nocturno', '+40-50%', 'Sábados y domingos 10 PM - 6 AM'],
-    ['Feriados', '+25-40%', 'Feriados nacionales'],
+    ['Diurno laboral', 'Tarifa base', 'Lunes a viernes en horario regular'],
+    ['Vespertino / Nocturno', 'Recargo posible', 'Fuera de horario regular'],
+    ['Fin de semana', 'Recargo posible', 'Sábados y domingos'],
+    ['Feriados', 'Recargo posible', 'Feriados nacionales'],
   ],
 };
 ---
@@ -39,7 +37,7 @@ const tarifasTable = {
 <ServiceLayout service={service} faqs={faqs}>
   <h2>¿Cuándo llamar a un plomero 24 horas en Panamá?</h2>
   <p>
-    Llama a un plomero 24 horas cuando el problema está causando daño activo y no puede esperar a la mañana. Tubería reventada, fuga incontrolable, inodoro desbordándose, sin agua en toda la casa, fuga de gas en calentador. Si el problema solo es incómodo pero no destructivo, suele ser más económico esperar al horario diurno normal.
+    Llama a un plomero de emergencia cuando el problema está causando daño activo y no puede esperar a la mañana. Tubería reventada, fuga incontrolable, inodoro desbordándose, sin agua en toda la casa, fuga de gas en calentador. Si el problema solo es incómodo pero no destructivo, suele ser más económico esperar al horario diurno regular.
   </p>
 
   <h3>¿Qué se considera una emergencia de plomería real?</h3>
@@ -54,12 +52,17 @@ const tarifasTable = {
     Si dudas, manda un WhatsApp con fotos. Te asesoramos sin costo si conviene esperar o atender ya.
   </p>
 
-  <h2>¿Cuánto tarda en llegar un plomero de emergencia en Panamá?</h2>
+  <h2>¿Cuánto tarda un plomero de emergencia en llegar a Panamá?</h2>
   <p>
-    Un plomero de emergencia llega en 30-60 minutos a la mayoría de Ciudad de Panamá. El tiempo depende de la zona y el tráfico. En zonas prioritarias (Costa del Este, San Francisco, Punta Pacífica) el promedio real es 30 minutos. En zonas más alejadas (Panamá Pacífico) sube a 45-60 minutos. Confirmamos el tiempo exacto al recibir tu WhatsApp.
+    El tiempo de llegada depende de la zona, el tráfico y la disponibilidad del momento. Confirmamos disponibilidad inmediata cuando recibimos tu WhatsApp con la dirección. No prometemos lo que no podemos cumplir.
   </p>
 
-  <ComparisonTable {...tiemposTable} />
+  <h2>Cobertura por zona</h2>
+  <p>
+    Estas son las zonas donde tenemos cobertura, con notas sobre el tipo de servicio típico en cada una.
+  </p>
+
+  <ComparisonTable {...coberturaTable} />
 
   <h2>¿Qué hacer mientras llega el plomero?</h2>
   <p>
@@ -72,21 +75,21 @@ const tarifasTable = {
     <li><strong>Retira muebles, electrónicos y documentos</strong> de la zona afectada.</li>
     <li><strong>Coloca toallas o baldes</strong> para contener el agua acumulada.</li>
     <li><strong>Documenta con fotos</strong> antes de mover demasiado (para tu seguro).</li>
-    <li><strong>No intentes reparar tú mismo</strong> si no estás seguro: empeorar la fuga es peor que esperar 30 minutos.</li>
+    <li><strong>No intentes reparar tú mismo</strong> si no estás seguro: empeorar la fuga es peor que esperar al plomero.</li>
   </ol>
   <p>
-    Para una guía completa con más detalle, ve nuestra <a href="/emergencias-plomeria-panama">página de emergencias 24h</a>.
+    Para una guía completa con más detalle, ve nuestra <a href="/emergencias-plomeria-panama">página de emergencias</a>.
   </p>
 
   <h2>¿Cuánto cobran las tarifas nocturnas y de fin de semana?</h2>
   <p>
-    El servicio de plomero 24 horas en Panamá tiene un recargo del 20-50% sobre la tarifa diurna estándar. El recargo aplica según horario y día. Esto cubre la disponibilidad fuera de horario y el costo de tener técnicos en guardia.
+    El servicio de plomería fuera de horario regular puede tener un recargo sobre la tarifa diurna. El recargo aplica según horario y día. Esto cubre la disponibilidad fuera de horario.
   </p>
 
   <ComparisonTable {...tarifasTable} />
 
   <p>
-    El recargo se calcula sobre el costo del trabajo, no se suma una cuota fija. Te damos cotización completa por WhatsApp antes de que el técnico salga, para que decidas si proceder o esperar al diurno normal.
+    Te damos cotización completa por WhatsApp antes de que el técnico salga, para que decidas si proceder o esperar al diurno regular. Más información sobre factores que afectan el precio en nuestra <a href="/precios">página de precios</a>.
   </p>
 
   <h2>¿Qué tipos de emergencias atendemos más?</h2>
@@ -104,17 +107,17 @@ const tarifasTable = {
 
   <h2>¿Atendemos en madrugada y feriados?</h2>
   <p>
-    Sí, atendemos emergencias 24 horas todos los días, incluyendo madrugadas, fines de semana y feriados nacionales. WhatsApp y teléfono activos siempre. La tarifa nocturna se aplica entre 10 PM y 6 AM con recargo del 30-50%, cotizada antes.
+    Sí, ofrecemos servicio de emergencias fuera de horario regular, incluyendo madrugadas, fines de semana y feriados nacionales. Para consultar disponibilidad inmediata, escríbenos por WhatsApp con descripción del problema y tu ubicación. La tarifa fuera de horario se cotiza antes.
   </p>
 
   <h2>¿Por qué elegirnos para una emergencia?</h2>
   <ul>
-    <li><strong>Disponibilidad real 24/7</strong>, no contestador.</li>
-    <li><strong>Llegada en 30-60 minutos</strong> según la zona, confirmada antes de salir.</li>
-    <li><strong>Cotización transparente</strong> antes de empezar el trabajo, incluyendo el recargo nocturno.</li>
+    <li><strong>Servicio de emergencias</strong> con respuesta rápida.</li>
+    <li><strong>Confirmación de disponibilidad por WhatsApp</strong> antes de coordinar.</li>
+    <li><strong>Cotización transparente</strong> antes de empezar el trabajo, incluyendo cualquier recargo aplicable.</li>
     <li><strong>Herramientas profesionales</strong> para emergencias (hidrojet, geófono, cámara endoscópica).</li>
     <li><strong>Pago al finalizar</strong>, una vez verifiques que el problema quedó resuelto.</li>
-    <li><strong>Garantía sobre el trabajo</strong> realizado, por escrito.</li>
+    <li><strong>Trabajo con garantía</strong> por escrito.</li>
   </ul>
 
   <h2>¿Qué hago si la emergencia es mientras estoy fuera de la casa?</h2>

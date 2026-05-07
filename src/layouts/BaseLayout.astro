@@ -55,6 +55,22 @@ const schemaProps: SchemaProps = schema
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <SchemaMarkup {...schemaProps} />
+
+    {siteConfig.ga4MeasurementId && (
+      <>
+        <script
+          is:inline
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.ga4MeasurementId}`}
+        ></script>
+        <script is:inline define:vars={{ gaId: siteConfig.ga4MeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
   </head>
   <body class="min-h-screen flex flex-col bg-white text-[color:var(--color-text-base)]">
     <Header />

@@ -42,7 +42,7 @@ La sopapa funciona en el 80% de los casos. La clave es la **técnica correcta**:
 
 ### Equipo
 
-Una sopapa con falda (forma de campana, $5-12 en ferretería) es mucho mejor que la plana. La falda se mete en el desagüe y crea sello perfecto.
+Una sopapa con falda (forma de campana, disponible en cualquier ferretería) es mucho mejor que la plana. La falda se mete en el desagüe y crea sello perfecto.
 
 ### Pasos
 
@@ -79,7 +79,7 @@ Si la sopapa y el detergente no resolvieron, el bloqueo es más profundo. Un **c
 
 ### Equipo
 
-Closet auger: $15-30 en ferretería. Es un cable con manivela y una funda protectora que cuida la porcelana.
+Closet auger: disponible en ferretería a precio razonable. Es un cable con manivela y una funda protectora que cuida la porcelana.
 
 ### Pasos
 
@@ -116,7 +116,7 @@ Llama a un plomero si:
 - **El inodoro tiene más de 20 años** y se tapa frecuentemente: probable problema estructural.
 - **Hay olor de aguas negras** además del taponamiento: posible problema en sifón principal.
 
-**Costo aproximado:** un destape profesional de inodoro en Panamá cuesta $40-90. Si el bloqueo es objeto sólido y requiere desmontar el inodoro, sube a $80-150.
+**Costo aproximado:** el destape profesional de inodoro tiene costo relativamente bajo. Si el bloqueo es objeto sólido y requiere desmontar el inodoro, el costo sube. Damos cotización gratis vía WhatsApp.
 
 ## Cómo prevenir que el inodoro se tape
 
@@ -142,7 +142,7 @@ Causas comunes: descarga débil (revisar cisterna), inodoro de bajo flujo siendo
 
 ### ¿Cuánto cuesta un plomero para destapar inodoro en Panamá?
 
-Entre $40 y $90 según la complejidad. Si requiere desmontar el inodoro o usar cámara endoscópica, sube a $80-150. Tarifa nocturna o de fin de semana tiene recargo. [Detalles de precios](/precios).
+El costo depende de la complejidad. Si requiere desmontar el inodoro o usar cámara endoscópica, el costo sube. La tarifa fuera de horario regular puede tener recargo. Damos cotización gratis vía WhatsApp; más [detalles de precios](/precios).
 
 ### ¿Es peligroso usar la sopapa muy fuerte?
 

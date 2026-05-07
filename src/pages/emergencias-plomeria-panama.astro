@@ -8,20 +8,20 @@ import { emergencyFAQs } from '../data/faqs';
 
 const breadcrumbs = [
   { name: 'Inicio', url: '/' },
-  { name: 'Emergencias 24h', url: '/emergencias-plomeria-panama' },
+  { name: 'Emergencias', url: '/emergencias-plomeria-panama' },
 ];
 
 const phoneHref = buildPhoneLink();
-const waHref = buildWhatsAppLink('Emergencia de plomería. Necesito un plomero AHORA.');
+const waHref = buildWhatsAppLink('Emergencia de plomería. Necesito información urgente sobre disponibilidad.');
 ---
 
 <BaseLayout
-  title="Emergencias de Plomería en Panamá 24h | Atención Inmediata"
-  description="Emergencia de plomería en Panamá. Tubería reventada, fuga incontrolable, sin agua. Llegamos en 30-60 minutos. Disponible 24h, 7 días. WhatsApp directo."
+  title="Emergencias de Plomería en Panamá | Atención Inmediata"
+  description="Emergencia de plomería en Panamá. Tubería reventada, fuga incontrolable, sin agua. Atención de emergencias. Consulta disponibilidad inmediata vía WhatsApp."
   schema={{
     type: 'page',
     pageTitle: 'Emergencias de Plomería en Panamá',
-    pageDescription: 'Servicio de emergencia de plomería 24h en Ciudad de Panamá.',
+    pageDescription: 'Servicio de emergencia de plomería en Ciudad de Panamá.',
     breadcrumbs,
     faqs: emergencyFAQs,
   }}
@@ -32,11 +32,11 @@ const waHref = buildWhatsAppLink('Emergencia de plomería. Necesito un plomero A
     <div class="container-site py-10 md:py-16">
       <div class="max-w-3xl">
         <span class="inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm font-bold mb-4">
-          <span aria-hidden="true">🚨</span> EMERGENCIA 24/7
+          <span aria-hidden="true">🚨</span> ATENCIÓN DE EMERGENCIAS
         </span>
-        <h1 class="text-white mb-4">Emergencia de Plomería en Panamá Ahora</h1>
+        <h1 class="text-white mb-4">Emergencia de Plomería en Panamá</h1>
         <p class="text-lg md:text-xl text-white/95 mb-6 leading-relaxed">
-          Tubería reventada, fuga sin control, inodoro desbordándose, sin agua en toda la casa. Llegamos en <strong>30-60 minutos</strong> a toda Ciudad de Panamá. Disponible 24 horas, todos los días.
+          Tubería reventada, fuga sin control, inodoro desbordándose, sin agua en toda la casa. Atendemos emergencias en Ciudad de Panamá. <strong>Consulta disponibilidad inmediata</strong> escribiéndonos por WhatsApp.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-3">
@@ -63,7 +63,7 @@ const waHref = buildWhatsAppLink('Emergencia de plomería. Necesito un plomero A
     <div class="prose-content">
       <h2>¿Qué se considera una emergencia de plomería en Panamá?</h2>
       <p>
-        Una emergencia de plomería es cualquier problema que cause daño activo a tu propiedad o ponga en riesgo tu salud o seguridad. Si está pasando algo de esto en tu casa o edificio, llama de inmediato. No esperes a la mañana.
+        Una emergencia de plomería es cualquier problema que cause daño activo a tu propiedad o ponga en riesgo tu salud o seguridad. Si está pasando algo de esto en tu casa o edificio, contáctanos de inmediato.
       </p>
       <ul>
         <li><strong>Tubería principal reventada</strong> o tubería con fuga grande que no puedes controlar.</li>
@@ -77,37 +77,34 @@ const waHref = buildWhatsAppLink('Emergencia de plomería. Necesito un plomero A
 
       <h2>¿Qué hacer mientras llega el plomero?</h2>
       <p>
-        Mientras nuestro plomero está en camino (30-60 minutos según tu zona), estos son los pasos que reducen el daño. Hazlos en este orden, no improvises.
+        Mientras coordinamos el servicio, estos son los pasos que reducen el daño. Hazlos en este orden, no improvises.
       </p>
       <ol>
         <li><strong>Cierra la llave de paso principal de la casa.</strong> Suele estar en la entrada del agua o cerca del medidor. Gírala en sentido horario hasta que cierre.</li>
-        <li><strong>Si hay riesgo eléctrico</strong> (agua cerca de tomacorrientes, lavadoras, etc.), <strong>baja el breaker general</strong> antes de intentar cualquier cosa.</li>
+        <li><strong>Si hay riesgo eléctrico</strong> (agua cerca de tomacorrientes, lavadoras, etc.), <strong>baja el breaker general</strong> antes de intentar nada.</li>
         <li><strong>Retira muebles, electrónicos y documentos</strong> de la zona afectada.</li>
         <li><strong>Coloca toallas, trapos o baldes</strong> para contener el agua acumulada.</li>
         <li><strong>Documenta con fotos</strong> antes de mover demasiado: lo necesitarás para tu seguro de hogar si aplica.</li>
-        <li><strong>No intentes reparar tú mismo</strong> si no estás seguro. Empeorar la fuga es peor que esperar 30 minutos al plomero.</li>
+        <li><strong>No intentes reparar tú mismo</strong> si no estás seguro. Empeorar la fuga es peor que esperar al plomero.</li>
         <li><strong>Si es fuga de gas</strong>: abre ventanas, no enciendas luces, sal de la casa y llama desde afuera.</li>
       </ol>
 
       <h2>¿Cuánto tarda un plomero de emergencia en llegar a Panamá?</h2>
       <p>
-        Un plomero de emergencia en Ciudad de Panamá llega entre 30 y 60 minutos según la zona. Costa del Este, San Francisco, Punta Pacífica y Obarrio: 30 minutos. Bella Vista, El Cangrejo, Vía España: 30-45 minutos. Panamá Pacífico y zonas más alejadas: 45-90 minutos.
-      </p>
-      <p>
-        Confirmamos el tiempo exacto cuando recibimos tu WhatsApp. No prometemos lo que no podemos cumplir.
+        El tiempo de llegada depende de la zona, el tráfico y la disponibilidad del momento. Confirmamos disponibilidad inmediata cuando recibimos tu WhatsApp con la dirección. No prometemos lo que no podemos cumplir.
       </p>
 
       <h2>¿Cuánto cuesta un plomero de emergencia en Panamá?</h2>
       <p>
-        Un plomero de emergencia en Panamá cuesta entre $50 y $200 según el problema, con un recargo del 20-50% sobre la tarifa normal por servicio nocturno o de fin de semana. Damos cotización antes de empezar para que decidas si proceder; no hay sorpresas al final del trabajo.
+        El costo depende del tipo de problema, los materiales necesarios y el horario. El servicio fuera de horario regular tiene un recargo posible sobre la tarifa diurna. Damos cotización antes de empezar para que decidas si proceder; no hay sorpresas al final del trabajo.
       </p>
       <p>
-        Más detalles en nuestra <a href="/precios">guía de precios</a>.
+        Más información en nuestra <a href="/precios">página de precios</a>.
       </p>
 
-      <h2>¿Atendemos emergencias en madrugada?</h2>
+      <h2>¿Atendemos emergencias fuera de horario?</h2>
       <p>
-        Sí, atendemos emergencias de plomería 24 horas todos los días, incluyendo madrugadas, fines de semana y feriados. El número de WhatsApp y teléfono está activo siempre. La tarifa nocturna se aplica entre 10 PM y 6 AM, y se cotiza antes.
+        Ofrecemos servicio de emergencias fuera de horario regular. Para consultar disponibilidad inmediata en madrugada, fines de semana o feriados, escríbenos por WhatsApp con descripción del problema y tu ubicación. La tarifa para servicio fuera de horario regular se cotiza antes de empezar.
       </p>
 
       <h2>Tipos de emergencias más comunes que atendemos</h2>
@@ -125,21 +122,21 @@ const waHref = buildWhatsAppLink('Emergencia de plomería. Necesito un plomero A
 
       <h2>¿Por qué elegirnos para una emergencia?</h2>
       <ul>
-        <li><strong>Disponibilidad real 24/7</strong> sin esperas largas.</li>
-        <li><strong>Llegada en 30-60 minutos</strong> según la zona, confirmada por WhatsApp.</li>
+        <li><strong>Atención de emergencias</strong> con respuesta rápida.</li>
+        <li><strong>Confirmación de disponibilidad por WhatsApp</strong> antes de coordinar.</li>
         <li><strong>Cotización transparente</strong> antes de empezar el trabajo.</li>
         <li><strong>Herramientas profesionales</strong> para emergencias (hidrojet, geófono, cámara endoscópica).</li>
         <li><strong>Pago al finalizar</strong>, una vez verifiques que el problema quedó resuelto.</li>
-        <li><strong>Garantía sobre el trabajo</strong> realizado, por escrito.</li>
+        <li><strong>Trabajo con garantía</strong> por escrito.</li>
       </ul>
     </div>
   </article>
 
   <CTABanner
     title="No esperes. Cada minuto cuenta."
-    subtitle="Una fuga sin control en 30 minutos puede causar miles de dólares en daños. Llama o escribe ahora."
+    subtitle="Una fuga sin control puede causar miles de dólares en daños. Llama o escribe ahora."
     variant="urgent"
-    whatsappMessage="EMERGENCIA. Necesito plomero AHORA en Panamá."
+    whatsappMessage="EMERGENCIA. Necesito información urgente sobre disponibilidad de plomero en Panamá."
   />
 
   <FAQSection faqs={emergencyFAQs} title="Preguntas frecuentes sobre emergencias" />

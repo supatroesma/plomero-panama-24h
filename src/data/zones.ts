@@ -13,15 +13,15 @@ export const zones: Zone[] = [
     slug: "costa-del-este",
     name: "Costa del Este",
     h1: "Plomero en Costa del Este, Panamá",
-    metaTitle: "Plomero en Costa del Este | Servicio 24h en Panamá",
+    metaTitle: "Plomero en Costa del Este | Servicio Profesional en Panamá",
     metaDescription:
-      "Plomero profesional en Costa del Este, Panamá. Servicio 24 horas para apartamentos y casas. Llegamos en 30 minutos. WhatsApp directo.",
+      "Plomero profesional en Costa del Este, Panamá. Servicio para apartamentos y casas. Cotización gratis vía WhatsApp.",
     description:
-      "Atendemos toda Costa del Este: torres residenciales, casas y locales. Tiempo de llegada promedio: 30 minutos.",
+      "Atendemos toda Costa del Este: torres residenciales, casas y locales. Servicio profesional con cotización transparente.",
     highlights: [
       "Servicio especializado en torres residenciales",
-      "Llegada en 30 minutos a Costa del Este",
-      "Disponible 24 horas, fines de semana incluidos",
+      "Cobertura completa en Costa del Este",
+      "Atención de emergencias — consulta disponibilidad vía WhatsApp",
       "Conocemos los sistemas de presión típicos de la zona",
     ],
   },
@@ -29,16 +29,16 @@ export const zones: Zone[] = [
     slug: "san-francisco",
     name: "San Francisco",
     h1: "Plomero en San Francisco, Panamá",
-    metaTitle: "Plomero en San Francisco, Panamá | Servicio Profesional 24h",
+    metaTitle: "Plomero en San Francisco, Panamá | Servicio Profesional",
     metaDescription:
-      "Plomero en San Francisco, Ciudad de Panamá. Atendemos casas, apartamentos y comercios. Servicio 24h. Cotización gratis vía WhatsApp.",
+      "Plomero en San Francisco, Ciudad de Panamá. Atendemos casas, apartamentos y comercios. Cotización gratis vía WhatsApp.",
     description:
-      "San Francisco es una de nuestras zonas de cobertura principal. Atención rápida en edificios y casas.",
+      "San Francisco es una de nuestras zonas de cobertura principal. Atención profesional en edificios y casas.",
     highlights: [
       "Cobertura completa en San Francisco",
-      "Especialistas en edificios antiguos y modernos",
-      "Tiempo de llegada: 30-45 minutos",
-      "Servicio nocturno disponible",
+      "Plomeros con experiencia en edificios antiguos y modernos",
+      "Servicio residencial y comercial",
+      "Atención de emergencias — consulta disponibilidad vía WhatsApp",
     ],
   },
   {
@@ -47,46 +47,46 @@ export const zones: Zone[] = [
     h1: "Plomero en Punta Pacífica, Panamá",
     metaTitle: "Plomero en Punta Pacífica | Plomería Profesional Panamá",
     metaDescription:
-      "Plomero profesional en Punta Pacífica, Panamá. Servicio 24h para torres residenciales y oficinas. Cotización gratis sin compromiso.",
+      "Plomero profesional en Punta Pacífica, Panamá. Servicio para torres residenciales y oficinas. Cotización gratis sin compromiso.",
     description:
-      "Trabajamos en torres de Punta Pacífica con sistemas de presión específicos. Servicio rápido y profesional.",
+      "Trabajamos en torres de Punta Pacífica con sistemas de presión específicos. Servicio profesional con cotización transparente.",
     highlights: [
-      "Especialistas en torres de alta presión",
-      "Llegada en 30 minutos",
+      "Plomeros con experiencia en torres de alta presión",
+      "Cobertura en torres residenciales y oficinas",
       "Servicio para residentes y administradores",
-      "Disponible 24/7",
+      "Atención de emergencias — consulta disponibilidad vía WhatsApp",
     ],
   },
   {
     slug: "obarrio",
     name: "Obarrio",
     h1: "Plomero en Obarrio, Panamá",
-    metaTitle: "Plomero en Obarrio, Panamá | Servicio 24 Horas",
+    metaTitle: "Plomero en Obarrio, Panamá | Servicio Profesional",
     metaDescription:
-      "Plomero en Obarrio, Ciudad de Panamá. Atendemos casas y oficinas. Servicio 24 horas. Llamada o WhatsApp para cotización gratis.",
+      "Plomero en Obarrio, Ciudad de Panamá. Atendemos casas y oficinas. Llamada o WhatsApp para cotización gratis.",
     description:
-      "Obarrio combina zona residencial y comercial. Atendemos ambos perfiles con la misma rapidez y profesionalismo.",
+      "Obarrio combina zona residencial y comercial. Atendemos ambos perfiles con servicio profesional.",
     highlights: [
       "Cobertura en zona comercial y residencial",
       "Servicio para oficinas y locales comerciales",
-      "Llegada en 30-45 minutos",
-      "Atención en horario de oficina y emergencias",
+      "Atención en horario de oficina",
+      "Servicio de emergencias disponible — consulta vía WhatsApp",
     ],
   },
   {
     slug: "panama-pacifico",
     name: "Panamá Pacífico",
     h1: "Plomero en Panamá Pacífico",
-    metaTitle: "Plomero en Panamá Pacífico | Servicio Profesional 24h",
+    metaTitle: "Plomero en Panamá Pacífico | Servicio Profesional",
     metaDescription:
-      "Plomero profesional en Panamá Pacífico. Atendemos casas, condominios y oficinas. Servicio 24 horas. Cotización gratis sin compromiso.",
+      "Plomero profesional en Panamá Pacífico. Atendemos casas, condominios y oficinas. Cotización gratis sin compromiso.",
     description:
-      "Cubrimos Panamá Pacífico con servicio completo de plomería residencial y comercial. Tiempo de llegada: 45-60 minutos.",
+      "Cubrimos Panamá Pacífico con servicio completo de plomería residencial y comercial. Cotización transparente.",
     highlights: [
-      "Cobertura completa en Panamá Pacífico",
-      "Especialistas en condominios y casas",
-      "Tiempo de llegada: 45-60 minutos",
-      "Servicio 24 horas con tarifa transparente",
+      "Cobertura en Panamá Pacífico",
+      "Plomeros con experiencia en condominios y casas",
+      "Servicio residencial y comercial",
+      "Atención de emergencias — consulta disponibilidad vía WhatsApp",
     ],
   },
 ];

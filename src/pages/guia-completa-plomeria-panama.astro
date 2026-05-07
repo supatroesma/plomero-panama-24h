@@ -25,13 +25,13 @@ const tipoTuberiasTable = {
 
 const calentadoresTable = {
   caption: 'Tipos de calentadores de agua para Panamá',
-  headers: ['Tipo', 'Costo equipo', 'Eficiencia', 'Mejor para'],
+  headers: ['Tipo', 'Costo relativo', 'Eficiencia', 'Mejor para'],
   rows: [
-    ['Eléctrico de tanque', 'Bajo ($250-450)', 'Media', 'Apartamentos pequeños, 1-3 personas'],
-    ['A gas', 'Medio ($400-800)', 'Alta', 'Casas con conexión a gas, familias grandes'],
-    ['Tankless eléctrico', 'Alto ($500-1,200)', 'Muy alta', 'Familias grandes, ahorro a largo plazo'],
-    ['Tankless a gas', 'Alto ($600-1,500)', 'Muy alta', 'Casas grandes, alto consumo'],
-    ['Solar', 'Muy alto ($1,000-2,500)', 'Excelente (clima Panamá)', 'Inversión a largo plazo, casas con techo'],
+    ['Eléctrico de tanque', 'Bajo', 'Media', 'Apartamentos pequeños, 1-3 personas'],
+    ['A gas', 'Medio', 'Alta', 'Casas con conexión a gas, familias grandes'],
+    ['Tankless eléctrico', 'Alto', 'Muy alta', 'Familias grandes, ahorro a largo plazo'],
+    ['Tankless a gas', 'Alto', 'Muy alta', 'Casas grandes, alto consumo'],
+    ['Solar', 'Muy alto', 'Excelente (clima Panamá)', 'Inversión a largo plazo, casas con techo'],
   ],
 };
 
@@ -178,7 +178,7 @@ const problemasTable = {
 
       <h3>¿Qué hago si veo agua color marrón?</h3>
       <p>
-        Agua color marrón en la primera carga del día generalmente indica oxidación en tuberías galvanizadas viejas. Si persiste todo el día, puede ser problema con la red IDAAN (revisar avisos de la entidad) o con el calentador (sedimentos acumulados). Llama a un plomero si dura más de 24 horas.
+        Agua color marrón en la primera carga del día generalmente indica oxidación en tuberías galvanizadas viejas. Si persiste todo el día, puede ser problema con la red IDAAN (revisar avisos de la entidad) o con el calentador (sedimentos acumulados). Llama a un plomero si persiste más de un día.
       </p>
 
       <h3>¿Cómo identifico una fuga oculta?</h3>
@@ -188,16 +188,16 @@ const problemasTable = {
 
       <h2 id="precios">¿Cuánto cuestan los servicios de plomería en Panamá?</h2>
       <p>
-        Los precios varían según servicio, complejidad y horario. Esta es la tabla de rangos reales en Ciudad de Panamá en 2026. Para una guía detallada con factores que afectan el precio, ve nuestra <a href="/precios">página de precios</a>.
+        Los precios varían según el tipo de servicio, la complejidad, los materiales y el horario. No publicamos precios fijos porque cada caso es distinto: por eso damos cotización individual gratis vía WhatsApp después de revisar la descripción del problema.
+      </p>
+      <p>
+        Para entender los factores que afectan el costo y cómo pedir cotización transparente, consulta nuestra <a href="/precios">página de precios</a>.
       </p>
       <ul>
-        <li><strong>Destape simple:</strong> $30-80</li>
-        <li><strong>Destape con hidrojet:</strong> $80-200</li>
-        <li><strong>Reparación de fuga visible:</strong> $50-120</li>
-        <li><strong>Detección + reparación de fuga oculta:</strong> $150-400</li>
-        <li><strong>Instalación calentador eléctrico:</strong> $80-180 (mano de obra)</li>
-        <li><strong>Cambio total de tuberías casa pequeña:</strong> $800-2,500</li>
-        <li><strong>Servicio nocturno o fin de semana:</strong> +20-50% sobre tarifa normal</li>
+        <li><strong>Cotización inicial vía WhatsApp:</strong> gratis, sin compromiso.</li>
+        <li><strong>Servicio fuera de horario regular:</strong> puede tener recargo, cotizado antes.</li>
+        <li><strong>Materiales:</strong> se cotizan aparte de la mano de obra.</li>
+        <li><strong>Garantía:</strong> incluida según el tipo de servicio, por escrito en la cotización.</li>
       </ul>
 
       <h2 id="mantenimiento">¿Cómo se hace mantenimiento preventivo de plomería?</h2>
@@ -247,7 +247,7 @@ const problemasTable = {
 
       <h2 id="zonas">¿En qué zonas de Ciudad de Panamá tenemos cobertura?</h2>
       <p>
-        Cubrimos toda Ciudad de Panamá con tiempos de llegada que varían según la zona. Estas son las zonas con páginas dedicadas y notas locales:
+        Cubrimos toda Ciudad de Panamá. Estas son las zonas con páginas dedicadas y notas locales:
       </p>
       <ul>
         {zones.map((z) => (
@@ -257,7 +257,7 @@ const problemasTable = {
         ))}
       </ul>
       <p>
-        Tiempo promedio de llegada: 30 minutos en Costa del Este, San Francisco, Punta Pacífica y Obarrio; 30-45 minutos en Bella Vista, El Cangrejo, Vía España y Calle 50; 45-90 minutos en Panamá Pacífico y áreas más alejadas.
+        El tiempo de llegada depende de la zona, el tráfico y la disponibilidad del momento. Confirmamos disponibilidad inmediata cuando recibimos tu WhatsApp con la dirección.
       </p>
 
       <h2 id="regulaciones">¿Qué regulaciones aplican a la plomería en Panamá?</h2>
@@ -336,17 +336,17 @@ const problemasTable = {
 
       <h3>¿Cuánto cuesta una visita de evaluación a domicilio?</h3>
       <p>
-        La cotización inicial vía WhatsApp es gratis. Una visita de evaluación al domicilio puede tener un costo de $15-25 que se descuenta del trabajo si decides contratar. Esto es estándar en Ciudad de Panamá.
+        La cotización inicial vía WhatsApp es gratis. Una visita de evaluación al domicilio puede tener un costo simbólico que se descuenta del trabajo si decides contratar. Esto es estándar en Ciudad de Panamá.
       </p>
 
       <h3>¿Atienden urgencias en madrugada?</h3>
       <p>
-        Sí, atendemos emergencias 24 horas todos los días. WhatsApp y teléfono activos siempre. Tarifa nocturna se aplica entre 10 PM y 6 AM con recargo del 30-50%.
+        Sí, ofrecemos servicio de emergencias fuera de horario regular. Para consultar disponibilidad inmediata, escríbenos por WhatsApp con la descripción del problema. La tarifa para servicio fuera de horario regular se cotiza antes de empezar.
       </p>
 
       <h3>¿Cuánto tiempo dura una reparación de plomería?</h3>
       <p>
-        Una reparación simple (fuga visible, destape) toma 30 minutos a 2 horas. Una reparación compleja (fuga oculta, cambio de tubería) toma 2-8 horas. Un cambio total de tuberías toma 2-3 días. La cotización siempre incluye tiempo estimado.
+        El tiempo varía según el tipo de reparación. Una fuga visible o destape simple suele resolverse en una visita corta. Una fuga oculta o cambio de tubería puede tomar varias horas. Un cambio total de tuberías toma uno o varios días. La cotización siempre incluye tiempo estimado.
       </p>
 
       <h2>Servicios y recursos del sitio</h2>

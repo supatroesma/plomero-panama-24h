@@ -25,58 +25,70 @@
   --container-site: 1200px;
 }
 
-:root {
-  font-family: var(--font-sans);
-  color: var(--color-text-base);
-  background: var(--color-bg-base);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+/*
+  Base typography & color resets — wrapped in @layer base so Tailwind utilities
+  (text-white, text-2xl, etc.) win on elements that use them. Without the
+  layer wrapping, unlayered rules win over @layer utilities and break things
+  like a white phone-button text in the header or a white H1 in the hero.
+*/
+@layer base {
+  :root {
+    font-family: var(--font-sans);
+    color: var(--color-text-base);
+    background: var(--color-bg-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-@media (min-width: 768px) {
   body {
-    font-size: 1.0625rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.0625rem;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-text-base);
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+
+  @media (min-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.25rem; }
+    h3 { font-size: 1.5rem; }
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+
+  a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--color-text-base);
-}
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.25rem; }
-
-@media (min-width: 768px) {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2.25rem; }
-  h3 { font-size: 1.5rem; }
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 150ms ease;
-}
-
-a:hover {
-  color: var(--color-primary-dark);
-  text-decoration: underline;
-}
-
+/* Custom component-style utilities — kept unlayered intentionally so
+   they apply consistently regardless of cascade order with utilities.
+   These target specific class selectors that don't conflict with utility
+   classes on the same element. */
 .container-site {
   width: 100%;
   max-width: var(--container-site);

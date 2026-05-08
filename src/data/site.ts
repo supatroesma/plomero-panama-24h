@@ -5,10 +5,10 @@ export const siteConfig = {
     "Plomero profesional en Panamá. Destape de cañerías, fugas de agua, instalación de calentadores. Servicio de emergencias. Cotización gratis vía WhatsApp.",
   url: "https://plomeropanama24h.com",
 
-  phone: "+507 0000-0000",
-  phoneClean: "50700000000",
-  whatsapp: "+507 0000-0000",
-  whatsappClean: "50700000000",
+  phone: "+507 6843-7411",
+  phoneClean: "50768437411",
+  whatsapp: "+507 6843-7411",
+  whatsappClean: "50768437411",
   whatsappMessage: "Hola, necesito información sobre servicios de plomería en Panamá. Vi su sitio web.",
   email: "contacto@plomeropanama24h.com",
 

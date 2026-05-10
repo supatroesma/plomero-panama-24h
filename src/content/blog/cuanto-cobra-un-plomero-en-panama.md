@@ -2,6 +2,7 @@
 title: "¿Cuánto cobra un plomero en Panamá? Guía 2026"
 description: "Cuánto cobra un plomero en Panamá: factores que afectan el precio, qué incluye una cotización transparente, cómo evitar plomeros que cobran de más. Guía 2026."
 pubDate: 2026-05-05
+image: "/images/blog/cuanto-cobra-un-plomero-en-panama.jpg"
 category: precios
 tags: [precios, plomero, panama, cotizacion]
 targetKeyword: "cuanto cobra un plomero en panama"

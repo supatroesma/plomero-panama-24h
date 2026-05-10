@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { siteConfig, buildPhoneLink, buildWhatsAppLink } from '../data/site';
+import heroBg from '../assets/hero-home.png';
 
 export type Props = {
   title: string;
@@ -7,6 +9,7 @@ export type Props = {
   badges?: string[];
   whatsappMessage?: string;
   logoSrc?: string;
+  showBgImage?: boolean;
 };
 
 const {
@@ -15,14 +18,35 @@ const {
   badges = ['Atención de Emergencias', 'Cotización Gratis', 'Servicio Profesional'],
   whatsappMessage,
   logoSrc,
+  showBgImage = false,
 } = Astro.props;
 
 const phoneHref = buildPhoneLink();
 const waHref = buildWhatsAppLink(whatsappMessage);
 ---
 
-<section class="bg-gradient-to-br from-[color:var(--color-primary)] to-[color:var(--color-primary-dark)] text-white">
-  <div class="container-site py-12 md:py-20">
+<section class="relative bg-gradient-to-br from-[color:var(--color-primary)] to-[color:var(--color-primary-dark)] text-white overflow-hidden">
+  {showBgImage && (
+    <>
+      <Image
+        src={heroBg}
+        alt=""
+        widths={[640, 1024, 1600, 1920]}
+        sizes="100vw"
+        formats={['webp']}
+        quality={70}
+        loading="eager"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover opacity-30"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[color:var(--color-primary)]/80 to-[color:var(--color-primary-dark)]/90"
+        aria-hidden="true"
+      ></div>
+    </>
+  )}
+
+  <div class="container-site py-12 md:py-20 relative z-10">
     <div class="max-w-3xl">
       {logoSrc ? (
         <h1 class="mb-4">

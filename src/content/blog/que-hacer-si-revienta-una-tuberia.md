@@ -2,6 +2,7 @@
 title: "¿Qué hacer si se revienta una tubería en tu casa? Guía de emergencia"
 description: "Si se revienta una tubería en tu casa en Panamá, cierra la llave de paso, baja el breaker si hay riesgo eléctrico y llama un plomero. Guía paso a paso."
 pubDate: 2026-05-01
+image: "/images/blog/que-hacer-si-revienta-una-tuberia.jpg"
 category: emergencias
 tags: [emergencia, tuberia, fuga, panama]
 targetKeyword: "que hacer si revienta una tuberia"

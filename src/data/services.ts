@@ -10,6 +10,7 @@ export type Service = {
   keyword: string;
   intent: "transactional" | "commercial" | "urgent";
   subTopics: string[];
+  image?: string;
 };
 
 export const services: Service[] = [
@@ -34,6 +35,7 @@ export const services: Service[] = [
       "Diferencia entre destape simple y destape profundo",
       "Productos químicos: cuándo SÍ y cuándo NO usarlos",
     ],
+    image: "/images/servicios/destape-canerias.webp",
   },
   {
     slug: "fugas-de-agua",
@@ -55,6 +57,7 @@ export const services: Service[] = [
       "Daños que causa una fuga sin reparar",
       "Cobertura de seguros en Panamá para fugas",
     ],
+    image: "/images/servicios/fugas-de-agua.jpg",
   },
   {
     slug: "reparacion-tuberias",
@@ -76,6 +79,7 @@ export const services: Service[] = [
       "Cambio parcial vs cambio total",
       "Cuánto tiempo dura una tubería en Panamá",
     ],
+    image: "/images/servicios/reparacion-tuberias.jpg",
   },
   {
     slug: "plomero-24-horas",
@@ -97,6 +101,7 @@ export const services: Service[] = [
       "Tarifas nocturnas y de fin de semana",
       "Tipos de emergencias más comunes",
     ],
+    image: "/images/servicios/plomero-24-horas.png",
   },
   {
     slug: "instalacion-calentadores",
@@ -118,6 +123,7 @@ export const services: Service[] = [
       "Mantenimiento de calentadores",
       "Reparación de calentadores que no calientan",
     ],
+    image: "/images/servicios/instalacion-calentadores.jpg",
   },
   {
     slug: "plomero-residencial",
@@ -139,6 +145,7 @@ export const services: Service[] = [
       "Cobertura: casas, apartamentos, edificios",
       "Cómo agendar una visita",
     ],
+    image: "/images/servicios/plomero-residencial.jpg",
   },
 ];
 

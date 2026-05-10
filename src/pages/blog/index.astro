@@ -42,14 +42,27 @@ const formatDate = (d: Date) =>
     ) : (
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {posts.map((post) => (
-          <a href={`/blog/${post.id}`} class="block bg-white border border-[color:var(--color-border-base)] rounded-xl p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all no-underline h-full flex flex-col">
-            <div class="text-xs text-[color:var(--color-text-muted)] mb-2 flex items-center gap-2">
-              <span class="bg-[color:var(--color-primary-light)] text-[color:var(--color-primary)] px-2 py-0.5 rounded text-xs font-semibold uppercase">{post.data.category}</span>
-              <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+          <a href={`/blog/${post.id}`} class="block bg-white border border-[color:var(--color-border-base)] rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all no-underline h-full flex flex-col">
+            {post.data.image && (
+              <img
+                src={post.data.image}
+                alt={post.data.title}
+                class="w-full aspect-[1200/630] object-cover bg-[color:var(--color-bg-alt)]"
+                width="1200"
+                height="630"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            <div class="p-5 flex flex-col flex-1">
+              <div class="text-xs text-[color:var(--color-text-muted)] mb-2 flex items-center gap-2">
+                <span class="bg-[color:var(--color-primary-light)] text-[color:var(--color-primary)] px-2 py-0.5 rounded text-xs font-semibold uppercase">{post.data.category}</span>
+                <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+              </div>
+              <h2 class="text-lg mb-2 text-[color:var(--color-text-base)]">{post.data.title}</h2>
+              <p class="text-sm text-[color:var(--color-text-muted)] leading-relaxed flex-1">{post.data.description}</p>
+              <span class="inline-block mt-3 text-sm font-semibold text-[color:var(--color-primary)]">Leer más →</span>
             </div>
-            <h2 class="text-lg mb-2 text-[color:var(--color-text-base)]">{post.data.title}</h2>
-            <p class="text-sm text-[color:var(--color-text-muted)] leading-relaxed flex-1">{post.data.description}</p>
-            <span class="inline-block mt-3 text-sm font-semibold text-[color:var(--color-primary)]">Leer más →</span>
           </a>
         ))}
       </div>

@@ -2,6 +2,7 @@
 title: "Cómo cerrar la llave de paso de agua: guía paso a paso"
 description: "Aprende cómo cerrar la llave de paso de agua de tu casa en Panamá en menos de 1 minuto. Guía con pasos exactos, dónde encontrarla y qué hacer si está atascada."
 pubDate: 2026-05-02
+image: "/images/blog/como-cerrar-la-llave-de-paso-de-agua.jpg"
 category: emergencias
 tags: [llave de paso, emergencia, agua, panama]
 targetKeyword: "como cerrar la llave de paso de agua"

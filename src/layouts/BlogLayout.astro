@@ -61,6 +61,20 @@ const formatDate = (d: Date) =>
       </div>
     </header>
 
+    {data.image && (
+      <figure class="mb-8">
+        <img
+          src={data.image}
+          alt={data.title}
+          class="w-full h-auto rounded-xl shadow-md"
+          width="1200"
+          height="630"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+    )}
+
     <div class="prose-content">
       <slot />
     </div>

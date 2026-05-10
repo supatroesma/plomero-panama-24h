@@ -2,6 +2,7 @@
 title: "Cómo destapar un inodoro paso a paso"
 description: "Cómo destapar un inodoro tapado en Panamá: sopapa, cable destapador, agua caliente con detergente. Guía paso a paso. Cuándo llamar plomero."
 pubDate: 2026-05-04
+image: "/images/blog/como-destapar-un-inodoro.png"
 category: tips
 tags: [destape, inodoro, diy, panama]
 targetKeyword: "como destapar un inodoro"

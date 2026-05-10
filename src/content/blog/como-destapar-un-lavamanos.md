@@ -2,6 +2,7 @@
 title: "Cómo destapar un lavamanos: 5 métodos caseros que funcionan"
 description: "5 métodos caseros para destapar un lavamanos en Panamá: agua hirviendo, bicarbonato, sopapa, cable y limpiar el sifón. Guía paso a paso con cuándo llamar plomero."
 pubDate: 2026-05-03
+image: "/images/blog/como-destapar-un-lavamanos.png"
 category: tips
 tags: [destape, lavamanos, diy, panama]
 targetKeyword: "como destapar un lavamanos"
